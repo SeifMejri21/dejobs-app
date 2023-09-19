@@ -1,12 +1,12 @@
 import dash_bootstrap_components as dbc
 import dash_mantine_components as dmc
-from dash import html, dcc, Input, dash, Output
+from dash import html, dcc, Input, dash
 from dash_iconify import DashIconify
 
 from dashboard.data_loader import JsonDataLoader, JobsListFilter
 
 jdl = JsonDataLoader()
-jlf = JobsListFilter()
+jdf = JobsListFilter()
 
 all_jobz = jdl.load_jobs()
 all_locations, all_titles, all_companies = jdl.load_filters_lists(all_jobz)
@@ -151,7 +151,7 @@ socials = dmc.Affix(
 
 version = html.H6("V1.0")
 all_jobs_cards = [job_card_dynamic(job_title=c['title'], company_name=c['company'], company_logo=c['company_logo'],
-                                   location=c['location'], job_url=c['url']) for c in all_jobz]
+                                    location=c['location'], job_url=c['url']) for c in all_jobz]
 
 front_page_layout = html.Div([
     html.Div(html.A(
@@ -187,10 +187,11 @@ front_page_layout = html.Div([
         ]),
     ], style={"margin-left": "35px", "margin-right": "35px", "margin-top": "35px", "margin-bottom": "35px",
               "align": "center"}),
-    # html.P(id="filtered_jobs"),
-    html.Div(id="filtered_jobs",
-             style={"margin-left": "55px", "margin-right": "55px", "margin-top": "55px", "margin-bottom": "55px",
-                    "align": "center", 'display': 'inline-block', 'width': '99%', }),
+    html.Div(
+        # [ job_card4(), ],
+        all_jobs_cards,
+        style={"margin-left": "55px", "margin-right": "55px", "margin-top": "55px", "margin-bottom": "55px",
+               "align": "center", 'display': 'inline-block', 'width': '99%', }),
     socials,
     version,
 ], style={"margin-left": "25px", "margin-right": "25px", "margin-top": "25px", "margin-bottom": "25px",
@@ -209,20 +210,14 @@ app.layout = front_page_layout
 
 
 @app.callback(
-    Output(component_id='filtered_jobs', component_property='children'),
     Input(component_id='job_title', component_property='value'),
     Input(component_id='company', component_property='value'),
     Input(component_id='location', component_property='value'),
+    # Output(component_id='data_table1', component_property='data'),
 )
 def update_jobs_list(job_title, company, location):
-    # print(job_title, company, location)
-    filtered_jobs = jlf.jobs_list_filter(key="title", condition_values=job_title, all_jobz=all_jobz)
-    filtered_jobs = jlf.jobs_list_filter(key="company", condition_values=company, all_jobz=filtered_jobs)
-    filtered_jobs = jlf.jobs_list_filter(key="location", condition_values=location, all_jobz=filtered_jobs)
-    filtered_jobs_cards = [job_card_dynamic(job_title=c['title'], company_name=c['company'],
-                                            company_logo=c['company_logo'], location=c['location'],
-                                            job_url=c['url']) for c in filtered_jobs]
-    return filtered_jobs_cards
+    print(job_title, company, location)
+    # return all_jobs_cards
 
 
 if __name__ == "__main__":
