@@ -3,81 +3,27 @@ import dash_mantine_components as dmc
 from dash import html, dcc, Input, dash, Output
 from dash_iconify import DashIconify
 
-from dashboard.data_loader import JsonDataLoader, JobsListFilter
+from dashboard.data_loader import JsonDataLoader, JobsListFilter, DeJobsApiTester
 
 jdl = JsonDataLoader()
 jlf = JobsListFilter()
+dj_api = DeJobsApiTester()
 
-all_jobz = jdl.load_jobs()
+# all_jobz = jdl.load_jobs()
+all_jobz = dj_api.import_available_jobs()
 all_locations, all_titles, all_companies = jdl.load_filters_lists(all_jobz)
 
 
-def job_card():
+def job_card_dynamic(job_title, company_logo, company_name, location, job_url, website_url):
     card = dbc.Card(
         [
             dbc.Row(
                 [
-                    dbc.Col(
-                        dbc.CardImg(
-                            src="https://assets-global.website-files.com/6364e65656ab107e465325d2/637aeee74d38a6e43415e6b3_vq8xBrkijMAgDZQi0-rEeQIceQhL2PwuO9vYWSU5OQ0.png",
-                            className="img-fluid rounded-start", style={"width": "75px"}
-                        ),
-                        className="col-md-2", style={'marginTop': '5px', 'marginBottom': '5px',
-                                                     'marginRight': '5px', 'marginLeft': '10px', }
-                    ),
-                    dbc.Col(
-                        dbc.CardBody(
-                            dbc.Row([
-                                dbc.Col([html.H4("Data Engineer", className="card-title"),
-                                         html.Small(
-                                             "Los Angeles",
-                                             className="card-text text-muted",
-                                             style={'marginTop': '100px', }
-                                         ), ],
-                                        className="col-md-8"),
-                                dbc.Col(html.P("Opensea", className="card-text"),
-                                        className="col-md-4", style={"color": "#272626"})
-                            ])
-                        ),
-                        className="col-md-7",
-                    ),
-                    dbc.Col(
-                        dmc.Button(
-                            dmc.Anchor("Apply here",
-                                       href="https://jobs.ashbyhq.com/OpenSea/66dd92c8-5075-45fb-81f9-8e43a053211a",
-                                       target="_blank", style={"textDecoration": "none", "color": "white", }, ),
-                            fullWidth=False,
-                            rightIcon=html.A(DashIconify(icon="material-symbols:open-in-new",
-                                                         style={  # "background-color": "white",
-                                                             "color": "white"}
-                                                         ),
-                                             href="https://jobs.ashbyhq.com/OpenSea/66dd92c8-5075-45fb-81f9-8e43a053211a",
-                                             target="_blank"),
-                            size="md",
-                            style={"background-color": "#FE1356", "height": "50px", "weight": "100px"}
-                        ),
-                        className="col-md-2",
-                    ),
-                ],
-                className="g-0 d-flex align-items-center",
-            )
-        ],
-        className="mb-3",
-        style={"maxWidth": "1100px", "maxHeight": "120px", "background-color": "#DFDFDF"},
-    )
-    return card
-
-
-def job_card_dynamic(job_title, company_logo, company_name, location, job_url):
-    card = dbc.Card(
-        [
-            dbc.Row(
-                [
-                    dbc.Col(
-                        dbc.CardImg(
-                            src=company_logo,
-                            className="img-fluid rounded-start", style={"width": "75px"}
-                        ),
+                    dbc.Col(html.A([dbc.CardImg(
+                        src=company_logo,
+                        className="img-fluid rounded-start", style={"width": "75px"}
+                    )], href=website_url, target="_blank")
+                        ,
                         className="col-md-2", style={'marginTop': '5px', 'marginBottom': '5px',
                                                      'marginRight': '5px', 'marginLeft': '10px', }
                     ),
@@ -107,10 +53,10 @@ def job_card_dynamic(job_title, company_logo, company_name, location, job_url):
                                                          style={  # "background-color": "white",
                                                              "color": "white"}
                                                          ),
-                                             href="job_url",
+                                             href=job_url,
                                              target="_blank"),
                             size="md",
-                            style={"background-color": "#FE1356", "height": "50px", "weight": "100px"}
+                            style={"background-color": "#FE1356", "height": "55px", "width": "150px"}
                         ),
                         className="col-md-2",
                     ),
@@ -150,8 +96,9 @@ socials = dmc.Affix(
 )
 
 version = html.H6("V1.0")
-all_jobs_cards = [job_card_dynamic(job_title=c['title'], company_name=c['company'], company_logo=c['company_logo'],
-                                   location=c['location'], job_url=c['url']) for c in all_jobz]
+all_jobs_cards = [job_card_dynamic(job_title=c['title'], company_name=c['company_name'], company_logo=c['company_logo'],
+                                   location=c['location'], job_url=c['apply_url'], website_url=c['company_website']) for
+                  c in all_jobz]
 
 front_page_layout = html.Div([
     html.Div(html.A(
@@ -219,11 +166,12 @@ app.layout = front_page_layout
 def update_jobs_list(job_title, company, location):
     # print(job_title, company, location)
     filtered_jobs = jlf.jobs_list_filter(key="title", condition_values=job_title, all_jobz=all_jobz)
-    filtered_jobs = jlf.jobs_list_filter(key="company", condition_values=company, all_jobz=filtered_jobs)
+    filtered_jobs = jlf.jobs_list_filter(key="company_name", condition_values=company, all_jobz=filtered_jobs)
     filtered_jobs = jlf.jobs_list_filter(key="location", condition_values=location, all_jobz=filtered_jobs)
-    filtered_jobs_cards = [job_card_dynamic(job_title=c['title'], company_name=c['company'],
+    filtered_jobs_cards = [job_card_dynamic(job_title=c['title'], company_name=c['company_name'],
                                             company_logo=c['company_logo'], location=c['location'],
-                                            job_url=c['url']) for c in filtered_jobs]
+                                            job_url=c['apply_url'], website_url=c['company_website']) for c in
+                           filtered_jobs]
     return filtered_jobs_cards
 
 

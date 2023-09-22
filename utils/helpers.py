@@ -1,4 +1,5 @@
 import json
+import sys
 
 
 def read_json(file_name, local=False, custom_path=''):
@@ -71,3 +72,11 @@ def list_flatter(listi):
         else:
             result.append(el)
     return result
+
+
+def set_env():
+    if sys.platform == 'win32':
+        env = 'local'
+    else:
+        env = 'prod'
+    return env
