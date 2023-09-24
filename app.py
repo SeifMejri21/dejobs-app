@@ -85,18 +85,17 @@ app.layout = front_page_layout
     Input(component_id='next', component_property='n_clicks'),
 )
 def update_jobs_list(job_title, company, location, load_previous, load_next):
+    items_per_page = 100
     page = load_next - load_previous + 1
-    max_page = int(jobs_count/50)+1
+    max_page = int(jobs_count/items_per_page)+1
     if page < 1:
         page = 1
     elif page > max_page:
         page = max_page
-    print(load_previous, load_next, page)
-    # filtered_jobs = jlf.jobs_list_filter(key="title", condition_values=job_title, all_jobz=all_jobz)
-    # filtered_jobs = jlf.jobs_list_filter(key="company_name", condition_values=company, all_jobz=filtered_jobs)
-    # filtered_jobs = jlf.jobs_list_filter(key="location", condition_values=location, all_jobz=filtered_jobs)
-    filtered_jobs = dj_api.import_available_jobs(page=page, items=50)
-    # filtered_jobs = list_flatter(filtered_jobs.append(new_jobs))
+    filtered_jobs = dj_api.import_available_jobs(page=page, items=items_per_page)
+    filtered_jobs = jlf.jobs_list_filter(key="title", condition_values=job_title, all_jobz=items_per_page)
+    filtered_jobs = jlf.jobs_list_filter(key="company_name", condition_values=company, all_jobz=filtered_jobs)
+    filtered_jobs = jlf.jobs_list_filter(key="location", condition_values=location, all_jobz=filtered_jobs)
     filtered_jobs_cards = [jc.job_card_dynamic(job_title=c['title'], company_name=c['company_name'],
                                                company_logo=c['company_logo'], location=c['location'],
                                                job_url=c['apply_url'], website_url=c['company_website'])
