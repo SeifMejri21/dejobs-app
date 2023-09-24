@@ -66,10 +66,21 @@ class DeJobsApiTester(object):
         companies_list = self.request_builder("GET", url)
         return companies_list
 
-    def import_available_jobs(self):
-        url = self.url_builder("jobs/available")
+    def import_available_jobs(self, page=1, items=50):
+        url = self.url_builder(f"jobs/available/?page={page}&items={items}")
         companies_list = self.request_builder("GET", url)
         return companies_list
+
+    def load_jobs_filters(self):
+        url = self.url_builder("jobs/filters")
+        filters = self.request_builder("GET", url)
+        all_locations, all_titles, all_companies = filters['locations'], filters['titles'], filters['companies_names'],
+        return all_locations, all_titles, all_companies
+
+    def load_available_jobs_count(self):
+        url = self.url_builder("jobs/count")
+        jobs_count = self.request_builder("GET", url)
+        return jobs_count['jobs_count']
 
 # dat = DeJobsApiTester(test_env="prod")
 # companies_list = dat.import_companies_list()
