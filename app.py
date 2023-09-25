@@ -22,6 +22,7 @@ jdl = JsonDataLoader()
 dj_api = DeJobsApiTester(test_env=set_env())
 
 all_jobs = dj_api.import_all_available_jobs()
+random.shuffle(all_jobs)
 all_locations, all_titles, all_companies = dj_api.load_jobs_filters()
 jobs_count = dj_api.load_available_jobs_count()
 
@@ -43,12 +44,14 @@ front_page_layout = html.Div([
     # fc.dropdown_filter(all_titles=all_titles, all_companies=all_companies, all_locations=all_locations),
     fc.input_keyword_filter(),
     # html.Hr(),
+    html.H5(id='jobs_found'),
     html.Center(html.Div(id="filtered_jobs",
                          style={"margin-left": "55px", "margin-right": "55px", "margin-top": "55px",
                                 "margin-bottom": "55px",
                                 "align": "center", 'display': 'inline-block', 'width': '99%', }), ),
     # html.Center(bt.load_more_jobs_button()),
     # html.Hr(),
+
     html.Center(bt.prev_next()),
     SOCIALS,
     VERSION,
@@ -71,6 +74,7 @@ app.layout = front_page_layout
 
 @app.callback(
     Output(component_id='filtered_jobs', component_property='children'),
+    Output(component_id='jobs_found', component_property='children'),
     Input(component_id='job_title', component_property='value'),
     Input(component_id='company', component_property='value'),
     Input(component_id='location', component_property='value'),
@@ -85,7 +89,8 @@ def update_jobs_list(job_title, company, location, load_previous, load_next):
 
     print(job_title, company, location)
     filtered_jobs = fc.regex_mega_filter(all_jobs, job_title, company, location)
-    print("filtered jobs", len(filtered_jobs))
+    leny = len(filtered_jobs)
+    print("filtered jobs", leny)
 
     items_per_page = 50
     page = load_next - load_previous
@@ -102,7 +107,7 @@ def update_jobs_list(job_title, company, location, load_previous, load_next):
                                                company_logo=c['company_logo'], location=c['location'],
                                                job_url=c['apply_url'], website_url=c['company_website'])
                            for c in filtered_jobs]
-    return filtered_jobs_cards
+    return filtered_jobs_cards, f"Jobs found: {leny}"
 
 
 if __name__ == "__main__":
