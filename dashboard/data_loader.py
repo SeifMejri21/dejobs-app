@@ -17,17 +17,6 @@ class JsonDataLoader(object):
         return all_locations, all_titles, all_companies
 
 
-class JobsListFilter(object):
-    @staticmethod
-    def jobs_list_filter(key, condition_values, all_jobz):
-        if condition_values:
-            filtered_jobz = [jb for jb in all_jobz if jb[key] in condition_values]
-        else:
-            filtered_jobz = all_jobz
-
-        return filtered_jobz
-
-
 class DeJobsApiTester(object):
     def __init__(self, test_env=set_env()):
         """
@@ -68,6 +57,11 @@ class DeJobsApiTester(object):
 
     def import_available_jobs(self, page=1, items=50):
         url = self.url_builder(f"jobs/available/?page={page}&items={items}")
+        companies_list = self.request_builder("GET", url)
+        return companies_list
+
+    def import_all_available_jobs(self):
+        url = self.url_builder(f"jobs/available/all")
         companies_list = self.request_builder("GET", url)
         return companies_list
 

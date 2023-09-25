@@ -2,20 +2,26 @@ import sys
 
 import dash_bootstrap_components as dbc
 import dash_mantine_components as dmc
-from dash import html, dcc, Input, dash, Output
+from dash import html, Input, dash, Output
 
 from dashboard.buttons import MyButtons
+from dashboard.data_loader import JsonDataLoader, DeJobsApiTester
+from dashboard.filters_components import FiltersComponents
 from dashboard.jobs_component import JobsComponent
-from dashboard.data_loader import JsonDataLoader, JobsListFilter, DeJobsApiTester
+from dashboard.paginator import Paginator
 from dashboard.static_components import SOCIALS, VERSION
+from utils.helpers import set_env
+import random
 
 bt = MyButtons()
 jc = JobsComponent()
+fc = FiltersComponents()
+pg = Paginator()
 jdl = JsonDataLoader()
-jlf = JobsListFilter()
-dj_api = DeJobsApiTester()
 
-start_jobs = dj_api.import_available_jobs(page=1, items=50)
+dj_api = DeJobsApiTester(test_env=set_env())
+
+all_jobs = dj_api.import_all_available_jobs()
 all_locations, all_titles, all_companies = dj_api.load_jobs_filters()
 jobs_count = dj_api.load_available_jobs_count()
 
@@ -34,21 +40,8 @@ front_page_layout = html.Div([
     )),
     html.Div([html.H2("Elevate Your Crypto Career: 100x More Jobs, One Board")],
              style={"height": "100px", "text-align": "center", "text-color": "pink"}),
-    html.Div([
-        dbc.Row([
-            dbc.Col([html.H6("Job Title"),
-                     # dcc.Input(id="job_title", type="text", placeholder="Junior Data Engineer",
-                     #             style={'marginRight': '1px'})
-                     dcc.Dropdown(options=all_titles, multi=True, clearable=False,
-                                  id='job_title')
-                     ]),
-            dbc.Col([html.H6("Company"),
-                     dcc.Dropdown(options=all_companies, multi=True, id='company')]),
-            dbc.Col([html.H6("Location"),
-                     dcc.Dropdown(options=all_locations, multi=True, id='location')]),
-        ]),
-    ], style={"margin-left": "35px", "margin-right": "35px", "margin-top": "35px", "margin-bottom": "35px",
-              "align": "center"}),
+    # fc.dropdown_filter(all_titles=all_titles, all_companies=all_companies, all_locations=all_locations),
+    fc.input_keyword_filter(),
     # html.Hr(),
     html.Center(html.Div(id="filtered_jobs",
                          style={"margin-left": "55px", "margin-right": "55px", "margin-top": "55px",
@@ -85,17 +78,26 @@ app.layout = front_page_layout
     Input(component_id='next', component_property='n_clicks'),
 )
 def update_jobs_list(job_title, company, location, load_previous, load_next):
-    items_per_page = 100
-    page = load_next - load_previous + 1
-    max_page = int(jobs_count/items_per_page)+1
-    if page < 1:
-        page = 1
+    # filtering data
+    # filtered_jobs = fc.jobs_list_filter(key="title", condition_values=job_title, all_jobz=all_jobs)
+    # filtered_jobs = fc.jobs_list_filter(key="company_name", condition_values=company, all_jobz=filtered_jobs)
+    # filtered_jobs = fc.jobs_list_filter(key="location", condition_values=location, all_jobz=filtered_jobs)
+
+    print(job_title, company, location)
+    filtered_jobs = fc.regex_mega_filter(all_jobs, job_title, company, location)
+    print("filtered jobs", len(filtered_jobs))
+
+    items_per_page = 50
+    page = load_next - load_previous
+    max_page = int(len(filtered_jobs) / items_per_page)
+    if page < 0:
+        page = 0
     elif page > max_page:
         page = max_page
-    filtered_jobs = dj_api.import_available_jobs(page=page, items=items_per_page)
-    filtered_jobs = jlf.jobs_list_filter(key="title", condition_values=job_title, all_jobz=items_per_page)
-    filtered_jobs = jlf.jobs_list_filter(key="company_name", condition_values=company, all_jobz=filtered_jobs)
-    filtered_jobs = jlf.jobs_list_filter(key="location", condition_values=location, all_jobz=filtered_jobs)
+    print(f"items_per_page: {items_per_page}, page: {page}, max_page: {max_page}, jobs: {len(filtered_jobs)}")
+
+    filtered_jobs = pg.paginator(filtered_jobs, page=page, items_per_age=items_per_page)
+    # random.shuffle(filtered_jobs)
     filtered_jobs_cards = [jc.job_card_dynamic(job_title=c['title'], company_name=c['company_name'],
                                                company_logo=c['company_logo'], location=c['location'],
                                                job_url=c['apply_url'], website_url=c['company_website'])

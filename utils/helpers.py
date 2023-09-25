@@ -80,3 +80,22 @@ def set_env():
     else:
         env = 'prod'
     return env
+
+def chunkify(big_list, chunk_size):
+    chunks = [big_list[x:x + chunk_size] for x in range(0, len(big_list), chunk_size)]
+    return chunks
+
+
+def cross_matching(pattern_list, strings_list):
+    findings = []
+    for s in strings_list:
+        for p in pattern_list:
+            if p == s:
+                findings.append(True)
+            else:
+                findings.append(False)
+    if findings.count(True) == len(strings_list) and findings.count(True) == len(pattern_list):
+        found = True
+    else:
+        found = False
+    return found
