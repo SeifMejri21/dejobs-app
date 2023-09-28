@@ -9,7 +9,7 @@ from dashboard.data_loader import JsonDataLoader, DeJobsApiTester
 from dashboard.filters_components import FiltersComponents
 from dashboard.jobs_component import JobsComponent
 from dashboard.paginator import Paginator
-from dashboard.static_components import SOCIALS, VERSION
+from dashboard.static_components import SOCIALS, VERSION, GOOGLE_ANALYICS
 from utils.helpers import set_env
 import random
 
@@ -19,7 +19,8 @@ fc = FiltersComponents()
 pg = Paginator()
 jdl = JsonDataLoader()
 
-dj_api = DeJobsApiTester(test_env=set_env())
+# dj_api = DeJobsApiTester(test_env=set_env())
+dj_api = DeJobsApiTester(test_env='prod')
 
 all_jobs = dj_api.import_all_available_jobs()
 random.shuffle(all_jobs)
@@ -27,7 +28,9 @@ all_locations, all_titles, all_companies = dj_api.load_jobs_filters()
 jobs_count = dj_api.load_available_jobs_count()
 
 front_page_layout = html.Div([
-    html.Div(html.A(
+    html.Div([
+        html.Script( children=[GOOGLE_ANALYICS], id='google-analytics-script'),
+        html.A(
         dmc.Image(
             src="https://i.postimg.cc/90fzNFxT/logo.png",
             alt="DeJobs. Logo",
@@ -38,7 +41,7 @@ front_page_layout = html.Div([
         href="https://github.com/SeifMejri21/dejobs",
         target="_blank",
         style={"textDecoration": "none"},
-    )),
+    )]),
     html.Div([html.H2("Elevate Your Crypto Career: 100x More Jobs, One Board")],
              style={"height": "100px", "text-align": "center", "text-color": "pink"}),
     # fc.dropdown_filter(all_titles=all_titles, all_companies=all_companies, all_locations=all_locations),
@@ -58,8 +61,11 @@ front_page_layout = html.Div([
 ], style={"display": "flex", "flex-direction": "column", "margin-left": "25px", "margin-right": "25px",
           "margin-top": "25px", "margin-bottom": "25px", "align": "center"})  # , "maxWidth": "1350px"
 
+with open('dashboard/assets/google_analytics.hmtl', 'r') as f:
+    google_analytics_script = f.read()
+
 app = dash.Dash(__name__,
-                external_stylesheets=[dbc.themes.BOOTSTRAP],
+                external_stylesheets=[dbc.themes.BOOTSTRAP],# index_string=google_analytics_script,
                 suppress_callback_exceptions=True,
                 title="DeJobs.",
                 update_title="DeJobs. | Loading...",
@@ -70,7 +76,7 @@ app._favicon = "dejobs_icon.png"
 
 server = app.server
 app.layout = front_page_layout
-
+# app.index_string = GOOGLE_ANALYICS
 
 @app.callback(
     Output(component_id='filtered_jobs', component_property='children'),
