@@ -99,3 +99,16 @@ def cross_matching(pattern_list, strings_list):
     else:
         found = False
     return found
+
+
+def open_html(file_path=""):
+    html_content = None
+    try:
+        with open(file_path, 'r', encoding='utf-8') as file:
+            html_content = file.read()
+    except Exception as e:
+        pass
+        # print(f'Error: reading  html file:')
+        # print(e)
+        # print(file_path)
+    return html_content

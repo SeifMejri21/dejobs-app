@@ -2,7 +2,7 @@ import dash_mantine_components as dmc
 from dash import html
 from dash_iconify import DashIconify
 
-VERSION = html.H6("V1.0")
+VERSION = html.H6("V1.1")
 
 SOCIALS = dmc.Affix(
     dmc.Stack(

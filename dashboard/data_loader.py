@@ -55,6 +55,11 @@ class DeJobsApiTester(object):
         companies_list = self.request_builder("GET", url)
         return companies_list
 
+    def import_not_parsed_companies_list(self):
+        url = self.url_builder("companies/not_parsed")
+        companies_list = self.request_builder("GET", url)
+        return companies_list
+
     def import_available_jobs(self, page=1, items=50):
         url = self.url_builder(f"jobs/available/?page={page}&items={items}")
         companies_list = self.request_builder("GET", url)

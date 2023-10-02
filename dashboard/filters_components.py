@@ -44,7 +44,7 @@ class FiltersComponents(object):
                 for sv in splitted_value:
                     sv_lower = sv.lower()
                     if re.search(sv_lower, sd_lower):
-                    # if re.search(sd_lower, sv_lower):
+                        # if re.search(sd_lower, sv_lower):
                         matched.append(sv_lower)
             if len(matched) == leny:
                 filtered_data.append(d)
@@ -69,17 +69,38 @@ class FiltersComponents(object):
                 else:
                     filtered_jobs = all_jobs
         return filtered_jobs
+
     @staticmethod
     def input_keyword_filter():
         filters = html.Div([
             dbc.Row([
                 dbc.Col([html.H6("Job Title"),
-                         dcc.Input(placeholder="Data Engineer", type='text', id='job_title')]),
+                         dcc.Input(placeholder="Data Engineer", type='text', id='job_title', debounce=True)]),
                 dbc.Col([html.H6("Company"),
-                         dcc.Input(placeholder="Binance", type='text', id='company')]),
+                         dcc.Input(placeholder="Binance", type='text', id='company', debounce=True)]),
                 dbc.Col([html.H6("Location"),
-                         dcc.Input(placeholder="Tunis", type='text', id='location')]),
+                         dcc.Input(placeholder="Tunis", type='text', id='location', debounce=True)]),
             ]),
         ], style={"margin-left": "35px", "margin-right": "35px", "margin-top": "35px", "margin-bottom": "35px",
                   "align": "center"})
         return filters
+
+    @staticmethod
+    def html_fetcher_input():
+        filters = html.Div([
+            dbc.Row([html.H6("Enter keywords, separate them by comma: a','"),
+                     dcc.Input(placeholder="Data Engineer", type='text', id='keywords', debounce=True,
+                               style={"height": "30px", "width": "250px"}
+                               )]),
+        ], style={"margin-left": "35px", "margin-right": "35px", "margin-top": "35px", "margin-bottom": "35px",
+                  "align": "center"})
+        return filters
+
+    @staticmethod
+    def matches_component(matches_list):
+        matches = []
+        for m in matches_list:
+            matches.append(html.Div([html.H4(f"{m['name']} matched with: {m['matching_pattern']}"),
+                                    dcc.Link(children="Open Careers Page", href=m["careers_page"],target="_blank"),
+                                    html.Hr()]))
+        return matches
