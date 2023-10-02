@@ -88,9 +88,9 @@ class FiltersComponents(object):
     @staticmethod
     def html_fetcher_input():
         filters = html.Div([
-            dbc.Row([html.H6("Enter keywords, separate them by comma: a','"),
+            dbc.Row([html.H4("Enter Job Titles, separate by a comma: "),
                      dcc.Input(placeholder="Data Engineer", type='text', id='keywords', debounce=True,
-                               style={"height": "30px", "width": "250px"}
+                               style={"height": "30px", "width": "500px"}
                                )]),
         ], style={"margin-left": "35px", "margin-right": "35px", "margin-top": "35px", "margin-bottom": "35px",
                   "align": "center"})

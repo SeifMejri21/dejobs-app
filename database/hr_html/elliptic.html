@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<script>var _rollbarConfig = {"accessToken":"0ab41f8274e04d638238b61af91c297a","captureUncaught":true,"payload":{"environment":"production"}};</script>
+<script>!function(r){var e={};function o(n){if(e[n])return e[n].exports;var t=e[n]={i:n,l:!1,exports:{}};return r[n].call(t.exports,t,t.exports,o),t.l=!0,t.exports}o.m=r,o.c=e,o.d=function(r,e,n){o.o(r,e)||Object.defineProperty(r,e,{enumerable:!0,get:n})},o.r=function(r){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(r,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(r,"__esModule",{value:!0})},o.t=function(r,e){if(1&e&&(r=o(r)),8&e)return r;if(4&e&&"object"==typeof r&&r&&r.__esModule)return r;var n=Object.create(null);if(o.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:r}),2&e&&"string"!=typeof r)for(var t in r)o.d(n,t,function(e){return r[e]}.bind(null,t));return n},o.n=function(r){var e=r&&r.__esModule?function(){return r.default}:function(){return r};return o.d(e,"a",e),e},o.o=function(r,e){return Object.prototype.hasOwnProperty.call(r,e)},o.p="",o(o.s=0)}([function(r,e,o){"use strict";var n=o(1),t=o(5);_rollbarConfig=_rollbarConfig||{},_rollbarConfig.rollbarJsUrl=_rollbarConfig.rollbarJsUrl||"https://cdn.rollbar.com/rollbarjs/refs/tags/v2.26.1/rollbar.min.js",_rollbarConfig.async=void 0===_rollbarConfig.async||_rollbarConfig.async;var a=n.setupShim(window,_rollbarConfig),l=t(_rollbarConfig);window.rollbar=n.Rollbar,a.loadFull(window,document,!_rollbarConfig.async,_rollbarConfig,l)},function(r,e,o){"use strict";var n=o(2),t=o(3);function a(r){return function(){try{return r.apply(this,arguments)}catch(r){try{console.error("[Rollbar]: Internal error",r)}catch(r){}}}}var l=0;function i(r,e){this.options=r,this._rollbarOldOnError=null;var o=l++;this.shimId=function(){return o},"undefined"!=typeof window&&window._rollbarShims&&(window._rollbarShims[o]={handler:e,messages:[]})}var s=o(4),d=function(r,e){return new i(r,e)},c=function(r){return new s(d,r)};function u(r){return a((function(){var e=this,o=Array.prototype.slice.call(arguments,0),n={shim:e,method:r,args:o,ts:new Date};window._rollbarShims[this.shimId()].messages.push(n)}))}i.prototype.loadFull=function(r,e,o,n,t){var l=!1,i=e.createElement("script"),s=e.getElementsByTagName("script")[0],d=s.parentNode;i.crossOrigin="",i.src=n.rollbarJsUrl,o||(i.async=!0),i.onload=i.onreadystatechange=a((function(){if(!(l||this.readyState&&"loaded"!==this.readyState&&"complete"!==this.readyState)){i.onload=i.onreadystatechange=null;try{d.removeChild(i)}catch(r){}l=!0,function(){var e;if(void 0===r._rollbarDidLoad){e=new Error("rollbar.js did not load");for(var o,n,a,l,i=0;o=r._rollbarShims[i++];)for(o=o.messages||[];n=o.shift();)for(a=n.args||[],i=0;i<a.length;++i)if("function"==typeof(l=a[i])){l(e);break}}"function"==typeof t&&t(e)}()}})),d.insertBefore(i,s)},i.prototype.wrap=function(r,e,o){try{var n;if(n="function"==typeof e?e:function(){return e||{}},"function"!=typeof r)return r;if(r._isWrap)return r;if(!r._rollbar_wrapped&&(r._rollbar_wrapped=function(){o&&"function"==typeof o&&o.apply(this,arguments);try{return r.apply(this,arguments)}catch(o){var e=o;throw e&&("string"==typeof e&&(e=new String(e)),e._rollbarContext=n()||{},e._rollbarContext._wrappedSource=r.toString(),window._rollbarWrappedError=e),e}},r._rollbar_wrapped._isWrap=!0,r.hasOwnProperty))for(var t in r)r.hasOwnProperty(t)&&(r._rollbar_wrapped[t]=r[t]);return r._rollbar_wrapped}catch(e){return r}};for(var p="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleAnonymousErrors,handleUnhandledRejection,captureEvent,captureDomContentLoaded,captureLoad".split(","),f=0;f<p.length;++f)i.prototype[p[f]]=u(p[f]);r.exports={setupShim:function(r,e){if(r){var o=e.globalAlias||"Rollbar";if("object"==typeof r[o])return r[o];r._rollbarShims={},r._rollbarWrappedError=null;var l=new c(e);return a((function(){e.captureUncaught&&(l._rollbarOldOnError=r.onerror,n.captureUncaughtExceptions(r,l,!0),e.wrapGlobalEventHandlers&&t(r,l,!0)),e.captureUnhandledRejections&&n.captureUnhandledRejections(r,l,!0);var a=e.autoInstrument;return!1!==e.enabled&&(void 0===a||!0===a||function(r){return!("object"!=typeof r||void 0!==r.page&&!r.page)}(a))&&r.addEventListener&&(r.addEventListener("load",l.captureLoad.bind(l)),r.addEventListener("DOMContentLoaded",l.captureDomContentLoaded.bind(l))),r[o]=l,l}))()}},Rollbar:c}},function(r,e,o){"use strict";function n(r,e,o,n){r._rollbarWrappedError&&(n[4]||(n[4]=r._rollbarWrappedError),n[5]||(n[5]=r._rollbarWrappedError._rollbarContext),r._rollbarWrappedError=null);var t=e.handleUncaughtException.apply(e,n);o&&o.apply(r,n),"anonymous"===t&&(e.anonymousErrorsPending+=1)}r.exports={captureUncaughtExceptions:function(r,e,o){if(r){var t;if("function"==typeof e._rollbarOldOnError)t=e._rollbarOldOnError;else if(r.onerror){for(t=r.onerror;t._rollbarOldOnError;)t=t._rollbarOldOnError;e._rollbarOldOnError=t}e.handleAnonymousErrors();var a=function(){var o=Array.prototype.slice.call(arguments,0);n(r,e,t,o)};o&&(a._rollbarOldOnError=t),r.onerror=a}},captureUnhandledRejections:function(r,e,o){if(r){"function"==typeof r._rollbarURH&&r._rollbarURH.belongsToShim&&r.removeEventListener("unhandledrejection",r._rollbarURH);var n=function(r){var o,n,t;try{o=r.reason}catch(r){o=void 0}try{n=r.promise}catch(r){n="[unhandledrejection] error getting `promise` from event"}try{t=r.detail,!o&&t&&(o=t.reason,n=t.promise)}catch(r){}o||(o="[unhandledrejection] error getting `reason` from event"),e&&e.handleUnhandledRejection&&e.handleUnhandledRejection(o,n)};n.belongsToShim=o,r._rollbarURH=n,r.addEventListener("unhandledrejection",n)}}}},function(r,e,o){"use strict";function n(r,e,o){if(e.hasOwnProperty&&e.hasOwnProperty("addEventListener")){for(var n=e.addEventListener;n._rollbarOldAdd&&n.belongsToShim;)n=n._rollbarOldAdd;var t=function(e,o,t){n.call(this,e,r.wrap(o),t)};t._rollbarOldAdd=n,t.belongsToShim=o,e.addEventListener=t;for(var a=e.removeEventListener;a._rollbarOldRemove&&a.belongsToShim;)a=a._rollbarOldRemove;var l=function(r,e,o){a.call(this,r,e&&e._rollbar_wrapped||e,o)};l._rollbarOldRemove=a,l.belongsToShim=o,e.removeEventListener=l}}r.exports=function(r,e,o){if(r){var t,a,l="EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");for(t=0;t<l.length;++t)r[a=l[t]]&&r[a].prototype&&n(e,r[a].prototype,o)}}},function(r,e,o){"use strict";function n(r,e){this.impl=r(e,this),this.options=e,function(r){for(var e=function(r){return function(){var e=Array.prototype.slice.call(arguments,0);if(this.impl[r])return this.impl[r].apply(this.impl,e)}},o="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleAnonymousErrors,handleUnhandledRejection,_createItem,wrap,loadFull,shimId,captureEvent,captureDomContentLoaded,captureLoad".split(","),n=0;n<o.length;n++)r[o[n]]=e(o[n])}(n.prototype)}n.prototype._swapAndProcessMessages=function(r,e){var o,n,t;for(this.impl=r(this.options);o=e.shift();)n=o.method,t=o.args,this[n]&&"function"==typeof this[n]&&("captureDomContentLoaded"===n||"captureLoad"===n?this[n].apply(this,[t[0],o.ts]):this[n].apply(this,t));return this},r.exports=n},function(r,e,o){"use strict";r.exports=function(r){return function(e){if(!e&&!window._rollbarInitialized){for(var o,n,t=(r=r||{}).globalAlias||"Rollbar",a=window.rollbar,l=function(r){return new a(r)},i=0;o=window._rollbarShims[i++];)n||(n=o.handler),o.handler._swapAndProcessMessages(l,o.messages);window[t]=n,window._rollbarInitialized=!0}}}}]);</script>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>Jobs at Elliptic | Elliptic Careers</title>
+  <meta name="description" content="Learn more about working at Elliptic and discover our latest career opportunities">
+
+  <style>
+    :root {
+      --theme-primary-color: #455C51;
+      --theme-secondary-color: #F4F4F4;
+      --theme-highlight-color: #ED9D85;
+      --theme-primary-font-color: #FFFFFF;
+      --theme-secondary-font-color: #1C2121;
+      --theme-highlight-font-color: #FFFFFF;
+    }
+  </style>
+
+  <script>
+//<![CDATA[
+
+    window.essentialCookiesOnly = false;
+
+    window.legacyCookieData = {"href":"/cookie-policy","message":"We use cookies to ensure you get the best experience on our website.","dismiss":"Got it!","link":"Learn more"};
+
+    window.cookieConsentData = {"customContent":{"notice":"We use cookies to ensure you get the best experience on our website.","explanation":"We use cookies to ensure the basic functionalities of the website and to enhance your online experience. You can choose for each category to opt-in/out whenever you want. For more details relative to cookies and other sensitive data, please read the full <a href='/cookie-policy'>privacy policy</a>.","further_information":null},"translations":{"accept_all":"Accept all","close":"Close","cookie_preferences":"Cookie preferences","cookies":"Cookies","description":"Description","domain":"Domain","expiration":"Expiration","more_information":"More information","name":"Name","reject_all":"Reject all","save_settings":"Save settings","settings":"Settings","strictly_necessary_cookies":"Strictly necessary cookies","these_cookies_are_essential":"These cookies are essential for the proper functioning of our website. Without these cookies, the website may not work properly.","as_soon_as_browser_window_is_closed":"As soon as browser window is closed","allows_us_to_associate_file_uploads":"Allows us to associate file uploads to our file storage provider with your form submissions","allows_our_load_balancer":"Allows our load balancer to send your specific traffic to the same backend server","saves_your_decisions":"Saves your decisions about these cookies so we don't need to ask every time","analytics_and_performance_cookies":"Analytics and Performance cookies","these_cookies_remember_the_choices":"These cookies allow the website to remember the choices you have made in the past","internal_metrics_collector":"We use an internal metrics collector to understand interactions with our website over time","six_months":"Six months","two_years":"Two years","four_hours":"Four hours"}};
+
+//]]>
+</script>
+  <script src="https://d2n5ied94mazop.cloudfront.net/packs/js/runtime-17ed73821a7dec8a9084.js" data-turbolinks-track="reload" defer="defer"></script>
+<script src="https://d2n5ied94mazop.cloudfront.net/packs/js/4287-7e41a862bd80660004dc.js" data-turbolinks-track="reload" defer="defer"></script>
+<script src="https://d2n5ied94mazop.cloudfront.net/packs/js/application-8b6c2f7355b3412b7ba1.js" data-turbolinks-track="reload" defer="defer"></script>
+<script src="https://d2n5ied94mazop.cloudfront.net/packs/js/7758-500534d14de13d6d913d.js" data-turbolinks-track="reload" defer="defer"></script>
+<script src="https://d2n5ied94mazop.cloudfront.net/packs/js/4934-7ef1df48c38cb8a32707.js" data-turbolinks-track="reload" defer="defer"></script>
+<script src="https://d2n5ied94mazop.cloudfront.net/packs/js/cloudinary-4e5eb5d8dc0e193d4cef.js" data-turbolinks-track="reload" defer="defer"></script>
+<script src="https://d2n5ied94mazop.cloudfront.net/packs/js/cookieconsent-ce6020c516b9a199c0bf.js" data-turbolinks-track="reload" defer="defer"></script>
+<script src="https://d2n5ied94mazop.cloudfront.net/packs/js/cdp-84feff2ddc8a9978561d.js" data-turbolinks-track="reload" defer="defer"></script>
+<script src="https://d2n5ied94mazop.cloudfront.net/packs/js/gtm-data-layer-9c7afd0f3a5aa7c9719c.js" data-turbolinks-track="reload" defer="defer"></script>
+  <link rel="stylesheet" media="screen" href="https://d2n5ied94mazop.cloudfront.net/packs/css/application-2a503bf7.css" data-turbolinks-track="reload" />
+<link rel="stylesheet" media="screen" href="https://d2n5ied94mazop.cloudfront.net/packs/css/cookieconsent-a540ff52.css" data-turbolinks-track="reload" />
+
+  <meta name="turbolinks-cache-control" content="no-preview">
+
+  <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="H1utWiiyxpI48Mzqms+7cVngpxPEt7SRP5AUFe0MGc6aWYe0d01HohdSYu3x8ZfJQwa10z7d+CgOJ6XvIiEcGQ==" />
+  
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://res.cloudinary.com/pinpointhq/image/upload/c_fill,f_auto,h_32,q_auto,w_32/v1/uploads/production/ywo0uhqnbyapglmkryjb.png" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-zrnmn8R8KkWl12rAZFt4yKjxplaDaT7/EUkKm7AovijfrQItFWR7O/JJn4DAa/gx" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/832bb86d52.js" crossorigin="anonymous"></script>
+
+  
+
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://elliptic.pinpointhq.com/jobs.rss" />
+
+
+  
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&amp;display=swap" rel="stylesheet">
+    <style>
+      body,
+      input {
+        font-family: Lato, "GTWalsheimPro", "Helvetica Neue", "Helvetica", sans-serif !important;
+      }
+    </style>
+
+
+  
+    <style type="text/css">
+      /* ---------------- AS - Custom CSS ---------------- */
+
+/* 
+Type 
+*/
+
+/* Font: Headings */
+.pinpoint-block--hero .careers-hero-block__title,
+.pinpoint-block--text .careers-block__h2,
+.pinpoint-block--cards .careers-card-block__h3,
+.pinpoint-block--jobs .careers-block__h2,
+.pinpoint-block--testimonial cite,
+.careers-testimonial-block__attribution,
+.external-panel .external-panel__title {
+  font-weight: 700 !important;
+}
+
+.pinpoint-block--text .careers-block__h2,
+.pinpoint-block--jobs .careers-block__h2 {
+  font-size: 4rem;
+  line-height: 1.1;
+}
+
+.pinpoint-block--text .careers-block__h2 {
+  margin-bottom: 20px;
+}
+
+.pinpoint-block--cards .careers-card-block__h3 {
+  line-height: 1.2;
+}
+
+/* Font: Text */
+.pinpoint-block--cards .careers-card-block__p,
+.careers-hero-block .careers-hero-block__text,
+.pinpoint-block--text .careers-block__trix, 
+.careers-testimonial-block__quotation {
+  font-weight: 400 !important;
+}
+
+.pinpoint-block--cards .careers-card-block__p,
+.pinpoint-block--text .careers-block__trix {
+  line-height: 1.6;
+}
+
+/* Font: Nav & Buttons */
+.careers-navigation-block__menu-item,
+.careers-navigation-block__sub-nav-menu {}
+.external-button {}
+
+
+/* Colour: Headings */
+.pinpoint-block--text .careers-block__h2,
+.pinpoint-block--cards .careers-card-block__h3,
+.pinpoint-block--jobs .careers-block__h2,
+.external-panel .external-panel__title,
+.external-panel .external-panel__heading {
+  color: var(--theme-primary-color);
+}
+
+/* Colour: Text */
+.pinpoint-block--cards .careers-card-block__p,
+.pinpoint-block--text .careers-block__trix,
+.external-panel .external-panel__trix-content,
+.external-definition-list dd,
+.external-stage-carousel .external-stage-carousel__stage-name,
+.external-panel .external-panel__text {
+  color: var(--theme-primary-color);
+}
+
+
+/* 
+Navigation Menu 
+*/
+
+/* Hide the Logo Text */
+.careers-navigation-block__logo-text,
+.careers-hero-block__logo-text {
+  display: none;
+}
+
+/* Paddings */
+.pinpoint-block--navigation {
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+/* Set logo width for desktop */
+@media (min-width: 768px) {
+  .pinpoint-block--navigation img,
+  .careers-hero-block--align-center img {
+    width: 174px !important;
+    height: auto !important;
+  }
+}
+
+/* Nav items */
+.careers-navigation-block__menu-item {
+  background-color: transparent !important;
+  font-size: 14px;
+  font-weight: 400 !important;
+  text-transform: capitalize;
+}
+
+/* Dropdown items  */
+.careers-navigation-block__sub-nav-menu {
+  color: #fff !important;
+  background-color: var(--theme-primary-color) !important;
+}
+
+.careers-navigation-block__menu-section--center > div > div > .careers-navigation-block__menu-item > div {
+  overflow: hidden;
+}
+
+/* Nav Items Hover */
+.careers-navigation-block__menu-item:hover,
+.careers-navigation-block__sub-nav-menu:hover {
+  color: var(--theme-highlight-color) !important;
+}
+
+
+/* 
+Buttons 
+*/
+
+/* All: Style */
+.external-button {
+  border-radius: 0;
+  font-weight: 700 !important;
+  font-size: 18px;
+  padding: 0.7em 3em;
+  border-width: 2px;
+  text-transform: capitalize;
+  color: var(--theme-primary-font-color);
+  border-color: var(--theme-primary-color);
+  background-color: var(--theme-primary-color);
+}
+
+/* All: Hover */
+.external-button:hover {
+  filter: brightness(100%);
+  color: var(--theme-primary-color);
+  border-color: var(--theme-primary-color);
+  background-color: var(--theme-secondary-color);
+}
+
+
+/* 
+Hero 
+*/
+
+/* Image Positioning */
+.careers-hero-block--image {
+  background-position: right;
+  background-size: contain;
+}
+
+/* Increase Hero Video Height */
+.careers-hero-block-container {
+  padding-top: 80px !important;
+  padding-bottom: 80px !important;
+}
+
+/* Increase Hero Image Height */
+.careers-hero-block--image {}
+
+#hero {
+  margin-top: 0;
+  padding: 60px 0;
+}
+
+@media (min-width: 768px) {
+  #hero .col-sm-7-12 {
+    width: 40%;
+  }
+  #hero .col-sm-5-12 {
+    width: 60%;
+  }
+}
+
+/* 
+Testimonial 
+*/
+
+.pinpoint-block--testimonial img {
+  border-radius: 185px;
+}
+
+.pinpoint-block--testimonial cite {
+  letter-spacing: 3px;
+}
+
+.pinpoint-block--testimonial .careers-testimonial-block {
+  align-items: center;
+}
+
+
+/* 
+Footer 
+*/
+
+/* Padding */
+.external-footer {
+  padding: 32px;
+}
+
+
+
+/* 
+All section
+*/
+
+  
+/* All visible corners for consistency  */
+.pinpoint-block--image-gallery img,
+.pinpoint-block--cards .careers-card-block__image,
+.plyr--video,
+.pinpoint-block--glassdoor .careers-block__inner,
+#external-jobs-show-meta-desktop > .external-panel .external-panel__inner--theme-secondary,
+.careers-card-block--align-left .careers-card-block__content {
+  border-radius: 0;
+}
+
+/* Transition: Nav items & Buttons */
+.careers-navigation-block__menu-item,
+.careers-navigation-block__sub-nav-menu,
+.external-button,
+#glassdoor-header a {
+  transition: all .3s ease-in-out;
+}
+
+    </style>
+
+
+    
+
+
+
+
+  
+
+  <meta property="og:url" content="https://elliptic.pinpointhq.com/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_GB">
+<meta property="og:title" content="Careers at Elliptic">
+<meta property="og:description" content="At Elliptic, we believe cryptocurrency will play a huge role in the future of value transfer, and we care deeply about helping to build this future. As digital assets and cryptocurrency become more widely adopted, our products are essential to ensure cryptocurrency is safe and accessible to ...">
+<meta property="og:image" content="https://res.cloudinary.com/pinpointhq/image/upload/f_auto,q_auto/v1/uploads/production/tiknvpyenq8uxkxdx2bf.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@pinpointhq">
+<meta name="twitter:image" content="https://res.cloudinary.com/pinpointhq/image/upload/f_auto,q_auto/v1/uploads/production/tiknvpyenq8uxkxdx2bf.jpg">
+
+  <script>
+//<![CDATA[
+
+    window.railsEnv = "production";
+
+//]]>
+</script>
+  
+
+    <link href="https://elliptic.pinpointhq.com/" rel="canonical" />
+</head>
+
+<body dir='auto' class="external-body pinpoint-page pinpoint-page--home theme-default">
+
+  
+
+  
+  <style>
+    :root {
+      --theme-primary-color: #141a1f;
+      --theme-secondary-color: #edf0f2;
+      --theme-highlight-color: #0192a1;
+      --theme-primary-font-color: #FFFFFF;
+      --theme-secondary-font-color: #1C2121;
+      --theme-highlight-font-color: #FFFFFF;
+    }
+  </style>
+
+  <style>
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      .theme-primary-color-ie-override {
+        color: #141a1f !important;
+      }
+      .theme-primary-background-color-ie-override {
+        background-color: #141a1f !important;
+      }
+      .theme-primary-border-color-ie-override {
+        border-color: #141a1f !important;
+      }
+      .theme-secondary-color-ie-override {
+        color: #edf0f2 !important;
+      }
+      .theme-secondary-background-color-ie-override {
+        background-color: #edf0f2 !important;
+      }
+      .theme-secondary-border-color-ie-override {
+        border-color: #edf0f2 !important;
+      }
+      .theme-highlight-color-ie-override {
+        color: #0192a1 !important;
+      }
+      .theme-highlight-background-color-ie-override {
+        background-color: #0192a1 !important;
+      }
+      .theme-highlight-border-color-ie-override {
+        border-color: #0192a1 !important;
+      }
+    }
+  </style>
+
+
+  <div class="external-content">
+
+
+    
+
+
+
+
+
+
+<main class="external-main">
+
+  
+    <section class="pinpoint-block pinpoint-block--navigation careers-block careers-navigation-block careers-navigation-block--justified theme-primary-background-color-ie-override" style="background: #ffffff">
+
+  <div class=" frow frow--gutters frow--justify-between frow--items-center frow--nowrap">
+
+  <div class="careers-navigation-block__menu-section--left">
+    <a href="https://www.elliptic.co/">
+
+      <div class="frow frow--items-center frow--gutters">
+
+        <span class="careers-navigation-block__logo-text" style="color: #141b1f">
+          Careers at
+        </span>
+
+        <div class="hide-at-sm-block"><img alt="Elliptic - Home" style="width: 220.0px; height: 19.2px;" width="220" height="19" src="https://app.pinpointhq.com/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNW0xamc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--a0ffa730a0bb717937ccb2a4273463b02e8b58c8/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lQTkRRd0xqQjROakF1TUFZNkJrVlUiLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--a8aaf45d691ceff55bb4ecfcc9bec21f806890fa/Elliptic_10_yr_LockUp_Website-1.png" /></div><div class="hide-sm-block"><img alt="Elliptic - Home" style="width: 220.0px; height: 19.2px;" width="220" height="19" src="https://app.pinpointhq.com/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNW0xamc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--a0ffa730a0bb717937ccb2a4273463b02e8b58c8/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lRTkRRd0xqQjRNVEF3TGpBR09nWkZWQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--5fd990b5737f041b8b006e0f6f8b9bd3043c9631/Elliptic_10_yr_LockUp_Website-1.png" /></div>
+
+      </div>
+
+</a>  </div>
+
+  <div class="careers-navigation-block__menu-section--center">
+
+    <script type="application/json" id="js-react-on-rails-context">{"railsEnv":"production","inMailer":false,"i18nLocale":"en","i18nDefaultLocale":"en","rorVersion":"13.0.2","rorPro":false,"href":"https://elliptic.pinpointhq.com/","location":"/","scheme":"https","host":"elliptic.pinpointhq.com","port":null,"pathname":"/","search":null,"httpAcceptLanguage":null,"serverSide":false}</script>
+<div class="careers-navigation-overflow-menu" style="color: #141b1f" id="External::Careerspage::Responsivenavigation-react-component-b76ba931-a906-40e3-905f-0cb3afd41d02"></div>
+      <script type="application/json" class="js-react-on-rails-component" data-component-name="External::Careerspage::Responsivenavigation" data-dom-id="External::Careerspage::Responsivenavigation-react-component-b76ba931-a906-40e3-905f-0cb3afd41d02">{"menuItems":[],"featureFlags":{"job_templates":"enabled"},"companySettings":{"edit_offer_before_send":true,"advanced_search":true,"facebook_advert":false,"bulk_download":false,"move_to_hired_on_offer_acceptance":true,"bulk_email_job_seekers":true,"workflow_automation":true,"cronofy_enterprise_connect":false,"job_requisition_management":true,"essential_cookies_only":false,"use_company_from_address":true,"semi_private_comments":false,"additional_statuses":true,"multiple_company_themes":true,"strict_ofccp_compliance":false,"grouped_jobs":true,"move_to_any_job":true,"remove_logo_from_email_template":false,"candidate_job_preferences":true,"automatically_reject_referrals":false,"indeed_feed_stages":false,"variable_sign_off_signatories":true,"react_select_on_external_jobs":false,"monitor_with_rum":false,"restricted_cronofy_oauth_scope":false,"application_national_identifiers":false,"allow_inactive_structures":false,"visible_other_applications":false,"allow_editing_job_requisition_fields":false,"two_column_sidebar":true,"multiple_job_postings":true,"max_applications":false,"group_interviews":false,"create_requisitions_for_existing_jobs":true,"team_rejection_notification":false,"send_pdf_copy_of_application":false,"disable_indeed_feed":false,"vonq_v2":true,"redirect_to_custom_subdomain":true,"add_cc_and_bcc_to_email":false,"allow_creating_company_teams":false,"manually_send_offers":false,"private_calendar_events":true,"candidate_details_in_offer_header":false,"show_date_in_offer_header":true,"show_job_seekers_in_all_candidates":false,"talent_pipeline":true,"anonymous_screening":true,"candidate_surveys":true,"task_management":true,"offer_management":true,"referral_management":true,"insights_hub":false,"allow_cover_letters":false},"enabledLocaleKeys":["en","cy"],"onboardingSettings":{"isOnboardingEnabled":false}}</script>
+      
+
+
+  </div>
+
+  <div class="careers-navigation-block__menu-section--right">
+
+      <a class="careers-navigation-block__menu-item" style="color: #141b1f" href="/?scroll_to=js-careers-jobs-block">View Jobs</a>
+
+  </div>
+
+</div>
+
+
+</section>
+
+
+    <section class="pinpoint-block pinpoint-block--cards careers-block careers-cards-block">
+
+  <div class="external-content-wrap">
+
+    <div class="careers-block__inner">
+
+
+        <div class="careers-cards-block__cards">
+
+
+            <section class="careers-cards-block__card col-md-1-1 careers-card-block careers-card-block--align-center careers-card-block--variant-large">
+              <section class="">
+
+
+    <div class="frow frow--gutters-2x frow--gutters-sm-4x frow--gutters-md-8x">
+
+      <div class="col-1-1 col-sm-order-1 col-order-2">
+
+        <div class="careers-card-block__content">
+
+          
+          <h3 class="careers-card-block__h3">Secure new frontiers for crypto.</h3>
+          <div class="careers-card-block__p "><div>Together, we can create a freer, fairer, and safer world by making crypto a reality. </div><div><br></div></div>
+          <a class="external-button external-button--theme-primary theme-primary-background-color-ie-override theme-primary-border-color-ie-override" target="_self" href="#js-careers-jobs-block">View Open Roles</a>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+</section>
+</section>
+
+        </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+    <section class="pinpoint-block pinpoint-block--jobs careers-block" id="js-careers-jobs-block">
+
+  <div class="external-content-wrap">
+
+    <div class="careers-block__inner">
+
+      <h2 class="careers-block__h2 text-center">Current Opportunities</h2>
+
+      <div class="careers-block__content pad-b-3">
+
+        <div class="frow frow--gutters frow--gutters-md-2x frow--items-end">
+
+          <div class="col-flex-grow-1">
+
+            <div id="Shared::Search-react-component-3517e3cf-dff5-49a7-9aa7-773ad261da2d"></div>
+      <script type="application/json" class="js-react-on-rails-component" data-component-name="Shared::Search" data-dom-id="Shared::Search-react-component-3517e3cf-dff5-49a7-9aa7-773ad261da2d">{"target":"external:jobs:index:8661","willUpdateUrl":true,"searchPlaceholderText":"Search...","featureFlags":{"job_templates":"enabled"},"companySettings":{"edit_offer_before_send":true,"advanced_search":true,"facebook_advert":false,"bulk_download":false,"move_to_hired_on_offer_acceptance":true,"bulk_email_job_seekers":true,"workflow_automation":true,"cronofy_enterprise_connect":false,"job_requisition_management":true,"essential_cookies_only":false,"use_company_from_address":true,"semi_private_comments":false,"additional_statuses":true,"multiple_company_themes":true,"strict_ofccp_compliance":false,"grouped_jobs":true,"move_to_any_job":true,"remove_logo_from_email_template":false,"candidate_job_preferences":true,"automatically_reject_referrals":false,"indeed_feed_stages":false,"variable_sign_off_signatories":true,"react_select_on_external_jobs":false,"monitor_with_rum":false,"restricted_cronofy_oauth_scope":false,"application_national_identifiers":false,"allow_inactive_structures":false,"visible_other_applications":false,"allow_editing_job_requisition_fields":false,"two_column_sidebar":true,"multiple_job_postings":true,"max_applications":false,"group_interviews":false,"create_requisitions_for_existing_jobs":true,"team_rejection_notification":false,"send_pdf_copy_of_application":false,"disable_indeed_feed":false,"vonq_v2":true,"redirect_to_custom_subdomain":true,"add_cc_and_bcc_to_email":false,"allow_creating_company_teams":false,"manually_send_offers":false,"private_calendar_events":true,"candidate_details_in_offer_header":false,"show_date_in_offer_header":true,"show_job_seekers_in_all_candidates":false,"talent_pipeline":true,"anonymous_screening":true,"candidate_surveys":true,"task_management":true,"offer_management":true,"referral_management":true,"insights_hub":false,"allow_cover_letters":false},"enabledLocaleKeys":["en","cy"],"onboardingSettings":{"isOnboardingEnabled":false}}</script>
+      
+
+
+          </div>
+
+
+            <div class="col-md-8-12">
+              <div id="Shared::Filters-react-component-ded23526-6e7e-40fb-a258-1c2fe90db456"></div>
+      <script type="application/json" class="js-react-on-rails-component" data-component-name="Shared::Filters" data-dom-id="Shared::Filters-react-component-ded23526-6e7e-40fb-a258-1c2fe90db456">{"filters":[{"name":"location","attribute":"location_id","values":[],"items":[{"label":"London, UK","value":17702},{"label":"New York, NY","value":17703}],"translations":{"singleItem":"Location","pluralItems":"Locations","allItems":"All Locations"}},{"name":"department","attribute":"department_id","values":[],"items":[{"label":"AMCS","value":28032},{"label":"Applications","value":28045},{"label":"Blockchain Integrations\t","value":28048},{"label":"Business Intelligence\t","value":28050},{"label":"Data Engineering","value":28030},{"label":"Demand Generation\t","value":28039},{"label":"Education\t","value":28041},{"label":"Engineering","value":27084},{"label":"Finance","value":27085},{"label":"Global Policy \u0026 Research\t","value":28036},{"label":"Government Solutions Team\t","value":28034},{"label":"InfoSec","value":28031},{"label":"Infrastructure","value":28035},{"label":"Intelligence Augmentation\t","value":28038},{"label":"Intelligence Collection\t","value":28037},{"label":"Legal","value":28046},{"label":"Marketing","value":27086},{"label":"Operations","value":27087},{"label":"Partnerships\t","value":28042},{"label":"People","value":28044},{"label":"Product","value":27088},{"label":"Research \u0026 Investigations\t","value":28043},{"label":"Rev Ops\t","value":28047},{"label":"Sales","value":27089},{"label":"Solution Engineering\t","value":28040},{"label":"Strategy","value":28033},{"label":"Technical Customer Support\t","value":28049}],"translations":{"singleItem":"Department","pluralItems":"Departments","allItems":"All Departments"}},{"name":"division","attribute":"division_id","values":[],"items":[{"label":"Account Management/Customer Success","value":1240},{"label":"Corporate","value":1242},{"label":"Government Solutions Team","value":1241},{"label":"Policy, Regulation \u0026 legal","value":1243},{"label":"Product, Engineering \u0026 Design","value":1238},{"label":"Revenue","value":1239}],"translations":{"singleItem":"Division","pluralItems":"Divisions","allItems":"All Divisions"}}],"expandableBelow":768,"isUrlFilterable":true,"target":"external:jobs:index:8661","willUpdateUrl":true,"visible_columns":{"employment_type_column_visible":true,"locations_column_visible":true,"departments_column_visible":true,"divisions_column_visible":true,"requisition_id_column_visible":null,"structure_custom_group_ones_column_visible":true,"workplace_type_column_visible":null},"featureFlags":{"job_templates":"enabled"},"companySettings":{"edit_offer_before_send":true,"advanced_search":true,"facebook_advert":false,"bulk_download":false,"move_to_hired_on_offer_acceptance":true,"bulk_email_job_seekers":true,"workflow_automation":true,"cronofy_enterprise_connect":false,"job_requisition_management":true,"essential_cookies_only":false,"use_company_from_address":true,"semi_private_comments":false,"additional_statuses":true,"multiple_company_themes":true,"strict_ofccp_compliance":false,"grouped_jobs":true,"move_to_any_job":true,"remove_logo_from_email_template":false,"candidate_job_preferences":true,"automatically_reject_referrals":false,"indeed_feed_stages":false,"variable_sign_off_signatories":true,"react_select_on_external_jobs":false,"monitor_with_rum":false,"restricted_cronofy_oauth_scope":false,"application_national_identifiers":false,"allow_inactive_structures":false,"visible_other_applications":false,"allow_editing_job_requisition_fields":false,"two_column_sidebar":true,"multiple_job_postings":true,"max_applications":false,"group_interviews":false,"create_requisitions_for_existing_jobs":true,"team_rejection_notification":false,"send_pdf_copy_of_application":false,"disable_indeed_feed":false,"vonq_v2":true,"redirect_to_custom_subdomain":true,"add_cc_and_bcc_to_email":false,"allow_creating_company_teams":false,"manually_send_offers":false,"private_calendar_events":true,"candidate_details_in_offer_header":false,"show_date_in_offer_header":true,"show_job_seekers_in_all_candidates":false,"talent_pipeline":true,"anonymous_screening":true,"candidate_surveys":true,"task_management":true,"offer_management":true,"referral_management":true,"insights_hub":false,"allow_cover_letters":false},"enabledLocaleKeys":["en","cy"],"onboardingSettings":{"isOnboardingEnabled":false}}</script>
+      
+
+
+            </div>
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div id="External::Jobs-react-component-d4d3efeb-493f-4707-be08-110c74ffe7f3"></div>
+      <script type="application/json" class="js-react-on-rails-component" data-component-name="External::Jobs" data-dom-id="External::Jobs-react-component-d4d3efeb-493f-4707-be08-110c74ffe7f3">{"additionalColumns":[],"url":"/postings.json","target":"external:jobs:index:8661","translations":{"job_title":"Job Title","department":"Department","division":"Division","requisition_id":"Requisition ID","structure_custom_group_one":"Custom","location":"Location","employment_type":"Employment Type","no_positions":"There are currently no positions advertised.","no_opportunities":"There are currently no opportunities based on your filters. Please try again, or register your interest.","workplace_type":"Workplace type"},"structures":[{"key":"location","keyPlural":"locations","name":"Location","namePlural":"Locations","nameAccessor":"locationName","columnVisibilityAccessor":"locationsColumnVisible"},{"key":"department","keyPlural":"departments","name":"Department","namePlural":"Departments","nameAccessor":"departmentName","columnVisibilityAccessor":"departmentsColumnVisible"},{"key":"division","keyPlural":"divisions","name":"Division","namePlural":"Divisions","nameAccessor":"divisionName","columnVisibilityAccessor":"divisionsColumnVisible"}],"visible_columns":{"employment_type_column_visible":true,"locations_column_visible":true,"departments_column_visible":true,"divisions_column_visible":true,"requisition_id_column_visible":null,"structure_custom_group_ones_column_visible":true,"workplace_type_column_visible":null},"showPagination":false,"pageSize":null,"featureFlags":{"job_templates":"enabled"},"companySettings":{"edit_offer_before_send":true,"advanced_search":true,"facebook_advert":false,"bulk_download":false,"move_to_hired_on_offer_acceptance":true,"bulk_email_job_seekers":true,"workflow_automation":true,"cronofy_enterprise_connect":false,"job_requisition_management":true,"essential_cookies_only":false,"use_company_from_address":true,"semi_private_comments":false,"additional_statuses":true,"multiple_company_themes":true,"strict_ofccp_compliance":false,"grouped_jobs":true,"move_to_any_job":true,"remove_logo_from_email_template":false,"candidate_job_preferences":true,"automatically_reject_referrals":false,"indeed_feed_stages":false,"variable_sign_off_signatories":true,"react_select_on_external_jobs":false,"monitor_with_rum":false,"restricted_cronofy_oauth_scope":false,"application_national_identifiers":false,"allow_inactive_structures":false,"visible_other_applications":false,"allow_editing_job_requisition_fields":false,"two_column_sidebar":true,"multiple_job_postings":true,"max_applications":false,"group_interviews":false,"create_requisitions_for_existing_jobs":true,"team_rejection_notification":false,"send_pdf_copy_of_application":false,"disable_indeed_feed":false,"vonq_v2":true,"redirect_to_custom_subdomain":true,"add_cc_and_bcc_to_email":false,"allow_creating_company_teams":false,"manually_send_offers":false,"private_calendar_events":true,"candidate_details_in_offer_header":false,"show_date_in_offer_header":true,"show_job_seekers_in_all_candidates":false,"talent_pipeline":true,"anonymous_screening":true,"candidate_surveys":true,"task_management":true,"offer_management":true,"referral_management":true,"insights_hub":false,"allow_cover_letters":false},"enabledLocaleKeys":["en","cy"],"onboardingSettings":{"isOnboardingEnabled":false}}</script>
+      
+
+
+    <div class="external-content-wrap">
+
+  <div class="careers-block__inner">
+
+    <div class="careers-block__content">
+
+      <div class="frow frow--centered-column">
+
+        <div class="col-md-3-5">
+
+          <p class="careers-block__text text-center mar-t-5 mar-sm-t-10 mar-b-4">
+
+            Don&#39;t worry if you don&#39;t see any roles you want to apply for now. Register your interest to allow us to contact you when a suitable role meeting your criteria comes along.
+
+          </p>
+
+        </div>
+
+        <a class="external-button external-button--theme-primary theme-primary-background-color-ie-override theme-primary-border-color-ie-override" href="/register-your-interest/new">Register Your Interest</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+</section>
+
+
+
+</main>
+
+
+  </div>
+
+    <footer class="external-footer theme-secondary-background-color-ie-override">
+
+  <div class="external-content-wrap">
+
+
+      <div class="external-footer__content">
+        <div class="frow frow--centered frow--gutters-3x mar-b-2">
+          <div>
+              <a class="external-footer__link mar-h-2" href="/">English</a>
+              <a class="external-footer__link mar-h-2" href="/cy">Cymraeg</a>
+          </div>
+        </div>
+      </div>
+
+
+    <div class="external-footer__content">
+
+      <div class="frow frow--justify-between frow--items-sm-center frow--direction-column frow--row-sm frow--gutters-3x">
+
+        <div>
+
+          <div class="frow frow--items-sm-center frow--direction-column frow--row-sm frow--gutters-2x">
+
+
+              <a class="external-footer__link" target="_blank" href="https://www.elliptic.co/">
+
+                Elliptic <i class="fas fa-external-link-alt mar-l-1"></i>
+
+</a>
+
+            <a class="external-footer__link" target="_blank" href="/privacy-policy">
+              Privacy Policy
+</a>
+              <a class='external-footer__link' data-cc="c-settings" aria-label="View cookie settings">
+                Cookies
+              </a>
+
+            <div class="frow frow--gutters frow--items-center">
+              
+              
+              
+              
+              
+              
+            </div>
+
+          </div>
+
+        </div>
+
+        <div>
+
+          <a class="external-footer__link" target="_blank" href="https://www.pinpointhq.com">Powered by Pinpoint</a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </div>
+
+</footer>
+
+
+  
+
+
+
+
+
+
+    
+
+
+</body>

@@ -1,0 +1,83 @@
+<!DOCTYPE html><html lang="ru"><head><base href="/"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><script src="/cdn-cgi/apps/head/b0GqKT0LP_I25OUfMQWjNC5TJT0.js"></script><link rel="manifest" crossorigin="use-credentials" href="/assets/img/favicon/site.webmanifest?40c9"><link rel="stylesheet" href="/assets/css/swiper-bundle.min.css?60e9"><title>UNITBOX DAO — the first DAO-based collateral-free NFT rental protocol for GameFi ecosystem</title><meta name="description" content="UNITBOX DAO PROTOCOL — is a Rent-2-Earn GameFi solution - we connect millions of investors and scholars thus creating a brand new high-yield investment product of a collateral-free rent."><meta name="keywords" content="NFT, GameFi, play-to-earn, p2e, play2earn, play-to-earn NFT gaming, blockchain games"><meta name="author" content="UNITBOX"><link href="/chunks/app/css/index.2PY7SMK7.css" type="text/css" rel="stylesheet"></link></head><body><div id="app"></div><script src="assets/js/swiper-bundle.min.js"></script><script>function init() {
+    const swiperMedia = new Swiper('.swiper-media', {
+        speed: 400,
+        spaceBetween: 25,
+        slidesPerView: 2.38,
+        navigation: {
+            nextEl: ".swiper-button-next.media",
+            prevEl: ".swiper-button-prev.media",
+        },
+        breakpoints: {
+            // when window width is >= 320px
+            220: {
+            slidesPerView: 1,
+            spaceBetween: 20
+            },
+            // when window width is >= 480px
+            768: {
+            slidesPerView: 2.38,
+            spaceBetween: 30
+        },
+    }});
+        const swiperComing = new Swiper('.swiper-coming', {
+            effect: 'creative',
+            creativeEffect: {
+                prev: {
+                translate: [0, 0, "-15.625rem"],
+                },
+                next: {
+                translate: ['100%', 0, 0],
+                },
+            },
+            speed: 1000,
+            slidesPerView: 1,
+
+            pagination: {
+                el: '.swiper-pagination',
+
+            },
+        });
+
+        const swiperPartner = new Swiper('.swiper-partner', {
+            speed: 1000,
+            slidesPerView: 1,
+            pagination: {
+                el: '.swiper-pagination',
+            },
+            navigation: {
+            nextEl: ".swiper-button-next.partner",
+            prevEl: ".swiper-button-prev.partner",
+        },
+        });
+
+        const comingItems = document.querySelectorAll('.coming .item')
+
+        comingItems.forEach((item, i) => {
+            item.addEventListener('click', () => {
+                for (let ind = 0; ind < comingItems.length; ind++) {
+                    comingItems[ind].classList.remove('active')
+                }
+                item.classList.add('active');
+                swiperComing.slideTo(i, 1000, true);
+            })
+        })
+
+        const hubItems = document.querySelectorAll('.hub li'),
+              hubImg1 = document.querySelectorAll('.hub .images img'),
+              hubImg2 = document.querySelectorAll('.hub .hub-img');
+
+        hubItems.forEach((item, i) => {
+            item.addEventListener('click', () => {
+                for (let ind = 0; ind < comingItems.length; ind++) {
+                    hubItems[ind].classList.remove('active')
+                    hubImg1[ind].classList.remove('active')
+                    hubImg2[ind].classList.remove('active')
+                }
+                hubImg1[i].classList.add('active');
+                hubImg2[i].classList.add('active');
+                item.classList.add('active');
+            })
+        })
+
+
+      }</script><script src="/chunks/app/js/index.6GGOPWC2.js" type="module"></script></body></html>

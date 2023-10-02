@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <title>Hacken Open Positions - PeopleForce</title>
+
+  <script type="text/javascript">
+      var LOCALE = "en";
+      var DATE_FORMAT = "dd.mm.yyyy";
+  </script>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="https://hacken.peopleforce.io/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNWVjTGc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--9f21460340515bcbb8791ca5c4648319764da50a/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNITUdrbCIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--499b41b2fae4cb42d52dbe37b24c5fcc62def465/Asset%202.png">
+
+  <link href="https://unpkg.com/@webpixels/css@1.1.92/dist/index.css" rel="stylesheet">
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+  <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="kphYumkU3ovhJah-HswSGDzuVUKpyIbLpqpnqOgpWyqLSR215aGognL4uTlXkCVIuT1R7mPd5VwGa7hpOmTmCQ" />
+  <link rel="stylesheet" media="screen" href="https://d1p62fpxdcfnjo.cloudfront.net/assets/careers-b0502ccc58bde2ad205473a34d995f934c2ed5cb0958e33620a24a3e3391c2c2.css" data-turbo-track="reload" />
+  <script src="https://d1p62fpxdcfnjo.cloudfront.net/assets/application-097661d6c40a3c1040be1b74999a098b7d9c09c290734ab1045f6ceed6a13b92.js" data-turbo-track="reload"></script>
+
+  <style>
+      .breadcrumb {
+          background-color: #3ef2d0;
+          padding: 10px;
+          border-radius: .25rem;
+      }
+  </style>
+
+  <style>
+    :root {
+        --main-primary-color: #3ef2d0;
+        --main-primary-color-transparent: #3ef2d050;
+        --main-primary-text-color: #000F30;
+        --swiper-theme-color: var(--main-primary-color);
+
+        --form-check-input-background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='%23000F30' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/></svg>");
+        --form-radio-input-background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='2' fill='%23000F30'/></svg>");
+        --form-check-indeterminate-background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='%23000F30' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10h8'/></svg>");
+    }
+
+    .sidebar-dark {
+        background-color: var(--main-primary-color);
+    }
+
+    .form-check-input[type='radio']:checked {
+        background-image: var(--form-radio-input-background-image) !important;
+    }
+
+    .form-check:not(.form-switch) .form-check-input[type='checkbox']:checked {
+        background-image: var(--form-check-input-background-image) !important;
+    }
+
+    .form-check-input[type='checkbox']:indeterminate {
+        background-image: var(--form-check-indeterminate-background-image) !important;
+    }
+
+    .form-check-input:checked, .form-check-input[type='checkbox']:indeterminate {
+        border-color: var(--main-primary-color) !important;
+        background-color: var(--main-primary-color) !important;
+    }
+
+    .btn-primary:not([disabled]):not(.disabled):hover {
+        background-color: #3ef2d0CC !important;
+        border-color: #3ef2d0CC !important;
+    }
+
+    .bg-primary {
+        background-color: var(--main-primary-color) !important;
+    }
+
+    .card-primary-transparent {
+        background-color: #3ef2d026 !important;
+        border-color: white;
+    }
+
+    .nav-tabs-bottom .nav-link.active:before {
+        background-color: var(--main-primary-color);
+    }
+
+    .nav-tabs-vertical .nav-link.active:before {
+        background-color: var(--main-primary-color);
+    }
+
+    .nav-tabs-highlight .nav-link.active:before {
+        background-color: var(--main-primary-color);
+    }
+
+    .sidebar-dark .nav-sidebar > .nav-item-open > .nav-link:not(.disabled), .sidebar-dark .nav-sidebar > .nav-item > .nav-link.active, .sidebar-light .card[class*=bg-]:not(.bg-light):not(.bg-white):not(.bg-transparent) .nav-sidebar > .nav-item-open > .nav-link:not(.disabled), .sidebar-light .card[class*=bg-]:not(.bg-light):not(.bg-white):not(.bg-transparent) .nav-sidebar > .nav-item > .nav-link.active {
+        background-color: #3ef2d0CC;
+    }
+
+    .nav-sidebar .nav-link.active i {
+        color: var(--main-primary-color);
+    }
+
+    .navbar-nav .active::after {
+        border-bottom: 4px solid var(--main-primary-color);
+        bottom: -4px;
+    }
+
+    .wizard > .steps > ul > li.current .number {
+        border-color: var(--main-primary-color);
+        color: var(--main-primary-color);
+    }
+
+    .wizard > .steps > ul > li.done .number {
+        border-color: var(--main-primary-color);
+        background-color: var(--main-primary-color);
+    }
+
+    .wizard > .steps > ul > li:after, .wizard > .steps > ul > li:before {
+        background-color: var(--main-primary-color);
+    }
+
+    .choices__list--multiple .choices__item {
+        background-color: var(--main-primary-color);
+        border: 1px solid var(--main-primary-color);
+    }
+
+    .choices__list--multiple .choices__item.is-highlighted {
+        background-color: #3ef2d0CC;
+        border: 1px solid #3ef2d0CC;
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: var(--main-primary-color);
+    }
+
+    .nav-pills .nav-link.active,
+    .nav-pills .show > .nav-link {
+        background-color: var(--main-primary-color);
+    }
+
+    .e-control .e-primary {
+        background-color: var(--main-primary-color) !important;
+    }
+
+    .e-control .e-primary:hover {
+        background-color: #3ef2d0CC !important;
+    }
+
+    .e-today span {
+        border: 1px solid #3ef2d0CC !important;
+        color: var(--main-primary-color) !important;
+    }
+
+    .e-selected span {
+        background-color: #3ef2d0CC !important;
+        border: 1px solid #3ef2d0CC !important;
+        color: var(--main-primary-color) !important;
+    }
+</style>
+
+
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-transparent px-0 py-3 mb-6">
+  <div class="container-md">
+
+    <!-- Logo -->
+    <a class="navbar-brand" href="/careers">
+        <img class="logo mt-2" src="https://hacken.peopleforce.io/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMEo3TGc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--3a19b4098994916ca62358abd292df02cdcaa1ac/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNITUdsViIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--ca3874306ddc7e7337555ef4c891741ba554ad4e/Asset%202.png" />
+    </a>
+
+    <div class="navbar-collapse offcanvas-collapse" id="navbarCollapse">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+      </ul>
+
+      <nav class="my-2 my-md-0 me-md-3" data-turbo="false">
+          <a target="_blank" class="m-2" href="https://hacken.io/"><i class='fas fa-lg fa-globe'></i></a>
+
+          <a target="_blank" class="m-2" href="https://www.facebook.com/hacken.io"><i class='fab fa-lg fa-facebook'></i></a>
+
+
+          <a target="_blank" class="m-2" href="https://www.linkedin.com/company/hacken/mycompany/"><i class='fab fa-lg fa-linkedin'></i></a>
+
+          <a target="_blank" class="m-2" href="https://twitter.com/hackenclub"><i class='fab fa-lg fa-twitter'></i></a>
+
+      </nav>
+
+    </div>
+
+  </div>
+</nav>
+
+<div class="container-md">
+    <h1 class="text-center mb-1">
+      Open Positions
+    </h1>
+
+      <h4 class="text-center mb-5">Where Passion for Web3 Security Thrives</h4>
+
+  <div class="mb-3">
+    
+  </div>
+
+  
+  <div class="mt-4 mb-4">
+    <strong>About Hacken</strong><br><br>We started in 2017 and are all about cybersecurity, especially for blockchain. We don't like to talk too much without getting to the point.<br><br>We offer top-notch security solutions for Web3 businesses around the world. We're careful with our actions and always ready to experiment with new ideas to stay ahead.<br><br>If we make a mistake, we admit it. We're confident but never rude and always stay truthful without exaggerating.<br><br><strong>Here's what makes us special:</strong><br><br><strong>Cutting-Edge Security:</strong> We work on staying ahead of cybersecurity threats with research and development.<br><strong>Excellence Matters:</strong> We focus on delivering high-quality protection for businesses.<br><strong>Auditing Authority:</strong> We're known for setting high standards in smart contract auditing.<br><strong>Decentralization Advocates:</strong> We help make the digital world safer and more decentralized.<br><strong>Community Involvement:</strong> We're part of a big security-focused community that supports various projects.<br><br><strong>Let's team up and make the Web3 world safer together!</strong>
+  </div>
+
+
+<div class="row mt-6">
+  <div class="col-sm-12 col-lg-8 order-2 order-lg-1">
+
+    <turbo-frame id="results">
+      <p class="mb-2 small">
+        <span class="text-muted">
+  Displaying <strong>1 - 10</strong> of <strong>10</strong> in total
+  <i class="turbo-spinner ms-2 fas fa-spinner fa-spin fa-lg"></i>
+</span>
+
+      </p>
+
+        <div class="card card-hover ">
+          <div class="card-body">
+            <h3>
+              <a class="stretched-link text-dark" data-turbo-frame="_top" href="https://hacken.peopleforce.io/careers/46319">QA Engineer</a>
+            </h3>
+            <p class="text-muted">
+              RnD Full-time, Remote
+            </p>
+          </div>
+        </div>
+        <br/>
+        <div class="card card-hover ">
+          <div class="card-body">
+            <h3>
+              <a class="stretched-link text-dark" data-turbo-frame="_top" href="https://hacken.peopleforce.io/careers/45277">Technical Lead</a>
+            </h3>
+            <p class="text-muted">
+              RnD Full-time, Remote
+            </p>
+          </div>
+        </div>
+        <br/>
+        <div class="card card-hover ">
+          <div class="card-body">
+            <h3>
+              <a class="stretched-link text-dark" data-turbo-frame="_top" href="https://hacken.peopleforce.io/careers/44448">Trainee Solidity Smart Contracts Auditor</a>
+            </h3>
+            <p class="text-muted">
+              Services Full-time, Remote
+            </p>
+          </div>
+        </div>
+        <br/>
+        <div class="card card-hover ">
+          <div class="card-body">
+            <h3>
+              <a class="stretched-link text-dark" data-turbo-frame="_top" href="https://hacken.peopleforce.io/careers/43949">Senior dApp Security Auditor</a>
+            </h3>
+            <p class="text-muted">
+              Services Full-time, Remote
+            </p>
+          </div>
+        </div>
+        <br/>
+        <div class="card card-hover ">
+          <div class="card-body">
+            <h3>
+              <a class="stretched-link text-dark" data-turbo-frame="_top" href="https://hacken.peopleforce.io/careers/43946">HR Manager</a>
+            </h3>
+            <p class="text-muted">
+              HR Full-time, Remote
+            </p>
+          </div>
+        </div>
+        <br/>
+        <div class="card card-hover ">
+          <div class="card-body">
+            <h3>
+              <a class="stretched-link text-dark" data-turbo-frame="_top" href="https://hacken.peopleforce.io/careers/42553">Senior Web Application Penetration Tester</a>
+            </h3>
+            <p class="text-muted">
+              Pentesting Full-time, Remote
+            </p>
+          </div>
+        </div>
+        <br/>
+        <div class="card card-hover ">
+          <div class="card-body">
+            <h3>
+              <a class="stretched-link text-dark" data-turbo-frame="_top" href="https://hacken.peopleforce.io/careers/39391">L1 Security Auditor</a>
+            </h3>
+            <p class="text-muted">
+              L1 Research &amp; Audit Department Full-time, Remote
+            </p>
+          </div>
+        </div>
+        <br/>
+        <div class="card card-hover ">
+          <div class="card-body">
+            <h3>
+              <a class="stretched-link text-dark" data-turbo-frame="_top" href="https://hacken.peopleforce.io/careers/34255">Junior L1 Security Auditor</a>
+            </h3>
+            <p class="text-muted">
+              L1 Research &amp; Audit Department Full-time, Remote
+            </p>
+          </div>
+        </div>
+        <br/>
+        <div class="card card-hover ">
+          <div class="card-body">
+            <h3>
+              <a class="stretched-link text-dark" data-turbo-frame="_top" href="https://hacken.peopleforce.io/careers/33266">Account Executive </a>
+            </h3>
+            <p class="text-muted">
+              Client Relationships Department Full-time, Remote
+            </p>
+          </div>
+        </div>
+        <br/>
+        <div class="card card-hover ">
+          <div class="card-body">
+            <h3>
+              <a class="stretched-link text-dark" data-turbo-frame="_top" href="https://hacken.peopleforce.io/careers/29755">Lead Smart Contracts Auditor</a>
+            </h3>
+            <p class="text-muted">
+              Services Full-time, Remote
+            </p>
+          </div>
+        </div>
+        <br/>
+
+      <p>
+        
+
+
+      </p>
+    </turbo-frame>
+
+  </div>
+  <div class="col-sm-12 col-lg-4 mb-6 mt-lg-8 order-1 order-lg-2">
+
+    <div class="sticky-top" style="top: 0.5em">
+      <div class="accordion bg-white" id="filter-accordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="filter-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#filter-content" aria-expanded="false" aria-controls="filter-content">
+              Filter
+            </button>
+          </h2>
+          <div id="filter-content" class="accordion-collapse collapse" aria-labelledby="filter-header" data-bs-parent="#filter-accordion">
+            <div class="accordion-body">
+              <form class="new_search" id="new_search" data-turbo-frame="results" action="https://hacken.peopleforce.io/careers" accept-charset="UTF-8" method="get">
+
+                <div class="mb-3">
+                  <input class="form-control form-control" placeholder="Search..." autocomplete="off" type="search" name="search[query]" id="search_query" />
+                </div>
+
+
+                <div class="mb-3">
+                  <select class="form-select form-control" name="search[location_id]" id="search_location_id"><option value="">Locations</option>
+<option value="39830">Argentina</option>
+<option value="36863">Brazil</option>
+<option value="36872">Bulgaria</option>
+<option value="36855">Croatia</option>
+<option value="36858">Czechia</option>
+<option value="36853">France</option>
+<option value="36865">Germany</option>
+<option value="36864">Italy</option>
+<option value="21980">Kyiv</option>
+<option value="21978">Kyiv office</option>
+<option value="23378">Kyiv / remote</option>
+<option value="28153">Lisbon</option>
+<option value="36867">Lithuania</option>
+<option value="36856">Moldova</option>
+<option value="37429">Montenegro</option>
+<option value="36880">Nigeria</option>
+<option value="41205">Northern Ireland</option>
+<option value="36852">Poland</option>
+<option value="21979">Remote</option>
+<option value="36866">Serbia</option>
+<option value="36862">Slovenia</option>
+<option value="36857">Spain</option>
+<option value="43128">Switzerland</option>
+<option value="36861">Thailand</option>
+<option value="36854">Turkey</option>
+<option value="36850">Ukraine</option>
+<option value="36860">United Kingdom</option>
+<option value="36859">USA</option></select>
+                </div>
+
+
+                  <div class="mb-3">
+                    <select class="form-select form-control" name="search[department_id]" id="search_department_id"><option value="">Departments</option>
+<option value="61019">Business Development &amp; Revenue</option>
+<option value="61016">Finance</option>
+<option value="64111">HackenProof</option>
+<option value="61018">HR</option>
+<option value="61017">Legal</option>
+<option value="61015">Marketing</option>
+<option value="61014">RnD</option>
+<option value="61013">Services</option></select>
+                  </div>
+
+                <div class="d-grid">
+                  <button name="button" type="submit" class="btn btn-primary btn btn-primary" form="new_search"><span class="show-when-enabled">Search</span><span class="show-when-disabled">Search</span></button>
+                </div>
+
+</form>            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+
+  <footer class="text-muted small mb-6">
+    <hr/>
+    <div class="d-flex">
+      <div class="credit">
+        Powered by <a target="_blank" href="https://peopleforce.io">PeopleForce</a>
+      </div>
+      <div class="ms-auto">
+        <div x-data="{}"><select name="locale" id="career_locale" class="form-select " x-on:change="window.location = &#39;?locale=&#39; + $event.target.value;"><option selected="selected" value="en">English</option>
+<option value="uk">Українська</option>
+<option value="pl">Polski</option>
+<option value="es">Español</option>
+<option value="ru">Русский</option></select></div>
+      </div>
+    </div>
+
+  </footer>
+</div>
+</body>
+
+</html>
+
+<script type="application/javascript">
+    document.getElementById("career_locale").addEventListener("change", function (e) {
+        let url = new URL(window.location);
+
+        url.searchParams.set("locale", e.target.value);
+        window.location = url;
+    })
+</script>

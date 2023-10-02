@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<head><script src="/cdn-cgi/apps/head/O6454gnZOdBVK1yKldfhmrUbXEo.js"></script><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(e){this.triggerEvents=e,this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",t=>{this.persisted=t.persisted}),window.addEventListener("DOMContentLoaded",()=>{this._preconnect3rdParties()}),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}_addUserInteractionListener(t){if(document.hidden){t._triggerListener();return}this.triggerEvents.forEach(e=>window.addEventListener(e,t.userEventHandler,{passive:!0})),window.addEventListener("touchstart",t.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",t.touchStartHandler),document.addEventListener("visibilitychange",t.userEventHandler)}_removeUserInteractionListener(){this.triggerEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!0})),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(t){"HTML"!==t.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),t.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"onclick","rocket-onclick"),this._pendingClickStarted())}_onTouchMove(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this._pendingClickFinished()}_onTouchEnd(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(t){t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this.interceptedClicks.push(t),t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),this._pendingClickFinished()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach(t=>{t.target.dispatchEvent(new MouseEvent("click",{view:t.view,bubbles:!0,cancelable:!0}))})}_waitForPendingClicks(){return new Promise(t=>{this._isClickPending?this._pendingClickFinished=t:t()})}_pendingClickStarted(){this._isClickPending=!0}_pendingClickFinished(){this._isClickPending=!1}_renameDOMAttribute(t,e,r){t.hasAttribute&&t.hasAttribute(e)&&(event.target.setAttribute(r,event.target.getAttribute(e)),event.target.removeAttribute(e))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let t=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(e=>{if(e.hasAttribute("src")){let r=new URL(e.src).origin;r!==location.origin&&t.push({src:r,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this._batchInjectResourceHints(t,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(this),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(t){console.error(t)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._waitForPendingClicks().then(()=>{this._replayClicks()}),this._emptyTrash()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _transformScript(t){return new Promise((await this._littleBreath(),navigator.userAgent.indexOf("Firefox/")>0||""===navigator.vendor)?e=>{let r=document.createElement("script");[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),r.setAttribute(e,t.nodeValue))}),t.text&&(r.text=t.text),r.hasAttribute("src")?(r.addEventListener("load",e),r.addEventListener("error",e)):(r.text=t.text,e());try{t.parentNode.replaceChild(r,t)}catch(i){e()}}:async e=>{function r(){t.setAttribute("data-rocket-status","failed"),e()}try{let i=t.getAttribute("data-rocket-type"),n=t.getAttribute("data-rocket-src");t.text,i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",function r(){t.setAttribute("data-rocket-status","executed"),e()}),t.addEventListener("error",r),n?(t.removeAttribute("data-rocket-src"),t.src=n):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}catch(s){r()}})}async _loadScriptsFromList(t){let e=t.shift();return e&&e.isConnected?(await this._transformScript(e),this._loadScriptsFromList(t)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(t,e){var r=document.createDocumentFragment();t.forEach(t=>{let i=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(i){let n=document.createElement("link");n.href=i,n.rel=e,"preconnect"!==e&&(n.as="script"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),r.appendChild(n),this.trash.push(n)}}),document.head.appendChild(r)}_delayEventListeners(t){let e={};function r(t,r){!function t(r){!e[r]&&(e[r]={originalFunctions:{add:r.addEventListener,remove:r.removeEventListener},eventsToRewrite:[]},r.addEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.add.apply(r,arguments)},r.removeEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.remove.apply(r,arguments)});function i(t){return e[r].eventsToRewrite.indexOf(t)>=0?"rocket-"+t:t}}(t),e[t].eventsToRewrite.push(r)}function i(t,e){let r=t[e];Object.defineProperty(t,e,{get:()=>r||function(){},set(i){t["rocket"+e]=r=i}})}r(document,"DOMContentLoaded"),r(window,"DOMContentLoaded"),r(window,"load"),r(window,"pageshow"),r(document,"readystatechange"),i(document,"onreadystatechange"),i(window,"onload"),i(window,"onpageshow")}_delayJQueryReady(t){let e;function r(r){if(r&&r.fn&&!t.allJQueries.includes(r)){r.fn.ready=r.fn.init.prototype.ready=function(e){return t.domReadyFired?e.bind(document)(r):document.addEventListener("rocket-DOMContentLoaded",()=>e.bind(document)(r)),r([])};let i=r.fn.on;r.fn.on=r.fn.init.prototype.on=function(){if(this[0]===window){function t(t){return t.split(" ").map(t=>"load"===t||0===t.indexOf("load.")?"rocket-jquery-load":t).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=t(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(e=>{delete Object.assign(arguments[0],{[t(e)]:arguments[0][e]})[e]})}return i.apply(this,arguments),this},t.allJQueries.push(r)}e=r}r(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){r(t)}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this._littleBreath();let t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){let t=new Map;document.write=document.writeln=function(e){let r=document.currentScript;r||console.error("WPRocket unable to document.write this: "+e);let i=document.createRange(),n=r.parentElement,s=t.get(r);void 0===s&&(s=r.nextSibling,t.set(r,s));let a=document.createDocumentFragment();i.setStart(a,0),a.appendChild(i.createContextualFragment(e)),n.insertBefore(a,s)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}_emptyTrash(){this.trash.forEach(t=>t.remove())}}</script>
+<meta charset="UTF-8">
+<title>- Metana</title><link rel="preload" as="style" href="data:text/css;charset=utf-8;base64,LypibGFuayov" data-type="kppassive" data-kplinkhref="https://fonts.googleapis.com/css?family=Be%20Vietnam%20Pro%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CIBM%20Plex%20Sans%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=swap" /><link rel="stylesheet" href="data:text/css;charset=utf-8;base64,LypibGFuayov" media="print" onload="this.media='all'" data-type="kppassive" data-kplinkhref="https://fonts.googleapis.com/css?family=Be%20Vietnam%20Pro%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CIBM%20Plex%20Sans%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=swap" /><noscript><link rel="stylesheet" href="data:text/css;charset=utf-8;base64,LypibGFuayov" data-type="kppassive" data-kplinkhref="https://fonts.googleapis.com/css?family=Be%20Vietnam%20Pro%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CIBM%20Plex%20Sans%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=swap" /></noscript>
+
+<meta name="robots" content="noindex">
+<meta name="googlebot" content="noindex,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+<meta name="bingbot" content="noindex,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+<link rel="canonical" href="https://metana.io/jobs/" />
+<link rel="alternate" type="application/rss+xml" href="https://metana.io/sitemap.xml" />
+<meta property="og:url" content="https://metana.io/jobs/" />
+<meta property="og:title" content="- Metana" />
+<meta property="og:description" content />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="http://metana.io/wp-content/uploads/2022/01/Screenshot-2021-12-21-at-23.27.39.png" />
+<meta property="og:image:width" content="500" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:site_name" content="Metana" />
+<meta property="og:locale" content="en_US" />
+<meta property="twitter:url" content="https://metana.io/jobs/" />
+<meta property="twitter:title" content="- Metana" />
+<meta property="twitter:description" content />
+<meta property="twitter:image" content="http://metana.io/wp-content/uploads/2022/07/Copy-of-Web3-Solidity-Bootcamp-Ethereum-Blockchain_-June-Cohort-Video.png" />
+<meta property="twitter:domain" content="Metana" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:creator" content="@metanahq" />
+<meta property="twitter:site" content="@metanahq" />
+<script type="rocketlazyloadscript" async data-rocket-src="https://www.google-analytics.com/analytics.js"></script><script type="rocketlazyloadscript">(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-214273211-1', 'auto');ga('send', 'pageview');</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://metana.io/jobs/#WebSite","url":"https://metana.io/jobs/","headline":"- Metana","mainEntityOfPage":{"@type":"WebPage","url":"https://metana.io/jobs/"},"potentialAction":{"@type":"SearchAction","target":"https://metana.io/?s={search_term_string}","query-input":"required name=search_term_string"},"publisher":{"@id":"https://metana.io#organization"}}]}</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Metana - Blockchain Bootcamp">
+<link rel="pingback" href="https://metana.io/xmlrpc.php" />
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">window.addEventListener('DOMContentLoaded', function() {
+			var WebFontConfig = WebFontConfig || {};
+			WebFontConfig['active'] = function() {
+				if ( typeof ( window.jQuery ) !== 'undefined' ) {
+					jQuery(window).trigger('liquid_async_fonts_active');
+				}
+			};
+			WebFontConfig['inactive'] = function() {
+				if ( typeof ( window.jQuery ) !== 'undefined' ) {
+					jQuery(window).trigger('liquid_async_fonts_inactive');
+				}
+			};
+			});</script>
+<link rel="dns-prefetch" href="//js.hs-scripts.com" />
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+<link href="https://fonts.gstatic.com" crossorigin rel="preconnect" />
+<link rel="alternate" type="application/rss+xml" title="Metana &raquo; Feed" href="https://metana.io/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Metana &raquo; Comments Feed" href="https://metana.io/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Metana &raquo; Job Openings Feed" href="https://metana.io/jobs/feed/" />
+<link rel="preload" href="https://metana.io/wp-content/themes/hub/assets/vendors/liquid-icon/lqd-essentials/fonts/lqd-essentials.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" id="wp-block-library-css" href="https://metana.io/wp-includes/css/dist/block-library/style.min.css?ver=6.3.1" type="text/css" media="all" />
+<style id="wp-block-library-theme-inline-css" type="text/css">
+.wp-block-audio figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio figcaption{color:hsla(0,0%,100%,.65)}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed figcaption{color:hsla(0,0%,100%,.65)}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:hsla(0,0%,100%,.65)}.wp-block-image figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-image figcaption{color:hsla(0,0%,100%,.65)}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table figcaption{color:hsla(0,0%,100%,.65)}.wp-block-video figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video figcaption{color:hsla(0,0%,100%,.65)}.wp-block-video{margin:0 0 1em}.wp-block-template-part.has-background{margin-bottom:0;margin-top:0;padding:1.25em 2.375em}
+</style>
+<style id="kevinbatdorf-code-block-pro-style-inline-css" type="text/css">
+.wp-block-kevinbatdorf-code-block-pro{box-sizing:border-box!important;direction:ltr!important;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;position:relative!important}.wp-block-kevinbatdorf-code-block-pro *{box-sizing:border-box!important}.wp-block-kevinbatdorf-code-block-pro pre,.wp-block-kevinbatdorf-code-block-pro pre *{font-size:inherit!important;line-height:inherit!important}.wp-block-kevinbatdorf-code-block-pro:not(.code-block-pro-editor) pre{--tw-shadow:0 0 #0000!important;--tw-shadow-colored:0 0 #0000!important;background-image:none!important;border:0!important;border-radius:0!important;border-style:none!important;border-width:0!important;box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)!important;color:inherit!important;font-family:inherit!important;margin:0!important;overflow:auto!important;overflow-wrap:normal!important;padding:16px 0 16px 16px!important;text-align:left!important;white-space:pre!important}.wp-block-kevinbatdorf-code-block-pro.padding-disabled:not(.code-block-pro-editor) pre{padding:0!important}.wp-block-kevinbatdorf-code-block-pro.padding-bottom-disabled pre{padding-bottom:0!important}.wp-block-kevinbatdorf-code-block-pro:not(.code-block-pro-editor) pre code{--tw-shadow:0 0 #0000!important;--tw-shadow-colored:0 0 #0000!important;background:none!important;background-color:transparent!important;border:0!important;border-radius:0!important;border-style:none!important;border-width:0!important;box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)!important;color:inherit!important;display:block!important;font-family:inherit!important;margin:0!important;overflow-wrap:normal!important;padding:0!important;text-align:left!important;white-space:pre!important;width:100%!important}.wp-block-kevinbatdorf-code-block-pro:not(.code-block-pro-editor) pre code .line{display:inline-block!important;min-width:var(--cbp-block-width,100%)!important;vertical-align:top!important}.wp-block-kevinbatdorf-code-block-pro.cbp-has-line-numbers:not(.code-block-pro-editor) pre code .line{padding-left:calc(12px + var(--cbp-line-number-width, auto))!important}.wp-block-kevinbatdorf-code-block-pro.cbp-has-line-numbers:not(.code-block-pro-editor) pre code{counter-increment:step calc(var(--cbp-line-number-start, 1) - 1)!important;counter-reset:step!important}.wp-block-kevinbatdorf-code-block-pro pre code .line{position:relative!important}.wp-block-kevinbatdorf-code-block-pro:not(.code-block-pro-editor) pre code .line:before{content:""!important;display:inline-block!important}.wp-block-kevinbatdorf-code-block-pro.cbp-has-line-numbers:not(.code-block-pro-editor) pre code .line:not(.cbp-line-number-disabled):before{color:var(--cbp-line-number-color,#999)!important;content:counter(step)!important;counter-increment:step!important;left:0!important;opacity:.5!important;position:absolute!important;text-align:right!important;transition-duration:.5s!important;transition-property:opacity!important;transition-timing-function:cubic-bezier(.4,0,.2,1)!important;-webkit-user-select:none!important;-moz-user-select:none!important;user-select:none!important;width:var(--cbp-line-number-width,auto)!important}.wp-block-kevinbatdorf-code-block-pro.cbp-highlight-hover .line{min-height:var(--cbp-block-height,100%)!important}.wp-block-kevinbatdorf-code-block-pro .line.cbp-line-highlight .cbp-line-highlighter,.wp-block-kevinbatdorf-code-block-pro .line.cbp-no-blur:hover .cbp-line-highlighter,.wp-block-kevinbatdorf-code-block-pro.cbp-highlight-hover:not(.cbp-blur-enabled:not(.cbp-unblur-on-hover)) .line:hover .cbp-line-highlighter{background:var(--cbp-line-highlight-color,rgb(14 165 233/.2))!important;left:-16px!important;min-height:var(--cbp-block-height,100%)!important;min-width:calc(var(--cbp-block-width, 100%) + 16px)!important;pointer-events:none!important;position:absolute!important;top:0!important;width:100%!important}[data-code-block-pro-font-family="Code-Pro-Comic-Mono.ttf"].wp-block-kevinbatdorf-code-block-pro .line.cbp-line-highlight .cbp-line-highlighter,[data-code-block-pro-font-family="Code-Pro-Comic-Mono.ttf"].wp-block-kevinbatdorf-code-block-pro .line.cbp-no-blur:hover .cbp-line-highlighter,[data-code-block-pro-font-family="Code-Pro-Comic-Mono.ttf"].wp-block-kevinbatdorf-code-block-pro.cbp-highlight-hover:not(.cbp-blur-enabled:not(.cbp-unblur-on-hover)) .line:hover .cbp-line-highlighter{top:-.125rem!important}[data-code-block-pro-font-family=Code-Pro-Fira-Code].wp-block-kevinbatdorf-code-block-pro .line.cbp-line-highlight .cbp-line-highlighter,[data-code-block-pro-font-family=Code-Pro-Fira-Code].wp-block-kevinbatdorf-code-block-pro .line.cbp-no-blur:hover .cbp-line-highlighter,[data-code-block-pro-font-family=Code-Pro-Fira-Code].wp-block-kevinbatdorf-code-block-pro.cbp-highlight-hover:not(.cbp-blur-enabled:not(.cbp-unblur-on-hover)) .line:hover .cbp-line-highlighter{top:-1.5px!important}.wp-block-kevinbatdorf-code-block-pro:not(.code-block-pro-editor).padding-disabled pre .line.cbp-line-highlight:after{left:0!important;width:100%!important}.wp-block-kevinbatdorf-code-block-pro.cbp-blur-enabled pre .line:not(.cbp-no-blur){filter:blur(1px)!important;opacity:.4!important;pointer-events:none!important;transition-duration:.2s!important;transition-property:all!important;transition-timing-function:cubic-bezier(.4,0,.2,1)!important}.wp-block-kevinbatdorf-code-block-pro.cbp-blur-enabled.cbp-unblur-on-hover:hover pre .line:not(.cbp-no-blur){--tw-blur:blur(0)!important;filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)!important;opacity:1!important;pointer-events:auto!important}.wp-block-kevinbatdorf-code-block-pro:not(.code-block-pro-editor) pre *{font-family:inherit!important}.cbp-see-more-simple-btn-hover{transition-property:none!important}.cbp-see-more-simple-btn-hover:hover{box-shadow:inset 0 0 100px 100px hsla(0,0%,100%,.1)!important}.code-block-pro-copy-button{background:none!important;background-color:transparent!important;border:0!important;border-style:none!important;border-width:0!important;cursor:pointer!important;left:auto!important;line-height:1!important;opacity:.1!important;padding:6px!important;position:absolute!important;right:0!important;top:0!important;transition-duration:.2s!important;transition-property:opacity!important;transition-timing-function:cubic-bezier(.4,0,.2,1)!important;z-index:10!important}.code-block-pro-copy-button:focus{opacity:.4!important}.wp-block-kevinbatdorf-code-block-pro.padding-disabled .code-block-pro-copy-button{padding:0!important}.wp-block-kevinbatdorf-code-block-pro:hover .code-block-pro-copy-button{opacity:.5!important}.wp-block-kevinbatdorf-code-block-pro .code-block-pro-copy-button:hover{opacity:.9!important}.code-block-pro-copy-button .without-check{display:block!important}.code-block-pro-copy-button .with-check,.code-block-pro-copy-button.cbp-copying .without-check{display:none!important}.code-block-pro-copy-button.cbp-copying .with-check{display:block!important}.cbp-footer-link:hover{text-decoration-line:underline!important}
+
+</style>
+<style id="safe-svg-svg-icon-style-inline-css" type="text/css">
+.safe-svg-cover{text-align:center}.safe-svg-cover .safe-svg-inside{display:inline-block;max-width:100%}.safe-svg-cover svg{height:100%;max-height:100%;max-width:100%;width:100%}
+
+</style>
+<style id="classic-theme-styles-inline-css" type="text/css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id="global-styles-inline-css" type="text/css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link data-minify="1" rel="stylesheet" id="awsm-jobs-general-css" href="https://metana.io/wp-content/cache/min/1/wp-content/plugins/wp-job-openings/assets/css/general.min.css?ver=1696240834" type="text/css" media="all" />
+<link rel="stylesheet" id="awsm-jobs-style-css" href="https://metana.io/wp-content/plugins/wp-job-openings/assets/css/style.min.css?ver=3.4.3" type="text/css" media="all" />
+<link data-minify="1" rel="stylesheet" id="hurrytimer-css" href="https://metana.io/wp-content/cache/min/1/wp-content/uploads/hurrytimer/css/a121fd4d377d89f9.css?ver=1696240834" type="text/css" media="all" />
+<link rel="stylesheet" id="bootstrap-css" href="https://metana.io/wp-content/themes/hub/assets/vendors/bootstrap/css/bootstrap.min.css" type="text/css" media="all" />
+<link data-minify="1" rel="stylesheet" id="liquid-base-css" href="https://metana.io/wp-content/cache/min/1/wp-content/themes/hub/style.css?ver=1696240834" type="text/css" media="all" />
+<link data-minify="1" rel="stylesheet" id="liquid-base-typography-css" href="https://metana.io/wp-content/cache/min/1/wp-content/themes/hub/assets/css/elements/base/typography.css?ver=1696240834" type="text/css" media="all" />
+<link rel="stylesheet" id="elementor-lazyload-css" href="https://metana.io/wp-content/plugins/elementor/assets/css/modules/lazyload/frontend.min.css?ver=3.16.4" type="text/css" media="all" />
+<link rel="stylesheet" id="elementor-frontend-css" href="https://metana.io/wp-content/plugins/elementor/assets/css/frontend-lite.min.css?ver=3.16.4" type="text/css" media="all" />
+<style id="elementor-frontend-inline-css" type="text/css">
+.elementor-kit-3471{--e-global-color-primary:#675DE1;--e-global-color-secondary:#D0FC03;--e-global-color-text:#3C4B62;--e-global-color-444f6b4:#282734;--e-global-color-9c501c2:#8745D5;--e-global-color-2ef8010:#49C193;--e-global-color-c108f5c:#D0FC03;--e-global-color-9cdc269:#FFFFFF;--e-global-color-c13b3c8:#1E2F69;--e-global-color-93f64f8:#4B66FF;--e-global-color-aa793f1:#FCA203;--e-global-color-d0397f0:#EDEDED;--e-global-color-5770919:#FF2C2C;--e-global-color-ba6a362:#D09FFF;--e-global-color-95a0373:#FBC73B;--e-global-color-4d05b4b:#C9C5FA;--e-global-color-42c8b0d:#3C61DE;--e-global-color-7b0e7ae:#A6BAFF;--e-global-typography-primary-font-family:"Be Vietnam Pro";--e-global-typography-primary-font-weight:500;--e-global-typography-text-font-family:"Be Vietnam Pro";--e-global-typography-text-font-size:14px;--e-global-typography-text-font-weight:500;--e-global-typography-6cb84af-font-family:"IBM Plex Sans";--e-global-typography-6cb84af-font-size:18px;--e-global-typography-6cb84af-font-weight:400;--e-global-typography-6cb84af-line-height:33px;color:var( --e-global-color-text );font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-size:var( --e-global-typography-text-font-size );font-weight:var( --e-global-typography-text-font-weight );line-height:var( --e-global-typography-text-line-height );}body.elementor-page{--color-gradient-start:#8745D5;--color-gradient-stop:#49C193;}h1, .h1{color:var( --e-global-color-444f6b4 );font-family:"Be Vietnam Pro", Sans-serif;font-size:40px;font-weight:700;line-height:1em;letter-spacing:-1.5px;}h2, .h2{color:var( --e-global-color-444f6b4 );font-family:"Be Vietnam Pro", Sans-serif;font-size:36px;font-weight:700;line-height:1em;letter-spacing:-1.5px;}h3, .h3{color:var( --e-global-color-444f6b4 );font-family:"Be Vietnam Pro", Sans-serif;font-size:32px;font-weight:700;line-height:1em;}h4, .h4{color:var( --e-global-color-444f6b4 );font-family:"Be Vietnam Pro", Sans-serif;font-size:25px;font-weight:700;line-height:1em;}h5, .h5{color:var( --e-global-color-444f6b4 );font-family:"Be Vietnam Pro", Sans-serif;font-size:21px;font-weight:700;line-height:1em;}h6, .h6{color:var( --e-global-color-444f6b4 );font-family:"Be Vietnam Pro", Sans-serif;font-size:18px;font-weight:700;line-height:1em;}.page-scheme-dark{color:rgba(255, 255, 255, 0.8);}.page-scheme-dark h1, .page-scheme-dark .h1{color:#ffffff;}.page-scheme-dark h2, .page-scheme-dark .h2{color:#ffffff;}.page-scheme-dark h3, .page-scheme-dark .h3{color:#ffffff;}.page-scheme-dark h4, .page-scheme-dark .h4{color:#ffffff;}.page-scheme-dark h5, .page-scheme-dark .h5{color:#ffffff;}.page-scheme-dark h6, .page-scheme-dark .h6{color:#ffffff;}.elementor-kit-3471 button,.elementor-kit-3471 input[type="button"],.elementor-kit-3471 input[type="submit"],.elementor-kit-3471 .elementor-button{font-size:15px;font-weight:500;}.main-header .navbar-brand{max-width:160px;}.elementor-section.elementor-section-boxed > .elementor-container{max-width:1060px;}.e-con{--container-max-width:1060px;}.elementor-widget:not(:last-child){margin-block-end:0px;}.elementor-element{--widgets-spacing:0px 0px;}{}h1.entry-title{display:var(--page-title-display);}.elementor-kit-3471 e-page-transition{background-color:#FFBC7D;}@media(max-width:1024px){.elementor-kit-3471{font-size:var( --e-global-typography-text-font-size );line-height:var( --e-global-typography-text-line-height );}.main-header .lqd-mobile-sec .navbar-brand img{max-width:160px;}.elementor-section.elementor-section-boxed > .elementor-container{max-width:1024px;}.e-con{--container-max-width:1024px;}}@media(max-width:767px){.elementor-kit-3471{font-size:var( --e-global-typography-text-font-size );line-height:var( --e-global-typography-text-line-height );}.main-header .lqd-mobile-sec .navbar-brand img{max-width:160px;}.elementor-section.elementor-section-boxed > .elementor-container{max-width:767px;}.e-con{--container-max-width:767px;}}
+@media (max-width: 1024px){}@media (max-width: 767px){}
+</style>
+<link rel="stylesheet" id="swiper-css" href="https://metana.io/wp-content/plugins/elementor/assets/lib/swiper/css/swiper.min.css?ver=5.3.6" type="text/css" media="all" />
+<link rel="stylesheet" id="powerpack-frontend-css" href="https://metana.io/wp-content/plugins/powerpack-elements/assets/css/min/frontend.min.css?ver=2.9.17" type="text/css" media="all" />
+<link rel="stylesheet" id="elementor-pro-css" href="https://metana.io/wp-content/plugins/elementor-pro/assets/css/frontend-lite.min.css?ver=3.16.2" type="text/css" media="all" />
+<link data-minify="1" rel="stylesheet" id="font-awesome-5-all-css" href="https://metana.io/wp-content/cache/min/1/wp-content/plugins/elementor/assets/lib/font-awesome/css/all.min.css?ver=1696240834" type="text/css" media="all" />
+<link rel="stylesheet" id="font-awesome-4-shim-css" href="https://metana.io/wp-content/plugins/elementor/assets/lib/font-awesome/css/v4-shims.min.css?ver=3.16.4" type="text/css" media="all" />
+<link rel="stylesheet" id="theme-elementor-css" href="https://metana.io/wp-content/plugins/hub-elementor-addons/assets/css/theme-elementor.min.css?ver=4.2" type="text/css" media="all" />
+<link rel="stylesheet" id="eael-general-css" href="https://metana.io/wp-content/plugins/essential-addons-for-elementor-lite/assets/front-end/css/view/general.min.css?ver=5.8.9" type="text/css" media="all" />
+<link rel="stylesheet" id="aca33b9c04-css" href="https://metana.io/wp-content/plugins/squirrly-seo/view/assets/css/frontend.min.css?ver=12.3.12" type="text/css" media="all" />
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin><script type="text/javascript" id="jquery-core-js-extra">
+/* <![CDATA[ */
+var pp = {"ajax_url":"https:\/\/metana.io\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metana.io/wp-includes/js/jquery/jquery.min.js?ver=3.7.0" id="jquery-core-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metana.io/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metana.io/wp-content/plugins/elementor/assets/lib/font-awesome/js/v4-shims.min.js?ver=3.16.4" id="font-awesome-4-shim-js" defer></script>
+
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.googletagmanager.com/gtag/js?id=UA-214273211-1" id="google_gtagjs-js" async></script>
+<script type="rocketlazyloadscript" id="google_gtagjs-js-after" data-rocket-type="text/javascript">
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag('set', 'linker', {"domains":["metana.io"]} );
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "UA-214273211-1", {"anonymize_ip":true});
+gtag("config", "G-T7CTE8KQBM");
+</script>
+
+<link rel="https://api.w.org/" href="https://metana.io/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://metana.io/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.3.1" />
+<meta name="generator" content="Site Kit by Google 1.110.0" /> 
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" class="hsq-set-content-id" data-content-id="listing-page">
+				var _hsq = _hsq || [];
+				_hsq.push(["setContentType", "listing-page"]);
+			</script>
+
+<link rel="shortcut icon" href="https://metana.io/wp-content/uploads/2022/07/Asset-12.svg" />
+
+<link rel="apple-touch-icon-precomposed" href="https://metana.io/wp-content/uploads/2022/07/Metana-Logo.jpg">
+
+<link rel="apple-touch-icon" sizes="114x114" href="https://metana.io/wp-content/uploads/2022/07/Metana-Logo.jpg">
+
+<link rel="apple-touch-icon" sizes="72x72" href="https://metana.io/wp-content/uploads/2022/07/Metana-Logo.jpg">
+
+<link rel="apple-touch-icon" sizes="144x144" href="https://metana.io/wp-content/uploads/2022/07/Metana-Logo.jpg">
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+				window.liquidParams = {
+					currentZIndex: 10,
+					
+					ccOuterSize: 35,
+					ccActiveCircleBg: 1,
+					ccActiveCircleBc: 1,
+				};
+				window.liquidIsElementor = true;
+			</script><meta name="generator" content="Elementor 3.16.4; features: e_dom_optimization, e_optimized_assets_loading, e_optimized_css_loading, e_font_icon_svg, additional_custom_breakpoints; settings: css_print_method-internal, google_font-enabled, font_display-auto">
+<meta name="theme-color" content="#d0fc03" />
+
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+			( function( w, d, s, l, i ) {
+				w[l] = w[l] || [];
+				w[l].push( {'gtm.start': new Date().getTime(), event: 'gtm.js'} );
+				var f = d.getElementsByTagName( s )[0],
+					j = d.createElement( s ), dl = l != 'dataLayer' ? '&l=' + l : '';
+				j.async = true;
+				j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+				f.parentNode.insertBefore( j, f );
+			} )( window, document, 'script', 'dataLayer', 'GTM-PRW3TR7' );
+			
+</script>
+
+<link rel="icon" href="https://metana.io/wp-content/uploads/2021/11/Asset-12.svg" sizes="32x32" />
+<link rel="icon" href="https://metana.io/wp-content/uploads/2021/11/Asset-12.svg" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://metana.io/wp-content/uploads/2021/11/Asset-12.svg" />
+<meta name="msapplication-TileImage" content="https://metana.io/wp-content/uploads/2021/11/Asset-12.svg" />
+<style type="text/css" id="wp-custom-css">
+			.awsm-job-specification-item {
+    padding: 15px 0;
+}
+button.awsm-jobs-pro-application-form-btn {
+    padding: 10px 50px;
+}
+.awsm-jobs-pro-listings-link-container {
+    padding: 20px;
+}
+
+div.awsm-job-entry-content.entry-content {
+    font-size: 16px;	
+}
+
+.start-applying-form .gfield_radio {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Use Flexbox to line them up horizontally */
+
+
+}
+
+.start-applying-form .gfield_radio li {
+   margin: 0;
+   width: 25%;
+   height: 0px;
+   position: relative;
+}
+
+.start-applying-form .gfield_radio label {
+    text-align: center;      /* Horizontally center the text */
+  line-height: 20px;
+  padding: 10px;
+  border: 2px solid #CCC; 
+  cursor: pointer;
+  z-index: 90;
+  width: 100%; /* Ensuring the label takes the full width */
+  box-sizing: border-box; /* Ensuring padding and border are included in width */
+
+}
+
+.start-applying-form .gfield_radio label:hover {
+  background: #DDD;
+
+}
+
+.start-applying-form .gfield_radio label,
+.start-applying-form .gfield_radio input {
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+ border-style: solid;
+ border-color: #E8E8E8;
+ border-radius: 5px;
+ font: inherit;
+ font-family: inherit;
+ line-height: inherit;
+ box-sizing: border-box;
+ cursor: pointer;
+ font-size: 15px;
+ font-weight: 500;
+ float: none;
+ height: auto;
+ transition: all .25s linear 0s;
+
+
+}
+
+.start-applying-form .gfield_radio input[type="radio"] {
+display:none;
+visibility:hidden;
+
+}
+
+.start-applying-form .gfield_radio input[type="radio"]:checked+label,
+.Checked+label {
+  background: #d0fc03;
+
+}
+
+.start-applying-form .gform_wrapper.gravity-theme div.gchoice {
+ box-sizing: border-box;
+ width: 100%!important;
+}
+
+.start-applying-form .gform_wrapper.gravity-theme div.gchoice:not(:last-child) {
+ padding-right: 10px!important; 
+  padding-left: 0!important; 
+}
+
+.start-applying-form .gform_wrapper.gravity-theme div.gchoice:last-child {
+ padding-right: 0 !important; 
+  padding-left: 0 !important; 
+}
+
+.start-applying-form .gform_wrapper.gravity-theme .gfield-choice-input+label{
+        max-width: 100%!important;
+}
+
+
+/* Mobile responsive styles */
+@media (max-width: 767px) {
+
+  .start-applying-form .gfield_radio {
+    flex-direction: column; /* Stack the list items vertically */
+  }
+
+  .start-applying-form .gfield_radio li {
+    width: 100%; /* Take the full width of the parent */
+    padding: 5px 0; /* Add 10px padding in total between options. 5px top + 5px bottom = 10px */
+  }
+
+  /* Remove padding for the first and last item */
+  .start-applying-form .gfield_radio div {
+    padding-bottom: 5px;
+  }
+
+  .start-applying-form .gform_wrapper.gravity-theme div.gchoice:not(:last-child),
+  .start-applying-form .gform_wrapper.gravity-theme div.gchoice:last-child {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+}
+		</style>
+<style id="liquid-stylesheet-inline-css" type="text/css">body{--lqd-cc-size-inner:17px;--lqd-cc-bg:rgb(255, 255, 255);--lqd-cc-active-bw:1px;--lqd-cc-active-bg:rgb(255, 251, 251);--lqd-cc-active-bc:rgb(255, 251, 251);--lqd-cc-active-circle-txt:rgb(255, 251, 251);--lqd-top-scroll-ind-height:8px;}.lqd-top-scrol-ind{z-index:99;height:8px;background:rgb(255, 255, 255);}.lqd-top-scrol-ind .lqd-scrl-indc-el{background:linear-gradient(90deg, rgb(233, 164, 194) 0%, rgb(164, 104, 252) 50%, #74c6e5 100%);}.titlebar-inner h1{}.titlebar-inner p{}.titlebar-inner{padding-top:80px;padding-bottom:80px;}@media screen and (min-width: 992px){body.has-sidebar #lqd-contents-wrap{padding-top:25px;}}.nav-trigger.circle .bars {
+    width: 41px;
+    height: 41px;
+    flex: 0 0 auto;
+}
+.nav-trigger.style-2 .bar {
+    width: 15px;
+}
+.nav-trigger.style-2 .bar:not(:last-child) {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+.lqd-sticky-menu>.inline-ul {
+    display: flex;
+}
+.lqd-sticky-menu>.inline-ul>li {
+    flex-grow: 1;
+}</style><noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>
+</head>
+<body class="archive post-type-archive post-type-archive-awsm_job_openings wp-embed-responsive e-lazyload elementor-default elementor-kit-3471" dir="ltr" itemscope="itemscope" itemtype="http://schema.org/Blog" data-mobile-nav-breakpoint="1200" data-localscroll-offset="175" data-mobile-nav-style="modern" data-mobile-nav-scheme="dark" data-mobile-nav-trigger-alignment="left" data-mobile-header-scheme="gray" data-mobile-logo-alignment="default" data-mobile-header-builder="true" data-overlay-onmobile="false">
+
+<noscript>
+			<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRW3TR7" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+		</noscript>
+
+<div><div class="screen-reader-text">Skip links</div><ul class="liquid-skip-link screen-reader-text"><li><a href="#primary-nav" class="screen-reader-shortcut"> Skip to primary navigation</a></li><li><a href="#lqd-site-content" class="screen-reader-shortcut"> Skip to content</a></li></ul></div>
+<div id="wrap">
+<div class="lqd-sticky-placeholder d-none"></div><header class="header site-header main-header    is-not-stuck" data-sticky-header="true" data-sticky-values-measured="false" id="header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+<style id="elementor-post-3473">.elementor-3473 .elementor-element.elementor-element-4cb062a3{--display:flex;--flex-direction:row;--container-widget-width:calc( ( 1 - var( --container-widget-flex-grow ) ) * 100% );--container-widget-height:100%;--container-widget-flex-grow:1;--container-widget-align-self:stretch;--align-items:center;--gap:0px 0px;--background-transition:0.3s;border-style:solid;--border-style:solid;border-width:0px 0px 1px 0px;--border-block-start-width:0px;--border-inline-end-width:0px;--border-block-end-width:1px;--border-inline-start-width:0px;border-color:#00000017;--border-color:#00000017;--padding-block-start:5px;--padding-block-end:5px;--padding-inline-start:0px;--padding-inline-end:0px;}.elementor-3473 .elementor-element.elementor-element-4cb062a3:not(.elementor-motion-effects-element-type-background), .elementor-3473 .elementor-element.elementor-element-4cb062a3 > .elementor-motion-effects-container > .elementor-motion-effects-layer{background-color:#FFFFFF;}.elementor-3473 .elementor-element.elementor-element-4cb062a3, .elementor-3473 .elementor-element.elementor-element-4cb062a3::before{--border-transition:0.3s;}.elementor-3473 .elementor-element.elementor-element-3e211ca5{--display:flex;--flex-direction:row;--container-widget-width:initial;--container-widget-height:100%;--container-widget-flex-grow:1;--container-widget-align-self:stretch;--background-transition:0.3s;--padding-block-start:0px;--padding-block-end:0px;--padding-inline-start:0px;--padding-inline-end:0px;}.elementor-3473 .elementor-element.elementor-element-3e211ca5.e-con{--align-self:center;--order:-99999 /* order start hack */;}.elementor-3473 .elementor-element.elementor-element-2925af78{--display:flex;--flex-direction:row;--container-widget-width:calc( ( 1 - var( --container-widget-flex-grow ) ) * 100% );--container-widget-height:100%;--container-widget-flex-grow:1;--container-widget-align-self:stretch;--justify-content:flex-end;--align-items:center;--background-transition:0.3s;--padding-block-start:0px;--padding-block-end:0px;--padding-inline-start:0px;--padding-inline-end:0px;}.elementor-3473 .elementor-element.elementor-element-5ac28f3 .main-nav > li > a{font-size:14px;font-weight:500;line-height:2em;}.elementor-3473 .elementor-element.elementor-element-5ac28f3{--lqd-menu-items-top-padding:15px;--lqd-menu-items-right-padding:22px;--lqd-menu-items-bottom-padding:15px;--lqd-menu-items-left-padding:22px;}.is-stuck .elementor-3473 .elementor-element.elementor-element-5ac28f3{--lqd-menu-items-top-padding:15px;--lqd-menu-items-right-padding:22px;--lqd-menu-items-bottom-padding:15px;--lqd-menu-items-left-padding:22px;}.elementor-3473 .elementor-element.elementor-element-5ac28f3 .nav-item-children > li > a{font-size:13px;}.elementor-3473 .elementor-element.elementor-element-5ac28f3 .main-nav > li > a, .navbar-fullscreen .elementor-3473 .elementor-element.elementor-element-5ac28f3 .main-nav > li > a{color:#00000075;}.elementor-3473 .elementor-element.elementor-element-5ac28f3 .main-nav > li:hover > a, .elementor-3473 .elementor-element.elementor-element-5ac28f3 .main-nav > li.is-active > a, .navbar-fullscreen .elementor-3473 .elementor-element.elementor-element-5ac28f3 .main-nav > li > a:hover{color:#000000;}.elementor-3473 .elementor-element.elementor-element-5ac28f3 .main-nav > li.is-active > a, .elementor-3473 .elementor-element.elementor-element-5ac28f3 .main-nav > li.current_page_item > a, .elementor-3473 .elementor-element.elementor-element-5ac28f3 .main-nav > li.current-menu-item > a, .elementor-3473 .elementor-element.elementor-element-5ac28f3 .main-nav > li.current-menu-ancestor > a, .navbar-fullscreen .elementor-3473 .elementor-element.elementor-element-5ac28f3 .main-nav > li.is-active > a, .navbar-fullscreen .elementor-3473 .elementor-element.elementor-element-5ac28f3 .main-nav > li.current_page_item > a, .navbar-fullscreen .elementor-3473 .elementor-element.elementor-element-5ac28f3 .main-nav > li.current-menu-item > a, .navbar-fullscreen .elementor-3473 .elementor-element.elementor-element-5ac28f3 .main-nav > li.current-menu-ancestor > a{color:#000000;}.elementor-3473 .elementor-element.elementor-element-5ac28f3 .main-nav > li > a:before{background-color:#F7F7F7;}.elementor-3473 .elementor-element.elementor-element-5ac28f3 > .elementor-widget-container{margin:0px 30px 0px 0px;}.elementor-3473 .elementor-element.elementor-element-45b0662f .btn{--icon-font-size:1em;--icon-mt:0px;--icon-me:0px;--icon-mb:0px;--icon-ms:12px;font-size:14px;color:#000000;fill:#000000;background-color:var( --e-global-color-c108f5c );border-radius:35px 35px 35px 35px;--btn-pt:0.7em;--btn-pe:2em;--btn-pb:0.7em;--btn-ps:2em;padding:0.7em 2em 0.7em 2em;}.elementor-3473 .elementor-element.elementor-element-b69932a{--display:flex;--background-transition:0.3s;}.elementor-3473 .elementor-element.elementor-element-b69932a:not(.elementor-motion-effects-element-type-background), .elementor-3473 .elementor-element.elementor-element-b69932a > .elementor-motion-effects-container > .elementor-motion-effects-layer{background-color:var( --e-global-color-9cdc269 );}.elementor-3473 .elementor-element.elementor-element-b69932a, .elementor-3473 .elementor-element.elementor-element-b69932a::before{--border-transition:0.3s;}.elementor-3473 .elementor-element.elementor-element-6e3ed5c .ld-module-sd > .ld-module-dropdown{width:350px;}.elementor-3473 .elementor-element.elementor-element-f2dd37b .btn{font-size:14px;color:#000000;fill:#000000;background-color:var( --e-global-color-c108f5c );border-radius:25px 25px 25px 25px;--btn-pt:0.7em;--btn-pe:2em;--btn-pb:0.7em;--btn-ps:2em;padding:0.7em 2em 0.7em 2em;}.is-stuck > .elementor > .elementor-section{background-color:#FFFFFF;}@media(max-width:1024px){.elementor-3473 .elementor-element.elementor-element-b69932a{--flex-direction:row;--container-widget-width:initial;--container-widget-height:100%;--container-widget-flex-grow:1;--container-widget-align-self:stretch;--justify-content:space-between;--padding-block-start:1%;--padding-block-end:1%;--padding-inline-start:2%;--padding-inline-end:2%;}}@media(min-width:768px){.elementor-3473 .elementor-element.elementor-element-4cb062a3{--content-width:90%;}.elementor-3473 .elementor-element.elementor-element-3e211ca5{--width:20%;}.elementor-3473 .elementor-element.elementor-element-2925af78{--width:80%;}}@media(max-width:1024px) and (min-width:768px){.elementor-3473 .elementor-element.elementor-element-3e211ca5{--width:100%;}}@media(max-width:767px){.elementor-3473 .elementor-element.elementor-element-45b0662f > .elementor-widget-container{margin:0px 0px 20px 0px;}.elementor-3473 .elementor-element.elementor-element-b69932a{--flex-direction:row;--container-widget-width:initial;--container-widget-height:100%;--container-widget-flex-grow:1;--container-widget-align-self:stretch;--justify-content:space-between;--padding-block-start:4%;--padding-block-end:4%;--padding-inline-start:2%;--padding-inline-end:4%;}.is-stuck .elementor-3473 .elementor-element.elementor-element-b69932a{padding:2% 4% 2% 2%;}.elementor-3473 .elementor-element.elementor-element-f2dd37b .btn{--btn-pt:10px;--btn-pe:15px;--btn-pb:10px;--btn-ps:15px;padding:10px 15px 10px 15px;}.elementor-3473 .elementor-element.elementor-element-f2dd37b > .elementor-widget-container{margin:0px 0px 0px 0px;}}</style> <div data-elementor-type="wp-post" data-elementor-id="3473" class="elementor elementor-3473" data-elementor-post-type="liquid-header">
+<div class="elementor-element elementor-element-4cb062a3 elementor-hidden-tablet elementor-hidden-mobile e-flex e-con-boxed e-con e-parent" data-id="4cb062a3" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;content_width&quot;:&quot;boxed&quot;}" data-core-v316-plus="true">
+<div class="e-con-inner">
+<div class="elementor-element elementor-element-3e211ca5 e-con-full e-flex e-con e-child" data-id="3e211ca5" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
+<div class="elementor-element elementor-element-825d495 elementor-widget elementor-widget-ld_header_image" data-id="825d495" data-element_type="widget" data-widget_type="ld_header_image.default">
+<div class="elementor-widget-container">
+<div class="module-logo d-flex   navbar-brand-plain" id="size-logo" itemscope="itemscope" itemtype="https://schema.org/Brand">
+<a class="navbar-brand d-flex p-0 pos-rel" href="https://metana.io/" rel="home" itemprop="url"><span class="navbar-brand-inner post-rel"> <img class="logo-default" src="https://metana.io/wp-content/uploads/2022/07/Metana-Logo.png" alt="Metana" itemprop="url" /></span></a> </div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-2925af78 e-con-full e-flex e-con e-child" data-id="2925af78" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
+<div class="elementor-element elementor-element-5ac28f3 elementor-hidden-tablet elementor-hidden-mobile elementor-widget elementor-widget-ld_header_menu" data-id="5ac28f3" data-element_type="widget" data-widget_type="ld_header_menu.default">
+<div class="elementor-widget-container">
+<div class="module-primary-nav d-flex">
+<div class="collapse navbar-collapse d-inline-flex p-0 lqd-submenu-default-style" id="main-header-collapse" aria-expanded="false" role="navigation">
+<ul id="primary-nav" class="main-nav d-flex reset-ul inline-ul lqd-menu-counter-right lqd-menu-items-inline main-nav-hover-fill" itemtype="http://schema.org/SiteNavigationElement" itemscope="itemscope" data-submenu-options="{&quot;toggleType&quot;:&quot;fade&quot;,&quot;handler&quot;:&quot;mouse-in-out&quot;}" data-localscroll="true" data-localscroll-options="{&quot;itemsSelector&quot;: &quot;> li > a&quot;}"><li id="menu-item-3796" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3796"><a href="https://metana.io/web3-solidity-bootcamp-ethereum-blockchain/">Solidity Bootcamp<span class="link-badge">Hot 🔥</span></a></li>
+<li id="menu-item-3671" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3671"><a href="#">Bootcamps<span class="submenu-expander"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="32" viewbox="0 0 21 32" style="width: 1em; height: 1em;"><path fill="currentColor" d="M10.5 18.375l7.938-7.938c.562-.562 1.562-.562 2.125 0s.562 1.563 0 2.126l-9 9c-.563.562-1.5.625-2.063.062L.437 12.562C.126 12.25 0 11.876 0 11.5s.125-.75.438-1.063c.562-.562 1.562-.562 2.124 0z"></path></svg></span><span class="link-icon d-inline-flex hide-if-empty right-icon"><i class="lqd-icn-ess icon-ion-ios-arrow-down"></i></span></a>
+<ul class="nav-item-children">
+<li id="menu-item-3673" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3673"><a href="https://metana.io/web3-solidity-bootcamp-ethereum-blockchain/">Solidity Bootcamp</a></li>
+<li id="menu-item-3672" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3672"><a href="https://metana.io/web3-rust-bootcamp-solana-blockchain/">Rust Bootcamp</a></li>
+<li id="menu-item-11277" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11277"><a href="https://metana.io/full-stack-software-engineer-bootcamp/">Full Stack Software Engineer Bootcamp</a></li>
+<li id="menu-item-10290" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10290"><a href="https://metana.io/data-analytics-bootcamp/">Data Analytics Bootcamp</a></li>
+<li id="menu-item-10291" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10291"><a href="https://metana.io/data-science-bootcamp/">Data Science Bootcamp</a></li>
+<li id="menu-item-7455" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7455"><a href="https://metana.io/ai-machine-learning-bootcamp/">AI &#038; ML Bootcamp<span class="link-badge" style="--badge-color: rgb(114, 212, 101);">New ✨</span></a></li>
+<li id="menu-item-5089" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5089"><a href="https://metana.io/cybersecurity-bootcamp/">Cybersecurity Bootcamp</a></li>
+</ul>
+</li>
+<li id="menu-item-3676" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3676"><a href="#">How it works<span class="submenu-expander"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="32" viewbox="0 0 21 32" style="width: 1em; height: 1em;"><path fill="currentColor" d="M10.5 18.375l7.938-7.938c.562-.562 1.562-.562 2.125 0s.562 1.563 0 2.126l-9 9c-.563.562-1.5.625-2.063.062L.437 12.562C.126 12.25 0 11.876 0 11.5s.125-.75.438-1.063c.562-.562 1.562-.562 2.124 0z"></path></svg></span><span class="link-icon d-inline-flex hide-if-empty right-icon"><i class="lqd-icn-ess icon-ion-ios-arrow-down"></i></span></a>
+<ul class="nav-item-children">
+<li id="menu-item-5016" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5016"><a href="https://metana.io/job-guarantee/">Metana’s Job Guarantee</a></li>
+<li id="menu-item-5015" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5015"><a href="https://metana.io/jobcamp/">Jobcamp</a></li>
+<li id="menu-item-5020" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5020"><a href="https://metana.io/tuition/">Tuition</a></li>
+</ul>
+</li>
+<li id="menu-item-5014" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-5014"><a href="https://metana.io/blog/">Blog</a></li>
+</ul> </div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-45b0662f elementor-align-justify elementor-widget elementor-widget-ld_button" data-id="45b0662f" data-element_type="widget" data-widget_type="ld_button.default">
+<div class="elementor-widget-container">
+<a href="/apply/" class="elementor-button btn btn-solid btn-hover-txt-switch-change btn-hover-txt-switch btn-hover-txt-switch-y btn-sm btn-icon-right btn-has-label">
+<span data-text="&lt; 3 mins" class="btn-txt" data-transition-delay="true" data-delay-options="{&quot;elements&quot;: &quot;.lqd-chars&quot;, &quot;delayType&quot;: &quot;animation&quot;, &quot;startDelay&quot;: 0, &quot;delayBetween&quot;: 32.5}" data-split-text="true" data-split-options="{&quot;type&quot;: &quot;chars, words&quot;}">
+Apply now </span>
+<span class="btn-icon">
+<i aria-hidden="true" class="lqd-icn-ess icon-ion-ios-arrow-forward"></i> </span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-b69932a elementor-hidden-desktop e-flex e-con-boxed e-con e-parent" data-id="b69932a" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;content_width&quot;:&quot;boxed&quot;}" data-core-v316-plus="true">
+<div class="e-con-inner">
+<div class="elementor-element elementor-element-6e3ed5c elementor-widget elementor-widget-ld_header_sidedrawer" data-id="6e3ed5c" data-element_type="widget" data-widget_type="ld_header_sidedrawer.default">
+<div class="elementor-widget-container">
+<div class="ld-module-sd ld-module-sd-hover ld-module-sd-right">
+<button class="nav-trigger d-flex pos-rel align-items-center justify-content-center style-1    collapsed lqd-drawer-651a95a92e7e2" role="button" type="button" data-ld-toggle="1" data-toggle-options="{&quot;cloneTriggerInTarget&quot;:false,&quot;type&quot;:&quot;click&quot;}" data-toggle="collapse" data-target="#lqd-drawer-651a95a92e7e2" aria-expanded="false" aria-label="Trigger" aria-controls="6e3ed5c">
+<span class="bars d-inline-block pos-rel z-index-1">
+<span class="bars-inner d-flex flex-column w-100 h-100">
+<span class="bar d-inline-block pos-rel"></span>
+<span class="bar d-inline-block pos-rel"></span>
+<span class="bar d-inline-block pos-rel"></span>
+</span>
+</span>
+</button>
+<div class="ld-module-dropdown collapse pos-abs lqd-drawer-651a95a92e7e2" id="lqd-drawer-651a95a92e7e2">
+<div class="ld-sd-wrap">
+<div class="ld-sd-inner justify-content-center">
+<style id="elementor-post-4699">.elementor-4699 .elementor-element.elementor-element-5a4ce009 > .elementor-container{max-width:400px;}.elementor-4699 .elementor-element.elementor-element-5a4ce009{padding:0px 40px 0px 40px;}.elementor-bc-flex-widget .elementor-4699 .elementor-element.elementor-element-2f7535c8.elementor-column .elementor-widget-wrap{align-items:space-evenly;}.elementor-4699 .elementor-element.elementor-element-2f7535c8.elementor-column.elementor-element[data-element_type="column"] > .elementor-widget-wrap.elementor-element-populated{align-content:space-evenly;align-items:space-evenly;}.elementor-4699 .elementor-element.elementor-element-6d878092 .module-logo{padding-top:30px;padding-inline-end:0px;padding-bottom:30px;padding-inline-start:0px;}.is-stuck .elementor-4699 .elementor-element.elementor-element-6d878092 .module-logo{padding-top:30px;padding-inline-end:0px;padding-bottom:30px;padding-inline-start:0px;}.elementor-4699 .elementor-element.elementor-element-28ddeee1{margin-top:0px;margin-bottom:35px;}.elementor-4699 .elementor-element.elementor-element-5ebc435.elementor-column > .elementor-widget-wrap{justify-content:space-between;}.elementor-4699 .elementor-element.elementor-element-66fbc7ea .ld-fh-element, .elementor-4699 .elementor-element.elementor-element-66fbc7ea .ld-fh-element a{color:var( --e-global-color-c13b3c8 );}.elementor-4699 .elementor-element.elementor-element-66fbc7ea .ld-fh-element{font-size:13px;text-transform:uppercase;line-height:21px;letter-spacing:1px;}.elementor-4699 .elementor-element.elementor-element-66fbc7ea .lqd-highlight-inner{bottom:0em;left:0em;}.elementor-4699 .elementor-element.elementor-element-66fbc7ea{width:auto;max-width:auto;}.elementor-4699 .elementor-element.elementor-element-23c40d83{--lqd-menu-items-top-padding:1em;--lqd-menu-items-right-padding:1em;--lqd-menu-items-bottom-padding:1em;--lqd-menu-items-left-padding:1em;}.is-stuck .elementor-4699 .elementor-element.elementor-element-23c40d83{--lqd-menu-items-top-padding:10px;--lqd-menu-items-right-padding:0px;--lqd-menu-items-bottom-padding:10px;--lqd-menu-items-left-padding:0px;}.elementor-4699 .elementor-element.elementor-element-23c40d83 .main-nav > li > a, .navbar-fullscreen .elementor-4699 .elementor-element.elementor-element-23c40d83 .main-nav > li > a{color:#000000;}.elementor-4699 .elementor-element.elementor-element-48a8b88{margin-top:0px;margin-bottom:35px;}.elementor-4699 .elementor-element.elementor-element-bf9100e.elementor-column > .elementor-widget-wrap{justify-content:space-between;}.elementor-4699 .elementor-element.elementor-element-0f9186c .ld-fh-element, .elementor-4699 .elementor-element.elementor-element-0f9186c .ld-fh-element a{color:var( --e-global-color-c13b3c8 );}.elementor-4699 .elementor-element.elementor-element-0f9186c .ld-fh-element{font-size:13px;text-transform:uppercase;line-height:21px;letter-spacing:1px;}.elementor-4699 .elementor-element.elementor-element-0f9186c .lqd-highlight-inner{bottom:0em;left:0em;}.elementor-4699 .elementor-element.elementor-element-0f9186c{width:auto;max-width:auto;}.elementor-4699 .elementor-element.elementor-element-072f479{--lqd-menu-items-top-padding:1em;--lqd-menu-items-right-padding:1em;--lqd-menu-items-bottom-padding:1em;--lqd-menu-items-left-padding:1em;}.is-stuck .elementor-4699 .elementor-element.elementor-element-072f479{--lqd-menu-items-top-padding:10px;--lqd-menu-items-right-padding:0px;--lqd-menu-items-bottom-padding:10px;--lqd-menu-items-left-padding:0px;}.elementor-4699 .elementor-element.elementor-element-072f479 .main-nav > li > a, .navbar-fullscreen .elementor-4699 .elementor-element.elementor-element-072f479 .main-nav > li > a{color:#000000;}.elementor-4699 .elementor-element.elementor-element-9378787{--divider-border-style:solid;--divider-color:#70707038;--divider-border-width:1px;width:var( --container-widget-width, 33% );max-width:33%;--container-widget-width:33%;--container-widget-flex-grow:0;}.elementor-4699 .elementor-element.elementor-element-9378787 .elementor-divider-separator{width:100%;}.elementor-4699 .elementor-element.elementor-element-9378787 .elementor-divider{padding-top:15px;padding-bottom:15px;}.elementor-4699 .elementor-element.elementor-element-15c1c0 .ld-fh-element{font-size:19px;line-height:1.5em;margin:0em 0em 1.5em 0em;}.elementor-4699 .elementor-element.elementor-element-15c1c0 .lqd-highlight-inner, .elementor-4699 .elementor-element.elementor-element-15c1c0 .lqd-highlight-inner .lqd-highlight-brush-svg{height:0.275em;}.elementor-4699 .elementor-element.elementor-element-15c1c0 .lqd-highlight-inner{bottom:0em;left:0em;}.elementor-4699 .elementor-element.elementor-element-15c1c0{width:100%;max-width:100%;}.elementor-4699 .elementor-element.elementor-element-317972e{--grid-template-columns:repeat(0, auto);--icon-size:25px;--grid-column-gap:20px;--grid-row-gap:0px;}.elementor-4699 .elementor-element.elementor-element-317972e .elementor-widget-container{text-align:left;}.elementor-4699 .elementor-element.elementor-element-317972e .elementor-social-icon{background-color:#02010100;--icon-padding:0em;}.elementor-4699 .elementor-element.elementor-element-317972e .elementor-social-icon i{color:#C8C8C8;}.elementor-4699 .elementor-element.elementor-element-317972e .elementor-social-icon svg{fill:#C8C8C8;}.elementor-4699 .elementor-element.elementor-element-317972e .elementor-social-icon:hover i{color:var( --e-global-color-text );}.elementor-4699 .elementor-element.elementor-element-317972e .elementor-social-icon:hover svg{fill:var( --e-global-color-text );}.elementor-4699 .elementor-element.elementor-element-f1cc756{--spacer-size:150px;}@media(max-width:1024px){.elementor-4699 .elementor-element.elementor-element-9378787{--container-widget-width:25%;--container-widget-flex-grow:0;width:var( --container-widget-width, 25% );max-width:25%;}.elementor-4699 .elementor-element.elementor-element-317972e .elementor-widget-container{text-align:left;}}@media(max-width:767px){.elementor-4699 .elementor-element.elementor-element-66fbc7ea{width:100%;max-width:100%;}.elementor-4699 .elementor-element.elementor-element-0f9186c{width:100%;max-width:100%;}.elementor-4699 .elementor-element.elementor-element-9378787 .elementor-divider-separator{width:100%;}.elementor-4699 .elementor-element.elementor-element-9378787{--container-widget-width:100%;--container-widget-flex-grow:0;width:var( --container-widget-width, 100% );max-width:100%;}.elementor-4699 .elementor-element.elementor-element-317972e .elementor-widget-container{text-align:left;}.elementor-4699 .elementor-element.elementor-element-317972e{width:100%;max-width:100%;}}</style><style>.elementor-4699 .elementor-element.elementor-element-5a4ce009 > .elementor-container{max-width:400px;}.elementor-4699 .elementor-element.elementor-element-5a4ce009{padding:0px 40px 0px 40px;}.elementor-bc-flex-widget .elementor-4699 .elementor-element.elementor-element-2f7535c8.elementor-column .elementor-widget-wrap{align-items:space-evenly;}.elementor-4699 .elementor-element.elementor-element-2f7535c8.elementor-column.elementor-element[data-element_type="column"] > .elementor-widget-wrap.elementor-element-populated{align-content:space-evenly;align-items:space-evenly;}.elementor-4699 .elementor-element.elementor-element-6d878092 .module-logo{padding-top:30px;padding-inline-end:0px;padding-bottom:30px;padding-inline-start:0px;}.is-stuck .elementor-4699 .elementor-element.elementor-element-6d878092 .module-logo{padding-top:30px;padding-inline-end:0px;padding-bottom:30px;padding-inline-start:0px;}.elementor-4699 .elementor-element.elementor-element-28ddeee1{margin-top:0px;margin-bottom:35px;}.elementor-4699 .elementor-element.elementor-element-5ebc435.elementor-column > .elementor-widget-wrap{justify-content:space-between;}.elementor-4699 .elementor-element.elementor-element-66fbc7ea .ld-fh-element, .elementor-4699 .elementor-element.elementor-element-66fbc7ea .ld-fh-element a{color:var( --e-global-color-c13b3c8 );}.elementor-4699 .elementor-element.elementor-element-66fbc7ea .ld-fh-element{font-size:13px;text-transform:uppercase;line-height:21px;letter-spacing:1px;}.elementor-4699 .elementor-element.elementor-element-66fbc7ea .lqd-highlight-inner{bottom:0em;left:0em;}.elementor-4699 .elementor-element.elementor-element-66fbc7ea{width:auto;max-width:auto;}.elementor-4699 .elementor-element.elementor-element-23c40d83{--lqd-menu-items-top-padding:1em;--lqd-menu-items-right-padding:1em;--lqd-menu-items-bottom-padding:1em;--lqd-menu-items-left-padding:1em;}.is-stuck .elementor-4699 .elementor-element.elementor-element-23c40d83{--lqd-menu-items-top-padding:10px;--lqd-menu-items-right-padding:0px;--lqd-menu-items-bottom-padding:10px;--lqd-menu-items-left-padding:0px;}.elementor-4699 .elementor-element.elementor-element-23c40d83 .main-nav > li > a, .navbar-fullscreen .elementor-4699 .elementor-element.elementor-element-23c40d83 .main-nav > li > a{color:#000000;}.elementor-4699 .elementor-element.elementor-element-48a8b88{margin-top:0px;margin-bottom:35px;}.elementor-4699 .elementor-element.elementor-element-bf9100e.elementor-column > .elementor-widget-wrap{justify-content:space-between;}.elementor-4699 .elementor-element.elementor-element-0f9186c .ld-fh-element, .elementor-4699 .elementor-element.elementor-element-0f9186c .ld-fh-element a{color:var( --e-global-color-c13b3c8 );}.elementor-4699 .elementor-element.elementor-element-0f9186c .ld-fh-element{font-size:13px;text-transform:uppercase;line-height:21px;letter-spacing:1px;}.elementor-4699 .elementor-element.elementor-element-0f9186c .lqd-highlight-inner{bottom:0em;left:0em;}.elementor-4699 .elementor-element.elementor-element-0f9186c{width:auto;max-width:auto;}.elementor-4699 .elementor-element.elementor-element-072f479{--lqd-menu-items-top-padding:1em;--lqd-menu-items-right-padding:1em;--lqd-menu-items-bottom-padding:1em;--lqd-menu-items-left-padding:1em;}.is-stuck .elementor-4699 .elementor-element.elementor-element-072f479{--lqd-menu-items-top-padding:10px;--lqd-menu-items-right-padding:0px;--lqd-menu-items-bottom-padding:10px;--lqd-menu-items-left-padding:0px;}.elementor-4699 .elementor-element.elementor-element-072f479 .main-nav > li > a, .navbar-fullscreen .elementor-4699 .elementor-element.elementor-element-072f479 .main-nav > li > a{color:#000000;}.elementor-4699 .elementor-element.elementor-element-9378787{--divider-border-style:solid;--divider-color:#70707038;--divider-border-width:1px;width:var( --container-widget-width, 33% );max-width:33%;--container-widget-width:33%;--container-widget-flex-grow:0;}.elementor-4699 .elementor-element.elementor-element-9378787 .elementor-divider-separator{width:100%;}.elementor-4699 .elementor-element.elementor-element-9378787 .elementor-divider{padding-top:15px;padding-bottom:15px;}.elementor-4699 .elementor-element.elementor-element-15c1c0 .ld-fh-element{font-size:19px;line-height:1.5em;margin:0em 0em 1.5em 0em;}.elementor-4699 .elementor-element.elementor-element-15c1c0 .lqd-highlight-inner, .elementor-4699 .elementor-element.elementor-element-15c1c0 .lqd-highlight-inner .lqd-highlight-brush-svg{height:0.275em;}.elementor-4699 .elementor-element.elementor-element-15c1c0 .lqd-highlight-inner{bottom:0em;left:0em;}.elementor-4699 .elementor-element.elementor-element-15c1c0{width:100%;max-width:100%;}.elementor-4699 .elementor-element.elementor-element-317972e{--grid-template-columns:repeat(0, auto);--icon-size:25px;--grid-column-gap:20px;--grid-row-gap:0px;}.elementor-4699 .elementor-element.elementor-element-317972e .elementor-widget-container{text-align:left;}.elementor-4699 .elementor-element.elementor-element-317972e .elementor-social-icon{background-color:#02010100;--icon-padding:0em;}.elementor-4699 .elementor-element.elementor-element-317972e .elementor-social-icon i{color:#C8C8C8;}.elementor-4699 .elementor-element.elementor-element-317972e .elementor-social-icon svg{fill:#C8C8C8;}.elementor-4699 .elementor-element.elementor-element-317972e .elementor-social-icon:hover i{color:var( --e-global-color-text );}.elementor-4699 .elementor-element.elementor-element-317972e .elementor-social-icon:hover svg{fill:var( --e-global-color-text );}.elementor-4699 .elementor-element.elementor-element-f1cc756{--spacer-size:150px;}@media(max-width:1024px){.elementor-4699 .elementor-element.elementor-element-317972e .elementor-widget-container{text-align:left;}}@media(max-width:767px){.elementor-4699 .elementor-element.elementor-element-66fbc7ea{width:100%;max-width:100%;}.elementor-4699 .elementor-element.elementor-element-0f9186c{width:100%;max-width:100%;}.elementor-4699 .elementor-element.elementor-element-9378787 .elementor-divider-separator{width:100%;}.elementor-4699 .elementor-element.elementor-element-317972e .elementor-widget-container{text-align:left;}.elementor-4699 .elementor-element.elementor-element-317972e{width:100%;max-width:100%;}}</style> <div data-elementor-type="section" data-elementor-id="4699" class="elementor elementor-4699" data-elementor-post-type="elementor_library">
+<section class="elementor-section elementor-top-section elementor-element elementor-element-5a4ce009 elementor-section-height-full elementor-section-items-stretch elementor-section-boxed elementor-section-height-default" data-id="5a4ce009" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-2f7535c8" data-id="2f7535c8" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-6d878092 elementor-widget elementor-widget-ld_header_image" data-id="6d878092" data-element_type="widget" data-widget_type="ld_header_image.default">
+<div class="elementor-widget-container">
+<div class="module-logo d-flex   navbar-brand-plain" id="size-logo" itemscope="itemscope" itemtype="https://schema.org/Brand">
+<a class="navbar-brand d-flex p-0 pos-rel" href="https://metana.io/" rel="home" itemprop="url"><span class="navbar-brand-inner post-rel"> <img class="logo-default" src="https://metana.io/wp-content/uploads/2022/07/Metana-Logo.png" alt="Metana" itemprop="url" /></span></a> </div>
+</div>
+</div>
+<section class="elementor-section elementor-inner-section elementor-element elementor-element-28ddeee1 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="28ddeee1" data-element_type="section">
+<div class="elementor-container elementor-column-gap-no">
+<div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-5ebc435" data-id="5ebc435" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-66fbc7ea elementor-widget__width-auto elementor-widget-mobile__width-inherit elementor-widget elementor-widget-hub_fancy_heading" data-id="66fbc7ea" data-element_type="widget" data-widget_type="hub_fancy_heading.default">
+<div class="elementor-widget-container">
+<div id="ld-fancy-heading-651a95a9428aa" class="ld-fancy-heading pos-rel">
+<h2 class="ld-fh-element d-inline-block pos-rel  elementor-heading-title lqd-highlight-classic lqd-highlight-grow-left h6"> Metana Bootcamps</h2> </div>
+</div>
+</div>
+<div class="elementor-element elementor-element-23c40d83 elementor-widget elementor-widget-ld_header_menu" data-id="23c40d83" data-element_type="widget" data-widget_type="ld_header_menu.default">
+<div class="elementor-widget-container">
+<div class="module-primary-nav d-flex">
+<div class="collapse navbar-collapse d-inline-flex p-0 lqd-submenu-default-style" id="main-header-collapse" aria-expanded="false" role="navigation">
+<ul id="primary-nav" class="main-nav d-flex reset-ul  lqd-menu-counter-right lqd-menu-items-block main-nav-hover-fill" itemtype="http://schema.org/SiteNavigationElement" itemscope="itemscope" data-submenu-options="{&quot;toggleType&quot;:&quot;slide&quot;,&quot;handler&quot;:&quot;click&quot;}"><li id="menu-item-4665" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4665"><a href="https://metana.io/web3-solidity-bootcamp-ethereum-blockchain/">Solidity Bootcamp<span class="link-badge">Hot 🔥</span></a></li>
+<li id="menu-item-4717" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4717"><a href="https://metana.io/web3-rust-bootcamp-solana-blockchain/">Rust Bootcamp</a></li>
+<li id="menu-item-5108" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5108"><a href="https://metana.io/cybersecurity-bootcamp/">Cybersecurity Bootcamp</a></li>
+<li id="menu-item-8182" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8182"><a href="https://metana.io/ai-machine-learning-bootcamp/">AI &#038; Machine Learning Bootcamp</a></li>
+<li id="menu-item-10302" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10302"><a href="https://metana.io/data-analytics-bootcamp/">Data Analytics Bootcamp</a></li>
+<li id="menu-item-10303" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10303"><a href="https://metana.io/data-science-bootcamp/">Data Science Bootcamp</a></li>
+</ul> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-inner-section elementor-element elementor-element-48a8b88 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="48a8b88" data-element_type="section">
+<div class="elementor-container elementor-column-gap-no">
+<div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-bf9100e" data-id="bf9100e" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-0f9186c elementor-widget__width-auto elementor-widget-mobile__width-inherit elementor-widget elementor-widget-hub_fancy_heading" data-id="0f9186c" data-element_type="widget" data-widget_type="hub_fancy_heading.default">
+<div class="elementor-widget-container">
+<div id="ld-fancy-heading-651a95a946121" class="ld-fancy-heading pos-rel">
+<h2 class="ld-fh-element d-inline-block pos-rel  elementor-heading-title lqd-highlight-classic lqd-highlight-grow-left h6"> Menu Items</h2> </div>
+</div>
+</div>
+<div class="elementor-element elementor-element-072f479 elementor-widget elementor-widget-ld_header_menu" data-id="072f479" data-element_type="widget" data-widget_type="ld_header_menu.default">
+<div class="elementor-widget-container">
+<div class="module-primary-nav d-flex">
+<div class="collapse navbar-collapse d-inline-flex p-0 lqd-submenu-default-style" id="main-header-collapse" aria-expanded="false" role="navigation">
+<ul id="primary-nav" class="main-nav d-flex reset-ul  lqd-menu-counter-right lqd-menu-items-block main-nav-hover-fill" itemtype="http://schema.org/SiteNavigationElement" itemscope="itemscope" data-submenu-options="{&quot;toggleType&quot;:&quot;slide&quot;,&quot;handler&quot;:&quot;click&quot;}"><li id="menu-item-4733" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-4733"><a href="https://metana.io/blog/">Blog</a></li>
+<li id="menu-item-4734" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4734"><a href="https://metana.io/jobcamp/">Jobcamp</a></li>
+<li id="menu-item-4736" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4736"><a href="https://metana.io/job-guarantee/">Metana’s Job Guarantee</a></li>
+<li id="menu-item-4737" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4737"><a href="https://metana.io/refer/">Refer a Friend</a></li>
+<li id="menu-item-4738" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4738"><a href="https://metana.io/tuition/">Tuition</a></li>
+<li id="menu-item-4739" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4739"><a href="https://metana.io/withdrawal-and-refund-policy/">Withdrawal and Refund Policy</a></li>
+</ul> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="elementor-element elementor-element-9378787 elementor-widget__width-initial elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="9378787" data-element_type="widget" data-widget_type="divider.default">
+<div class="elementor-widget-container">
+<style>/*! elementor - v3.16.0 - 20-09-2023 */
+.elementor-widget-divider{--divider-border-style:none;--divider-border-width:1px;--divider-color:#0c0d0e;--divider-icon-size:20px;--divider-element-spacing:10px;--divider-pattern-height:24px;--divider-pattern-size:20px;--divider-pattern-url:none;--divider-pattern-repeat:repeat-x}.elementor-widget-divider .elementor-divider{display:flex}.elementor-widget-divider .elementor-divider__text{font-size:15px;line-height:1;max-width:95%}.elementor-widget-divider .elementor-divider__element{margin:0 var(--divider-element-spacing);flex-shrink:0}.elementor-widget-divider .elementor-icon{font-size:var(--divider-icon-size)}.elementor-widget-divider .elementor-divider-separator{display:flex;margin:0;direction:ltr}.elementor-widget-divider--view-line_icon .elementor-divider-separator,.elementor-widget-divider--view-line_text .elementor-divider-separator{align-items:center}.elementor-widget-divider--view-line_icon .elementor-divider-separator:after,.elementor-widget-divider--view-line_icon .elementor-divider-separator:before,.elementor-widget-divider--view-line_text .elementor-divider-separator:after,.elementor-widget-divider--view-line_text .elementor-divider-separator:before{display:block;content:"";border-bottom:0;flex-grow:1;border-top:var(--divider-border-width) var(--divider-border-style) var(--divider-color)}.elementor-widget-divider--element-align-left .elementor-divider .elementor-divider-separator>.elementor-divider__svg:first-of-type{flex-grow:0;flex-shrink:100}.elementor-widget-divider--element-align-left .elementor-divider-separator:before{content:none}.elementor-widget-divider--element-align-left .elementor-divider__element{margin-left:0}.elementor-widget-divider--element-align-right .elementor-divider .elementor-divider-separator>.elementor-divider__svg:last-of-type{flex-grow:0;flex-shrink:100}.elementor-widget-divider--element-align-right .elementor-divider-separator:after{content:none}.elementor-widget-divider--element-align-right .elementor-divider__element{margin-right:0}.elementor-widget-divider:not(.elementor-widget-divider--view-line_text):not(.elementor-widget-divider--view-line_icon) .elementor-divider-separator{border-top:var(--divider-border-width) var(--divider-border-style) var(--divider-color)}.elementor-widget-divider--separator-type-pattern{--divider-border-style:none}.elementor-widget-divider--separator-type-pattern.elementor-widget-divider--view-line .elementor-divider-separator,.elementor-widget-divider--separator-type-pattern:not(.elementor-widget-divider--view-line) .elementor-divider-separator:after,.elementor-widget-divider--separator-type-pattern:not(.elementor-widget-divider--view-line) .elementor-divider-separator:before,.elementor-widget-divider--separator-type-pattern:not([class*=elementor-widget-divider--view]) .elementor-divider-separator{width:100%;min-height:var(--divider-pattern-height);-webkit-mask-size:var(--divider-pattern-size) 100%;mask-size:var(--divider-pattern-size) 100%;-webkit-mask-repeat:var(--divider-pattern-repeat);mask-repeat:var(--divider-pattern-repeat);background-color:var(--divider-color);-webkit-mask-image:var(--divider-pattern-url);mask-image:var(--divider-pattern-url)}.elementor-widget-divider--no-spacing{--divider-pattern-size:auto}.elementor-widget-divider--bg-round{--divider-pattern-repeat:round}.rtl .elementor-widget-divider .elementor-divider__text{direction:rtl}.e-con-inner>.elementor-widget-divider,.e-con>.elementor-widget-divider{width:var(--container-widget-width,100%);--flex-grow:var(--container-widget-flex-grow)}</style> <div class="elementor-divider">
+<span class="elementor-divider-separator">
+</span>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-15c1c0 elementor-widget__width-inherit elementor-widget elementor-widget-hub_fancy_heading" data-id="15c1c0" data-element_type="widget" data-widget_type="hub_fancy_heading.default">
+<div class="elementor-widget-container">
+<div id="ld-fancy-heading-651a95a9494d0" class="ld-fancy-heading pos-rel">
+<p class="ld-fh-element d-inline-block pos-rel  lqd-highlight-classic lqd-highlight-grow-left p"> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7f161119103f121a0b1e111e511610">[email&#160;protected]</a></p> </div>
+</div>
+</div>
+<div class="elementor-element elementor-element-317972e e-grid-align-left e-grid-align-tablet-left e-grid-align-mobile-left elementor-widget-mobile__width-inherit elementor-shape-rounded elementor-grid-0 elementor-widget elementor-widget-social-icons" data-id="317972e" data-element_type="widget" data-widget_type="social-icons.default">
+<div class="elementor-widget-container">
+<style>/*! elementor - v3.16.0 - 20-09-2023 */
+.elementor-widget-social-icons.elementor-grid-0 .elementor-widget-container,.elementor-widget-social-icons.elementor-grid-mobile-0 .elementor-widget-container,.elementor-widget-social-icons.elementor-grid-tablet-0 .elementor-widget-container{line-height:1;font-size:0}.elementor-widget-social-icons:not(.elementor-grid-0):not(.elementor-grid-tablet-0):not(.elementor-grid-mobile-0) .elementor-grid{display:inline-grid}.elementor-widget-social-icons .elementor-grid{grid-column-gap:var(--grid-column-gap,5px);grid-row-gap:var(--grid-row-gap,5px);grid-template-columns:var(--grid-template-columns);justify-content:var(--justify-content,center);justify-items:var(--justify-content,center)}.elementor-icon.elementor-social-icon{font-size:var(--icon-size,25px);line-height:var(--icon-size,25px);width:calc(var(--icon-size, 25px) + (2 * var(--icon-padding, .5em)));height:calc(var(--icon-size, 25px) + (2 * var(--icon-padding, .5em)))}.elementor-social-icon{--e-social-icon-icon-color:#fff;display:inline-flex;background-color:#69727d;align-items:center;justify-content:center;text-align:center;cursor:pointer}.elementor-social-icon i{color:var(--e-social-icon-icon-color)}.elementor-social-icon svg{fill:var(--e-social-icon-icon-color)}.elementor-social-icon:last-child{margin:0}.elementor-social-icon:hover{opacity:.9;color:#fff}.elementor-social-icon-android{background-color:#a4c639}.elementor-social-icon-apple{background-color:#999}.elementor-social-icon-behance{background-color:#1769ff}.elementor-social-icon-bitbucket{background-color:#205081}.elementor-social-icon-codepen{background-color:#000}.elementor-social-icon-delicious{background-color:#39f}.elementor-social-icon-deviantart{background-color:#05cc47}.elementor-social-icon-digg{background-color:#005be2}.elementor-social-icon-dribbble{background-color:#ea4c89}.elementor-social-icon-elementor{background-color:#d30c5c}.elementor-social-icon-envelope{background-color:#ea4335}.elementor-social-icon-facebook,.elementor-social-icon-facebook-f{background-color:#3b5998}.elementor-social-icon-flickr{background-color:#0063dc}.elementor-social-icon-foursquare{background-color:#2d5be3}.elementor-social-icon-free-code-camp,.elementor-social-icon-freecodecamp{background-color:#006400}.elementor-social-icon-github{background-color:#333}.elementor-social-icon-gitlab{background-color:#e24329}.elementor-social-icon-globe{background-color:#69727d}.elementor-social-icon-google-plus,.elementor-social-icon-google-plus-g{background-color:#dd4b39}.elementor-social-icon-houzz{background-color:#7ac142}.elementor-social-icon-instagram{background-color:#262626}.elementor-social-icon-jsfiddle{background-color:#487aa2}.elementor-social-icon-link{background-color:#818a91}.elementor-social-icon-linkedin,.elementor-social-icon-linkedin-in{background-color:#0077b5}.elementor-social-icon-medium{background-color:#00ab6b}.elementor-social-icon-meetup{background-color:#ec1c40}.elementor-social-icon-mixcloud{background-color:#273a4b}.elementor-social-icon-odnoklassniki{background-color:#f4731c}.elementor-social-icon-pinterest{background-color:#bd081c}.elementor-social-icon-product-hunt{background-color:#da552f}.elementor-social-icon-reddit{background-color:#ff4500}.elementor-social-icon-rss{background-color:#f26522}.elementor-social-icon-shopping-cart{background-color:#4caf50}.elementor-social-icon-skype{background-color:#00aff0}.elementor-social-icon-slideshare{background-color:#0077b5}.elementor-social-icon-snapchat{background-color:#fffc00}.elementor-social-icon-soundcloud{background-color:#f80}.elementor-social-icon-spotify{background-color:#2ebd59}.elementor-social-icon-stack-overflow{background-color:#fe7a15}.elementor-social-icon-steam{background-color:#00adee}.elementor-social-icon-stumbleupon{background-color:#eb4924}.elementor-social-icon-telegram{background-color:#2ca5e0}.elementor-social-icon-thumb-tack{background-color:#1aa1d8}.elementor-social-icon-tripadvisor{background-color:#589442}.elementor-social-icon-tumblr{background-color:#35465c}.elementor-social-icon-twitch{background-color:#6441a5}.elementor-social-icon-twitter{background-color:#1da1f2}.elementor-social-icon-viber{background-color:#665cac}.elementor-social-icon-vimeo{background-color:#1ab7ea}.elementor-social-icon-vk{background-color:#45668e}.elementor-social-icon-weibo{background-color:#dd2430}.elementor-social-icon-weixin{background-color:#31a918}.elementor-social-icon-whatsapp{background-color:#25d366}.elementor-social-icon-wordpress{background-color:#21759b}.elementor-social-icon-xing{background-color:#026466}.elementor-social-icon-yelp{background-color:#af0606}.elementor-social-icon-youtube{background-color:#cd201f}.elementor-social-icon-500px{background-color:#0099e5}.elementor-shape-rounded .elementor-icon.elementor-social-icon{border-radius:10%}.elementor-shape-circle .elementor-icon.elementor-social-icon{border-radius:50%}</style> <div class="elementor-social-icons-wrapper elementor-grid">
+<span class="elementor-grid-item">
+<a class="elementor-icon elementor-social-icon elementor-social-icon-facebook elementor-repeater-item-f1cbc6c" href="https://www.facebook.com/metanahq" target="_blank">
+<span class="elementor-screen-only">Facebook</span>
+<svg class="e-font-icon-svg e-fab-facebook" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"></path></svg> </a>
+</span>
+<span class="elementor-grid-item">
+<a class="elementor-icon elementor-social-icon elementor-social-icon-twitter elementor-repeater-item-72927e2" href="https://twitter.com/metanahq" target="_blank">
+<span class="elementor-screen-only">Twitter</span>
+<svg class="e-font-icon-svg e-fab-twitter" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg> </a>
+</span>
+<span class="elementor-grid-item">
+<a class="elementor-icon elementor-social-icon elementor-social-icon-linkedin elementor-repeater-item-2bfbe8d" href="https://www.linkedin.com/school/metana/" target="_blank">
+<span class="elementor-screen-only">Linkedin</span>
+<svg class="e-font-icon-svg e-fab-linkedin" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg> </a>
+</span>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-f1cc756 elementor-widget elementor-widget-spacer" data-id="f1cc756" data-element_type="widget" data-widget_type="spacer.default">
+<div class="elementor-widget-container">
+<style>/*! elementor - v3.16.0 - 20-09-2023 */
+.elementor-column .elementor-spacer-inner{height:var(--spacer-size)}.e-con{--container-widget-width:100%}.e-con-inner>.elementor-widget-spacer,.e-con>.elementor-widget-spacer{width:var(--container-widget-width,var(--spacer-size));--align-self:var(--container-widget-align-self,initial);--flex-shrink:0}.e-con-inner>.elementor-widget-spacer>.elementor-widget-container,.e-con>.elementor-widget-spacer>.elementor-widget-container{height:100%;width:100%}.e-con-inner>.elementor-widget-spacer>.elementor-widget-container>.elementor-spacer,.e-con>.elementor-widget-spacer>.elementor-widget-container>.elementor-spacer{height:100%}.e-con-inner>.elementor-widget-spacer>.elementor-widget-container>.elementor-spacer>.elementor-spacer-inner,.e-con>.elementor-widget-spacer>.elementor-widget-container>.elementor-spacer>.elementor-spacer-inner{height:var(--container-widget-height,var(--spacer-size))}.e-con-inner>.elementor-widget-spacer.elementor-widget-empty,.e-con>.elementor-widget-spacer.elementor-widget-empty{position:relative;min-height:22px;min-width:22px}.e-con-inner>.elementor-widget-spacer.elementor-widget-empty .elementor-widget-empty-icon,.e-con>.elementor-widget-spacer.elementor-widget-empty .elementor-widget-empty-icon{position:absolute;top:0;bottom:0;left:0;right:0;margin:auto;padding:0;width:22px;height:22px}</style> <div class="elementor-spacer">
+<div class="elementor-spacer-inner"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</div>
+<div class="lqd-module-backdrop"></div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-5a9311f elementor-widget elementor-widget-ld_header_image" data-id="5a9311f" data-element_type="widget" data-widget_type="ld_header_image.default">
+<div class="elementor-widget-container">
+<div class="module-logo d-flex   navbar-brand-plain" id="size-logo" itemscope="itemscope" itemtype="https://schema.org/Brand">
+<a class="navbar-brand d-flex p-0 pos-rel" href="https://metana.io/" rel="home" itemprop="url"><span class="navbar-brand-inner post-rel"> <img class="logo-default" src="https://metana.io/wp-content/uploads/2022/07/Metana-Logo.png" alt="Metana" itemprop="url" /></span></a> </div>
+</div>
+</div>
+<div class="elementor-element elementor-element-f2dd37b elementor-align-justify elementor-widget elementor-widget-ld_button" data-id="f2dd37b" data-element_type="widget" data-widget_type="ld_button.default">
+<div class="elementor-widget-container">
+<a href="/apply" class="elementor-button btn btn-solid btn-icon-shaped btn-has-label">
+<span data-text="Apply now" class="btn-txt">
+Apply now </span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main class="content" id="lqd-site-content">
+<div class="container" id="lqd-contents-wrap">
+<div class="awsm-job-main awsm-job-archive-content">
+<div class="awsm-job-container">
+<h1 class="page-title awsm-jobs-archive-title">Job Openings</h1> <div class="awsm-job-wrap">
+<div class="awsm-filter-wrap awsm-no-search-filter-wrap"><form action="https://metana.io/wp-admin/admin-ajax.php" method="POST"><a href="#" class="awsm-filter-toggle" role="button" aria-pressed="false"><span class="awsm-filter-toggle-text-wrapper">Filter by</span><svg width="100" height="100" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" version="1.1" preserveaspectratio="xMinYMin"><path xmlns="http://www.w3.org/2000/svg" fill="rgb(9.803922%,9.803922%,9.803922%)" d="M 36.417969 19.9375 L 36.417969 17.265625 C 36.417969 16.160156 35.523438 15.265625 34.417969 15.265625 L 21.578125 15.265625 C 20.476562 15.265625 19.578125 16.160156 19.578125 17.265625 L 19.578125 19.9375 L 11 19.9375 L 11 26.9375 L 19.578125 26.9375 L 19.578125 30.105469 C 19.578125 31.210938 20.476562 32.105469 21.578125 32.105469 L 34.417969 32.105469 C 35.523438 32.105469 36.417969 31.210938 36.417969 30.105469 L 36.417969 26.9375 L 89 26.9375 L 89 19.9375 Z M 58.421875 43.578125 C 58.421875 42.476562 57.527344 41.578125 56.421875 41.578125 L 43.582031 41.578125 C 42.480469 41.578125 41.582031 42.476562 41.582031 43.578125 L 41.582031 46.5 L 11 46.5 L 11 53.5 L 41.582031 53.5 L 41.582031 56.421875 C 41.582031 57.527344 42.480469 58.421875 43.582031 58.421875 L 56.421875 58.421875 C 57.527344 58.421875 58.421875 57.527344 58.421875 56.421875 L 58.421875 53.5 L 89 53.5 L 89 46.5 L 58.421875 46.5 Z M 80.417969 70.140625 C 80.417969 69.035156 79.523438 68.140625 78.417969 68.140625 L 65.578125 68.140625 C 64.476562 68.140625 63.578125 69.035156 63.578125 70.140625 L 63.578125 73.0625 L 11 73.0625 L 11 80.0625 L 63.578125 80.0625 L 63.578125 82.984375 C 63.578125 84.085938 64.476562 84.984375 65.578125 84.984375 L 78.417969 84.984375 C 79.523438 84.984375 80.417969 84.085938 80.417969 82.984375 L 80.417969 80.0625 L 89 80.0625 L 89 73.0625 L 80.417969 73.0625 Z M 80.417969 70.140625" /></svg></a><div class="awsm-filter-items"><div class="awsm-filter-item" data-filter="job__category_spec"><label for="awsm-job-category-filter-option" class="awsm-sr-only">All Job Category</label><select name="awsm_job_spec[job-category]" class="awsm-filter-option awsm-job-category-filter-option" id="awsm-job-category-filter-option" aria-label="All Job Category"><option value>All Job Category</option><option value="102" data-slug="marketing">Marketing</option><option value="89" data-slug="sales">Sales</option></select></div><div class="awsm-filter-item" data-filter="job__type_spec"><label for="awsm-job-type-filter-option" class="awsm-sr-only">All Job Type</label><select name="awsm_job_spec[job-type]" class="awsm-filter-option awsm-job-type-filter-option" id="awsm-job-type-filter-option" aria-label="All Job Type"><option value>All Job Type</option><option value="26" data-slug="full-time">Full Time</option><option value="27" data-slug="part-time">Part Time</option></select></div><div class="awsm-filter-item" data-filter="job__location_spec"><label for="awsm-job-location-filter-option" class="awsm-sr-only">All Job Location</label><select name="awsm_job_spec[job-location]" class="awsm-filter-option awsm-job-location-filter-option" id="awsm-job-location-filter-option" aria-label="All Job Location"><option value>All Job Location</option><option value="29" data-slug="colombo-sri-lanka">Colombo Sri Lanka</option></select></div></div><input type="hidden" name="action" value="jobfilter"></form></div>
+<div class="awsm-job-listings awsm-lists" data-listings="10">
+<div class="awsm-job-listing-item awsm-list-item" id="awsm-list-item-8743"> <div class="awsm-job-item"> <div class="awsm-list-left-col">
+<h2 class="awsm-job-post-title">
+<a href="https://metana.io/jobs/sales-manager/">Sales Manager</a> </h2>
+</div>
+<div class="awsm-list-right-col">
+<div class="awsm-job-specification-wrapper"><div class="awsm-job-specification-item awsm-job-specification-job-category"><span class="awsm-job-specification-term">Sales</span> </div><div class="awsm-job-specification-item awsm-job-specification-job-location"><span class="awsm-job-specification-term">Colombo Sri Lanka</span> </div></div><div class="awsm-job-more-container"><a class="awsm-job-more" href="https://metana.io/jobs/sales-manager/">More Details <span></span></a></div> </div>
+</div> </div><div class="awsm-job-listing-item awsm-list-item" id="awsm-list-item-8712"> <div class="awsm-job-item"> <div class="awsm-list-left-col">
+<h2 class="awsm-job-post-title">
+<a href="https://metana.io/jobs/technical-assistant/">Technical Assistant</a> </h2>
+</div>
+<div class="awsm-list-right-col">
+<div class="awsm-job-specification-wrapper"><div class="awsm-job-specification-item awsm-job-specification-job-category"><span class="awsm-job-specification-term">Marketing</span> </div><div class="awsm-job-specification-item awsm-job-specification-job-location"><span class="awsm-job-specification-term">Colombo Sri Lanka</span> </div></div><div class="awsm-job-more-container"><a class="awsm-job-more" href="https://metana.io/jobs/technical-assistant/">More Details <span></span></a></div> </div>
+</div> </div><div class="awsm-job-listing-item awsm-list-item" id="awsm-list-item-8708"> <div class="awsm-job-item"> <div class="awsm-list-left-col">
+<h2 class="awsm-job-post-title">
+<a href="https://metana.io/jobs/sales-executive/">Sales Executive &#8211; Inbound Sales</a> </h2>
+</div>
+<div class="awsm-list-right-col">
+<div class="awsm-job-specification-wrapper"><div class="awsm-job-specification-item awsm-job-specification-job-category"><span class="awsm-job-specification-term">Sales</span> </div><div class="awsm-job-specification-item awsm-job-specification-job-location"><span class="awsm-job-specification-term">Colombo Sri Lanka</span> </div></div><div class="awsm-job-more-container"><a class="awsm-job-more" href="https://metana.io/jobs/sales-executive/">More Details <span></span></a></div> </div>
+</div> </div> </div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<div class="lqd-top-scrol-ind pos-fix pos-tl z-index-10 w-100 pointer-events-none" data-lqd-scroll-indicator="true" data-scrl-indc-options="{&quot;scale&quot;: true, &quot;dir&quot;: &quot;x&quot;, &quot;end&quot;: &quot;bottom bottom&quot;, &quot;origin&quot;: &quot;left&quot;}" style>
+<span class="lqd-scrl-indc-inner d-block lqd-overlay">
+<span class="lqd-scrl-indc-line d-block lqd-overlay">
+<span class="lqd-scrl-indc-el d-block lqd-overlay" style="transform: scaleX(0);"></span>
+</span>
+</span>
+</div><footer class="main-footer site-footer footer" id="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+<style id="elementor-post-3772">.elementor-3772 .elementor-element.elementor-element-5705d24f{--display:flex;--flex-direction:row;--container-widget-width:initial;--container-widget-height:100%;--container-widget-flex-grow:1;--container-widget-align-self:stretch;--justify-content:flex-start;--flex-wrap:wrap;--overflow:hidden;--background-transition:0.3s;--padding-block-start:100px;--padding-block-end:100px;--padding-inline-start:0px;--padding-inline-end:0px;}.elementor-3772 .elementor-element.elementor-element-74334cd5 .lqd-lottie{height:100%;}.elementor-3772 .elementor-element.elementor-element-74334cd5{width:100%;max-width:100%;bottom:-35%;z-index:0;}body:not(.rtl) .elementor-3772 .elementor-element.elementor-element-74334cd5{left:0px;}body.rtl .elementor-3772 .elementor-element.elementor-element-74334cd5{right:0px;}.elementor-3772 .elementor-element.elementor-element-74334cd5 > .elementor-widget-container{--e-transform-rotateZ:180deg;}.elementor-3772 .elementor-element.elementor-element-5aa72f60{--display:flex;--background-transition:0.3s;--margin-block-start:0px;--margin-block-end:30px;--margin-inline-start:0px;--margin-inline-end:0px;--padding-block-start:0px;--padding-block-end:0px;--padding-inline-start:0px;--padding-inline-end:80px;}.elementor-3772 .elementor-element.elementor-element-16f0f9a .ld-fh-element, .elementor-3772 .elementor-element.elementor-element-16f0f9a .ld-fh-element a{color:#0000007D;}.elementor-3772 .elementor-element.elementor-element-16f0f9a .ld-fh-element{font-size:10px;text-transform:uppercase;letter-spacing:1px;margin:0em 0em 3.5em 0em;}.elementor-3772 .elementor-element.elementor-element-16f0f9a .lqd-highlight-inner{bottom:0em;left:0em;}.elementor-3772 .elementor-element.elementor-element-7e27629f .ld-fh-element, .elementor-3772 .elementor-element.elementor-element-7e27629f .ld-fh-element a{color:#000000;}.elementor-3772 .elementor-element.elementor-element-7e27629f .ld-fh-element{font-size:21px;line-height:34px;margin:0em 0em 1.5em 0em;}.elementor-3772 .elementor-element.elementor-element-7e27629f .lqd-highlight-inner{bottom:0em;left:0em;}.elementor-3772 .elementor-element.elementor-element-33a45b64 .ld-sf input{font-size:13px;}.elementor-3772 .elementor-element.elementor-element-33a45b64 .ld-sf p{margin-bottom:0px;}.elementor-3772 .elementor-element.elementor-element-33a45b64 .ld-sf .ld_sf_submit{font-size:13px;}.elementor-3772 .elementor-element.elementor-element-33a45b64 .ld_sf_response h4{color:#9999A3;}.elementor-3772 .elementor-element.elementor-element-33a45b64 .ld-sf input[type="email"], .ld-sf input[type="text"]{color:#9999A3;}.elementor-3772 .elementor-element.elementor-element-33a45b64 .ld-sf input[type="email"]:focus, .ld-sf input[type="text"]:focus{color:#000000;}.elementor-3772 .elementor-element.elementor-element-33a45b64 .ld-sf button.ld_sf_submit{color:var( --e-global-color-text );background:var( --e-global-color-secondary );}.elementor-3772 .elementor-element.elementor-element-33a45b64 .ld-sf button.ld_sf_submit:hover{color:var( --e-global-color-secondary );background:var( --e-global-color-444f6b4 );}.elementor-3772 .elementor-element.elementor-element-33a45b64{width:100%;max-width:100%;}.elementor-3772 .elementor-element.elementor-element-3d3027c0{--display:flex;--background-transition:0.3s;--margin-block-start:0px;--margin-block-end:30px;--margin-inline-start:0px;--margin-inline-end:0px;}.elementor-3772 .elementor-element.elementor-element-2dbb54ee .ld-fh-element, .elementor-3772 .elementor-element.elementor-element-2dbb54ee .ld-fh-element a{color:#0000007D;}.elementor-3772 .elementor-element.elementor-element-2dbb54ee .ld-fh-element{font-size:10px;text-transform:uppercase;letter-spacing:1px;margin:0em 0em 3.5em 0em;}.elementor-3772 .elementor-element.elementor-element-2dbb54ee .lqd-highlight-inner{bottom:0em;left:0em;}.elementor-3772 .elementor-element.elementor-element-2f73141f .ld-fh-element, .elementor-3772 .elementor-element.elementor-element-2f73141f .ld-fh-element a{color:#1C1C1CB8;}.elementor-3772 .elementor-element.elementor-element-2f73141f .ld-fh-element{font-size:10px;text-transform:uppercase;letter-spacing:1px;}.elementor-3772 .elementor-element.elementor-element-2f73141f .lqd-highlight-inner{bottom:0em;left:0em;}.elementor-3772 .elementor-element.elementor-element-33727023 .ld-fh-element, .elementor-3772 .elementor-element.elementor-element-33727023 .ld-fh-element a{color:#1C1C1C;}.elementor-3772 .elementor-element.elementor-element-33727023 .ld-fh-element{font-size:18px;font-weight:500;margin:0em 0em 1.75em 0em;}.elementor-3772 .elementor-element.elementor-element-33727023 .lqd-highlight-inner{bottom:0em;left:0em;}.elementor-3772 .elementor-element.elementor-element-647adc26 .ld-fh-element, .elementor-3772 .elementor-element.elementor-element-647adc26 .ld-fh-element a{color:#1C1C1CB8;}.elementor-3772 .elementor-element.elementor-element-647adc26 .ld-fh-element{font-size:10px;text-transform:uppercase;letter-spacing:1px;}.elementor-3772 .elementor-element.elementor-element-647adc26 .lqd-highlight-inner{bottom:0em;left:0em;}.elementor-3772 .elementor-element.elementor-element-483f6ed2 .ld-fh-element, .elementor-3772 .elementor-element.elementor-element-483f6ed2 .ld-fh-element a{color:#1C1C1C;}.elementor-3772 .elementor-element.elementor-element-483f6ed2 .ld-fh-element{font-size:18px;font-weight:500;margin:0em 0em 1.75em 0em;}.elementor-3772 .elementor-element.elementor-element-483f6ed2 .lqd-highlight-inner{bottom:0em;left:0em;}.elementor-3772 .elementor-element.elementor-element-433ef33{--display:flex;--flex-direction:row;--container-widget-width:initial;--container-widget-height:100%;--container-widget-flex-grow:1;--container-widget-align-self:stretch;--background-transition:0.3s;--margin-block-start:020px;--margin-block-end:020px;--margin-inline-start:0px;--margin-inline-end:0px;}.elementor-3772 .elementor-element.elementor-element-83a2dde{--display:flex;--background-transition:0.3s;}.elementor-3772 .elementor-element.elementor-element-1aa1018 .ld-fh-element, .elementor-3772 .elementor-element.elementor-element-1aa1018 .ld-fh-element a{color:#0000007D;}.elementor-3772 .elementor-element.elementor-element-1aa1018 .ld-fh-element{font-size:10px;text-transform:uppercase;letter-spacing:1px;margin:0em 0em 3.5em 0em;}.elementor-3772 .elementor-element.elementor-element-1aa1018 .lqd-highlight-inner{bottom:0em;left:0em;}.elementor-3772 .elementor-element.elementor-element-0f3dd46 .elementor-icon-list-items:not(.elementor-inline-items) .elementor-icon-list-item:not(:last-child){padding-bottom:calc(10px/2);}.elementor-3772 .elementor-element.elementor-element-0f3dd46 .elementor-icon-list-items:not(.elementor-inline-items) .elementor-icon-list-item:not(:first-child){margin-top:calc(10px/2);}.elementor-3772 .elementor-element.elementor-element-0f3dd46 .elementor-icon-list-items.elementor-inline-items .elementor-icon-list-item{margin-right:calc(10px/2);margin-left:calc(10px/2);}.elementor-3772 .elementor-element.elementor-element-0f3dd46 .elementor-icon-list-items.elementor-inline-items{margin-right:calc(-10px/2);margin-left:calc(-10px/2);}body.rtl .elementor-3772 .elementor-element.elementor-element-0f3dd46 .elementor-icon-list-items.elementor-inline-items .elementor-icon-list-item:after{left:calc(-10px/2);}body:not(.rtl) .elementor-3772 .elementor-element.elementor-element-0f3dd46 .elementor-icon-list-items.elementor-inline-items .elementor-icon-list-item:after{right:calc(-10px/2);}.elementor-3772 .elementor-element.elementor-element-0f3dd46 .elementor-icon-list-icon i{transition:color 0.3s;}.elementor-3772 .elementor-element.elementor-element-0f3dd46 .elementor-icon-list-icon svg{transition:fill 0.3s;}.elementor-3772 .elementor-element.elementor-element-0f3dd46{--e-icon-list-icon-size:0px;--icon-vertical-offset:0px;}.elementor-3772 .elementor-element.elementor-element-0f3dd46 .elementor-icon-list-icon{padding-right:0px;}.elementor-3772 .elementor-element.elementor-element-0f3dd46 .elementor-icon-list-text{color:#62738D;transition:color 0.3s;}.elementor-3772 .elementor-element.elementor-element-0f3dd46 .elementor-icon-list-item:hover .elementor-icon-list-text{color:var( --e-global-color-444f6b4 );}.elementor-3772 .elementor-element.elementor-element-6c56f39{--display:flex;--background-transition:0.3s;}.elementor-3772 .elementor-element.elementor-element-4222de6 .ld-fh-element, .elementor-3772 .elementor-element.elementor-element-4222de6 .ld-fh-element a{color:#0000007D;}.elementor-3772 .elementor-element.elementor-element-4222de6 .ld-fh-element{font-size:10px;text-transform:uppercase;letter-spacing:1px;margin:0em 0em 3.5em 0em;}.elementor-3772 .elementor-element.elementor-element-4222de6 .lqd-highlight-inner{bottom:0em;left:0em;}.elementor-3772 .elementor-element.elementor-element-19f74cc .elementor-icon-list-items:not(.elementor-inline-items) .elementor-icon-list-item:not(:last-child){padding-bottom:calc(10px/2);}.elementor-3772 .elementor-element.elementor-element-19f74cc .elementor-icon-list-items:not(.elementor-inline-items) .elementor-icon-list-item:not(:first-child){margin-top:calc(10px/2);}.elementor-3772 .elementor-element.elementor-element-19f74cc .elementor-icon-list-items.elementor-inline-items .elementor-icon-list-item{margin-right:calc(10px/2);margin-left:calc(10px/2);}.elementor-3772 .elementor-element.elementor-element-19f74cc .elementor-icon-list-items.elementor-inline-items{margin-right:calc(-10px/2);margin-left:calc(-10px/2);}body.rtl .elementor-3772 .elementor-element.elementor-element-19f74cc .elementor-icon-list-items.elementor-inline-items .elementor-icon-list-item:after{left:calc(-10px/2);}body:not(.rtl) .elementor-3772 .elementor-element.elementor-element-19f74cc .elementor-icon-list-items.elementor-inline-items .elementor-icon-list-item:after{right:calc(-10px/2);}.elementor-3772 .elementor-element.elementor-element-19f74cc .elementor-icon-list-icon i{transition:color 0.3s;}.elementor-3772 .elementor-element.elementor-element-19f74cc .elementor-icon-list-icon svg{transition:fill 0.3s;}.elementor-3772 .elementor-element.elementor-element-19f74cc{--e-icon-list-icon-size:0px;--icon-vertical-offset:0px;}.elementor-3772 .elementor-element.elementor-element-19f74cc .elementor-icon-list-icon{padding-right:0px;}.elementor-3772 .elementor-element.elementor-element-19f74cc .elementor-icon-list-text{color:#62738D;transition:color 0.3s;}.elementor-3772 .elementor-element.elementor-element-19f74cc .elementor-icon-list-item:hover .elementor-icon-list-text{color:var( --e-global-color-444f6b4 );}.elementor-3772 .elementor-element.elementor-element-7d37f71{--display:flex;--background-transition:0.3s;}.elementor-3772 .elementor-element.elementor-element-b43d1d3 .ld-fh-element, .elementor-3772 .elementor-element.elementor-element-b43d1d3 .ld-fh-element a{color:#0000007D;}.elementor-3772 .elementor-element.elementor-element-b43d1d3 .ld-fh-element{font-size:10px;text-transform:uppercase;letter-spacing:1px;margin:0em 0em 3.5em 0em;}.elementor-3772 .elementor-element.elementor-element-b43d1d3 .lqd-highlight-inner{bottom:0em;left:0em;}.elementor-3772 .elementor-element.elementor-element-0533296 .elementor-icon-list-items:not(.elementor-inline-items) .elementor-icon-list-item:not(:last-child){padding-bottom:calc(10px/2);}.elementor-3772 .elementor-element.elementor-element-0533296 .elementor-icon-list-items:not(.elementor-inline-items) .elementor-icon-list-item:not(:first-child){margin-top:calc(10px/2);}.elementor-3772 .elementor-element.elementor-element-0533296 .elementor-icon-list-items.elementor-inline-items .elementor-icon-list-item{margin-right:calc(10px/2);margin-left:calc(10px/2);}.elementor-3772 .elementor-element.elementor-element-0533296 .elementor-icon-list-items.elementor-inline-items{margin-right:calc(-10px/2);margin-left:calc(-10px/2);}body.rtl .elementor-3772 .elementor-element.elementor-element-0533296 .elementor-icon-list-items.elementor-inline-items .elementor-icon-list-item:after{left:calc(-10px/2);}body:not(.rtl) .elementor-3772 .elementor-element.elementor-element-0533296 .elementor-icon-list-items.elementor-inline-items .elementor-icon-list-item:after{right:calc(-10px/2);}.elementor-3772 .elementor-element.elementor-element-0533296 .elementor-icon-list-icon i{transition:color 0.3s;}.elementor-3772 .elementor-element.elementor-element-0533296 .elementor-icon-list-icon svg{transition:fill 0.3s;}.elementor-3772 .elementor-element.elementor-element-0533296{--e-icon-list-icon-size:0px;--icon-vertical-offset:0px;}.elementor-3772 .elementor-element.elementor-element-0533296 .elementor-icon-list-icon{padding-right:0px;}.elementor-3772 .elementor-element.elementor-element-0533296 .elementor-icon-list-text{color:#62738D;transition:color 0.3s;}.elementor-3772 .elementor-element.elementor-element-0533296 .elementor-icon-list-item:hover .elementor-icon-list-text{color:var( --e-global-color-444f6b4 );}.elementor-3772 .elementor-element.elementor-element-d338e44{--display:flex;--background-transition:0.3s;}.elementor-3772 .elementor-element.elementor-element-1b18510 .ld-fh-element, .elementor-3772 .elementor-element.elementor-element-1b18510 .ld-fh-element a{color:#0000007D;}.elementor-3772 .elementor-element.elementor-element-1b18510 .ld-fh-element{font-size:10px;text-transform:uppercase;letter-spacing:1px;margin:0em 0em 3.5em 0em;}.elementor-3772 .elementor-element.elementor-element-1b18510 .lqd-highlight-inner{bottom:0em;left:0em;}.elementor-3772 .elementor-element.elementor-element-8a93be4 .elementor-icon-list-items:not(.elementor-inline-items) .elementor-icon-list-item:not(:last-child){padding-bottom:calc(10px/2);}.elementor-3772 .elementor-element.elementor-element-8a93be4 .elementor-icon-list-items:not(.elementor-inline-items) .elementor-icon-list-item:not(:first-child){margin-top:calc(10px/2);}.elementor-3772 .elementor-element.elementor-element-8a93be4 .elementor-icon-list-items.elementor-inline-items .elementor-icon-list-item{margin-right:calc(10px/2);margin-left:calc(10px/2);}.elementor-3772 .elementor-element.elementor-element-8a93be4 .elementor-icon-list-items.elementor-inline-items{margin-right:calc(-10px/2);margin-left:calc(-10px/2);}body.rtl .elementor-3772 .elementor-element.elementor-element-8a93be4 .elementor-icon-list-items.elementor-inline-items .elementor-icon-list-item:after{left:calc(-10px/2);}body:not(.rtl) .elementor-3772 .elementor-element.elementor-element-8a93be4 .elementor-icon-list-items.elementor-inline-items .elementor-icon-list-item:after{right:calc(-10px/2);}.elementor-3772 .elementor-element.elementor-element-8a93be4 .elementor-icon-list-icon i{transition:color 0.3s;}.elementor-3772 .elementor-element.elementor-element-8a93be4 .elementor-icon-list-icon svg{transition:fill 0.3s;}.elementor-3772 .elementor-element.elementor-element-8a93be4{--e-icon-list-icon-size:0px;--icon-vertical-offset:0px;}.elementor-3772 .elementor-element.elementor-element-8a93be4 .elementor-icon-list-icon{padding-right:0px;}.elementor-3772 .elementor-element.elementor-element-8a93be4 .elementor-icon-list-text{color:#62738D;transition:color 0.3s;}.elementor-3772 .elementor-element.elementor-element-8a93be4 .elementor-icon-list-item:hover .elementor-icon-list-text{color:var( --e-global-color-444f6b4 );}.elementor-3772 .elementor-element.elementor-element-218c4d9d{--display:flex;--flex-direction:row;--container-widget-width:calc( ( 1 - var( --container-widget-flex-grow ) ) * 100% );--container-widget-height:100%;--container-widget-flex-grow:1;--container-widget-align-self:stretch;--align-items:center;--background-transition:0.3s;--padding-block-start:20px;--padding-block-end:35px;--padding-inline-start:0px;--padding-inline-end:30px;}.elementor-3772 .elementor-element.elementor-element-186725c img{width:180px;}.elementor-3772 .elementor-element.elementor-element-3df43f2f{--display:flex;--flex-direction:row;--container-widget-width:calc( ( 1 - var( --container-widget-flex-grow ) ) * 100% );--container-widget-height:100%;--container-widget-flex-grow:1;--container-widget-align-self:stretch;--justify-content:flex-end;--align-items:center;--background-transition:0.3s;--padding-block-start:20px;--padding-block-end:35px;--padding-inline-start:0px;--padding-inline-end:0px;}.elementor-3772 .elementor-element.elementor-element-0903020 .ld-fh-element, .elementor-3772 .elementor-element.elementor-element-0903020 .ld-fh-element a{color:#0201018A;}.elementor-3772 .elementor-element.elementor-element-0903020 .ld-fh-element{font-size:12px;line-height:21px;}.elementor-3772 .elementor-element.elementor-element-0903020 .lqd-highlight-inner{bottom:0em;left:0em;}.elementor-3772 .elementor-element.elementor-element-5eb4bbc8{--display:flex;--flex-direction:row;--container-widget-width:calc( ( 1 - var( --container-widget-flex-grow ) ) * 100% );--container-widget-height:100%;--container-widget-flex-grow:1;--container-widget-align-self:stretch;--justify-content:flex-end;--align-items:center;--background-transition:0.3s;--padding-block-start:0px;--padding-block-end:10px;--padding-inline-start:0px;--padding-inline-end:0px;}.elementor-3772 .elementor-element.elementor-element-1a352aa0{--divider-border-style:solid;--divider-color:#737E9D4F;--divider-border-width:1px;width:100%;max-width:100%;}.elementor-3772 .elementor-element.elementor-element-1a352aa0 .elementor-divider-separator{width:100%;}.elementor-3772 .elementor-element.elementor-element-1a352aa0 .elementor-divider{padding-top:2px;padding-bottom:2px;}.elementor-3772 .elementor-element.elementor-element-705307a9{--display:flex;--flex-direction:row;--container-widget-width:calc( ( 1 - var( --container-widget-flex-grow ) ) * 100% );--container-widget-height:100%;--container-widget-flex-grow:1;--container-widget-align-self:stretch;--align-items:center;--background-transition:0.3s;--padding-block-start:20px;--padding-block-end:35px;--padding-inline-start:0px;--padding-inline-end:0px;}.elementor-3772 .elementor-element.elementor-element-705307a9.e-con{--flex-grow:0;--flex-shrink:0;}.elementor-3772 .elementor-element.elementor-element-6c91d72d .ld-fh-element, .elementor-3772 .elementor-element.elementor-element-6c91d72d .ld-fh-element a{color:#0201018A;}.elementor-3772 .elementor-element.elementor-element-6c91d72d .ld-fh-element{font-size:12px;line-height:21px;}.elementor-3772 .elementor-element.elementor-element-6c91d72d .lqd-highlight-inner{bottom:0em;left:0em;}.elementor-3772 .elementor-element.elementor-element-3f270e50{--display:flex;--flex-direction:row;--container-widget-width:calc( ( 1 - var( --container-widget-flex-grow ) ) * 100% );--container-widget-height:100%;--container-widget-flex-grow:1;--container-widget-align-self:stretch;--justify-content:flex-end;--align-items:center;--background-transition:0.3s;--padding-block-start:20px;--padding-block-end:35px;--padding-inline-start:0px;--padding-inline-end:0px;}.elementor-3772 .elementor-element.elementor-element-1d7a705{--grid-template-columns:repeat(0, auto);--icon-size:25px;--grid-column-gap:20px;--grid-row-gap:0px;}.elementor-3772 .elementor-element.elementor-element-1d7a705 .elementor-widget-container{text-align:left;}.elementor-3772 .elementor-element.elementor-element-1d7a705 .elementor-social-icon{background-color:#02010100;--icon-padding:0em;}.elementor-3772 .elementor-element.elementor-element-1d7a705 .elementor-social-icon i{color:#C8C8C8;}.elementor-3772 .elementor-element.elementor-element-1d7a705 .elementor-social-icon svg{fill:#C8C8C8;}.elementor-3772 .elementor-element.elementor-element-1d7a705 .elementor-social-icon:hover i{color:var( --e-global-color-text );}.elementor-3772 .elementor-element.elementor-element-1d7a705 .elementor-social-icon:hover svg{fill:var( --e-global-color-text );}@media(min-width:768px){.elementor-3772 .elementor-element.elementor-element-5aa72f60{--width:70%;}.elementor-3772 .elementor-element.elementor-element-3d3027c0{--width:30%;}.elementor-3772 .elementor-element.elementor-element-83a2dde{--width:25%;}.elementor-3772 .elementor-element.elementor-element-6c56f39{--width:25%;}.elementor-3772 .elementor-element.elementor-element-7d37f71{--width:25%;}.elementor-3772 .elementor-element.elementor-element-d338e44{--width:25%;}.elementor-3772 .elementor-element.elementor-element-218c4d9d{--width:30%;}.elementor-3772 .elementor-element.elementor-element-3df43f2f{--width:70%;}.elementor-3772 .elementor-element.elementor-element-705307a9{--width:75%;}.elementor-3772 .elementor-element.elementor-element-3f270e50{--width:25%;}}@media(max-width:1024px){.elementor-3772 .elementor-element.elementor-element-5705d24f{--padding-block-start:100px;--padding-block-end:0px;--padding-inline-start:20px;--padding-inline-end:20px;}.elementor-3772 .elementor-element.elementor-element-1d7a705 .elementor-widget-container{text-align:left;}}@media(max-width:767px){.elementor-3772 .elementor-element.elementor-element-5705d24f{--padding-block-start:70px;--padding-block-end:0px;--padding-inline-start:20px;--padding-inline-end:20px;}.elementor-3772 .elementor-element.elementor-element-5aa72f60{--padding-block-start:0px;--padding-block-end:0px;--padding-inline-start:0px;--padding-inline-end:0px;}.elementor-3772 .elementor-element.elementor-element-3d3027c0{--width:50%;}.elementor-3772 .elementor-element.elementor-element-4222de6 > .elementor-widget-container{margin:50px 0px 0px 0px;}.elementor-3772 .elementor-element.elementor-element-b43d1d3 > .elementor-widget-container{margin:50px 0px 0px 0px;}.elementor-3772 .elementor-element.elementor-element-1b18510 > .elementor-widget-container{margin:50px 0px 0px 0px;}.elementor-3772 .elementor-element.elementor-element-218c4d9d{--margin-block-start:0px;--margin-block-end:30px;--margin-inline-start:0px;--margin-inline-end:0px;--padding-block-start:0px;--padding-block-end:0px;--padding-inline-start:0px;--padding-inline-end:0px;}.elementor-3772 .elementor-element.elementor-element-218c4d9d.e-con{--order:-99999 /* order start hack */;}.elementor-3772 .elementor-element.elementor-element-3df43f2f{--padding-block-start:0px;--padding-block-end:30px;--padding-inline-start:0px;--padding-inline-end:0px;}.elementor-3772 .elementor-element.elementor-element-705307a9{--padding-block-start:20px;--padding-block-end:20px;--padding-inline-start:0px;--padding-inline-end:0px;}.elementor-3772 .elementor-element.elementor-element-1d7a705 .elementor-widget-container{text-align:left;}.elementor-3772 .elementor-element.elementor-element-1d7a705{width:100%;max-width:100%;}}</style> <div data-elementor-type="wp-post" data-elementor-id="3772" class="elementor elementor-3772" data-elementor-post-type="liquid-footer">
+<div class="elementor-element elementor-element-5705d24f e-flex e-con-boxed e-con e-parent" data-id="5705d24f" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;boxed&quot;}" data-core-v316-plus="true">
+<div class="e-con-inner">
+<div class="elementor-element elementor-element-74334cd5 elementor-widget__width-inherit elementor-absolute e-transform elementor-hidden-mobile elementor-widget elementor-widget-ld_lottie" data-id="74334cd5" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;,&quot;_transform_rotateZ_effect&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:180,&quot;sizes&quot;:[]},&quot;_transform_rotateZ_effect_tablet&quot;:{&quot;unit&quot;:&quot;deg&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_rotateZ_effect_mobile&quot;:{&quot;unit&quot;:&quot;deg&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}" data-widget_type="ld_lottie.default">
+<div class="elementor-widget-container">
+<div id="lqd-lottie-74334cd5" class="lqd-lottie"></div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="rocketlazyloadscript">
+            (() => {
+                window.addEventListener('DOMContentLoaded', () => {
+                    const wrapper_74334cd5 = document.getElementById( 'lqd-lottie-74334cd5' );
+                    const animItem_74334cd5 = bodymovin.loadAnimation({
+                        wrapper: wrapper_74334cd5,
+                        animType: 'svg',
+                        name: 'lqd-lottie-74334cd5',
+                        autoplay: true,
+                        loop: true,
+                        path: 'https://hubcollection.liquid-themes.com/wp-content/uploads/2022/09/103015-gradient-header-1.json',
+                        rendererSettings: {
+                            className: 'lqd-lottie',
+                        }
+                    });
+
+                    lottie.setDirection(1, 'lqd-lottie-74334cd5');
+                    lottie.setSpeed(0.5, 'lqd-lottie-74334cd5');
+
+                    lottie.pause('lqd-lottie-74334cd5');
+
+                    new IntersectionObserver(([entry]) => {
+                        if ( entry.isIntersecting ) {
+                            lottie.play('lqd-lottie-74334cd5');
+                        } else {
+                            lottie.pause('lqd-lottie-74334cd5')
+                        }
+                    }).observe(wrapper_74334cd5)
+                })
+            })();
+        </script>
+</div>
+</div>
+<div class="elementor-element elementor-element-5aa72f60 e-con-full e-flex e-con e-child" data-id="5aa72f60" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
+<div class="elementor-element elementor-element-16f0f9a elementor-widget elementor-widget-hub_fancy_heading" data-id="16f0f9a" data-element_type="widget" data-widget_type="hub_fancy_heading.default">
+<div class="elementor-widget-container">
+<div id="ld-fancy-heading-651a95a956f95" class="ld-fancy-heading pos-rel">
+<h6 class="ld-fh-element d-inline-block pos-rel  elementor-heading-title lqd-highlight-classic lqd-highlight-grow-left h6"> Address</h6> </div>
+</div>
+</div>
+<div class="elementor-element elementor-element-7e27629f elementor-widget elementor-widget-hub_fancy_heading" data-id="7e27629f" data-element_type="widget" data-widget_type="hub_fancy_heading.default">
+<div class="elementor-widget-container">
+<div id="ld-fancy-heading-651a95a957759" class="ld-fancy-heading pos-rel">
+<p class="ld-fh-element d-inline-block pos-rel  lqd-highlight-classic lqd-highlight-grow-left p"> 44 Montgomery St, <br>
+San Francisco, CA 94104, United States</p> </div>
+</div>
+</div>
+<div class="elementor-element elementor-element-33a45b64 elementor-widget__width-inherit elementor-widget elementor-widget-ld_newsletter" data-id="33a45b64" data-element_type="widget" data-widget_type="ld_newsletter.default">
+<div class="elementor-widget-container">
+<div id="lqd-newsletter-33a45b64" class="ld-sf pos-rel ld-sf--input-solid ld-sf--button-solid   ld-sf--size-sm ld-sf--circle  ld-sf--border-none ld-sf--input-shadow ld-sf--button-show ld-sf--button-inside">
+<form class="ld_subscribe_form ld_sf_form pos-rel" method="post" action="https://metana.io/jobs/sales-manager/">
+<p class="ld_sf_paragraph pos-rel">
+<input type="email" class="ld_sf_text ld_sf_email d-block w-100 border-radius-2" name="email" placeholder="We rarely send emails. Subscribe just in case 🌱" />
+</p>
+<button type="submit" class="ld_sf_submit d-inline-flex align-items-center justify-content-center m-0 border-radius-2 pos-rel"><span class="submit-text">Submit</span> <span class="ld-sf-spinner border-radius-circle pos-abs overflow-hidden"><span class="d-block lqd-overlay border-radius-circle">Sending </span></span></button> <input type="hidden" name="use_opt_in" value>
+<input type="hidden" class="ld_sf_list_id" name="list_id" value="0">
+<input type="hidden" id="_wpnonce" name="_wpnonce" value="2fa3cc6913" /><input type="hidden" name="_wp_http_referer" value="/jobs/" /> </form>
+<div class="ld_sf_response"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-3d3027c0 e-con-full e-flex e-con e-child" data-id="3d3027c0" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
+<div class="elementor-element elementor-element-2dbb54ee elementor-widget elementor-widget-hub_fancy_heading" data-id="2dbb54ee" data-element_type="widget" data-widget_type="hub_fancy_heading.default">
+<div class="elementor-widget-container">
+<div id="ld-fancy-heading-651a95a95935a" class="ld-fancy-heading pos-rel">
+<h6 class="ld-fh-element d-inline-block pos-rel  elementor-heading-title lqd-highlight-classic lqd-highlight-grow-left h6"> Contact us</h6> </div>
+</div>
+</div>
+<div class="elementor-element elementor-element-2f73141f elementor-widget elementor-widget-hub_fancy_heading" data-id="2f73141f" data-element_type="widget" data-widget_type="hub_fancy_heading.default">
+<div class="elementor-widget-container">
+<div id="ld-fancy-heading-651a95a959b8c" class="ld-fancy-heading pos-rel">
+<h6 class="ld-fh-element d-inline-block pos-rel  elementor-heading-title lqd-highlight-classic lqd-highlight-grow-left h6"> Call us directly</h6> </div>
+</div>
+</div>
+<div class="elementor-element elementor-element-33727023 elementor-widget elementor-widget-hub_fancy_heading" data-id="33727023" data-element_type="widget" data-widget_type="hub_fancy_heading.default">
+<div class="elementor-widget-container">
+<div id="ld-fancy-heading-651a95a95a3e0" class="ld-fancy-heading pos-rel">
+<p class="ld-fh-element d-inline-block pos-rel  lqd-highlight-classic lqd-highlight-grow-left p"> (415) 416-0800</p> </div>
+</div>
+</div>
+<div class="elementor-element elementor-element-647adc26 elementor-widget elementor-widget-hub_fancy_heading" data-id="647adc26" data-element_type="widget" data-widget_type="hub_fancy_heading.default">
+<div class="elementor-widget-container">
+<div id="ld-fancy-heading-651a95a95ab5d" class="ld-fancy-heading pos-rel">
+<h6 class="ld-fh-element d-inline-block pos-rel  elementor-heading-title lqd-highlight-classic lqd-highlight-grow-left h6"> Mail us directly</h6> </div>
+</div>
+</div>
+<div class="elementor-element elementor-element-483f6ed2 elementor-widget elementor-widget-hub_fancy_heading" data-id="483f6ed2" data-element_type="widget" data-widget_type="hub_fancy_heading.default">
+<div class="elementor-widget-container">
+<div id="ld-fancy-heading-651a95a95b476" class="ld-fancy-heading pos-rel">
+<p class="ld-fh-element d-inline-block pos-rel  lqd-highlight-classic lqd-highlight-grow-left p"> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a0c9cec6cfe0cdc5d4c1cec18ec9cf">[email&#160;protected]</a></p> </div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-433ef33 e-flex e-con-boxed e-con e-child" data-id="433ef33" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;boxed&quot;}">
+<div class="e-con-inner">
+<div class="elementor-element elementor-element-83a2dde e-con-full e-flex e-con e-child" data-id="83a2dde" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
+<div class="elementor-element elementor-element-1aa1018 elementor-widget elementor-widget-hub_fancy_heading" data-id="1aa1018" data-element_type="widget" data-widget_type="hub_fancy_heading.default">
+<div class="elementor-widget-container">
+<div id="ld-fancy-heading-651a95a95ccb1" class="ld-fancy-heading pos-rel">
+<h3 class="ld-fh-element d-inline-block pos-rel  elementor-heading-title lqd-highlight-classic lqd-highlight-grow-left h3"> Company</h3> </div>
+</div>
+</div>
+<div class="elementor-element elementor-element-0f3dd46 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="0f3dd46" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<link rel="stylesheet" href="https://metana.io/wp-content/plugins/elementor/assets/css/widget-icon-list.min.css"> <ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item">
+<a href="/">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="dticon dticon-caret-forward-outline"></i> </span>
+<span class="elementor-icon-list-text">Home</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="https://metana.io/blog/">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="dticon dticon-caret-forward-outline"></i> </span>
+<span class="elementor-icon-list-text">Blog</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="/jobs/">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="dticon dticon-caret-forward-outline"></i> </span>
+<span class="elementor-icon-list-text">Jobs at Metana</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="https://metana.io/apply/">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="dticon dticon-caret-forward-outline"></i> </span>
+<span class="elementor-icon-list-text">Bootcamp Application</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="/refer/">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="dticon dticon-caret-forward-outline"></i> </span>
+<span class="elementor-icon-list-text">Refer a friend</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="/perks/">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="dticon dticon-caret-forward-outline"></i> </span>
+<span class="elementor-icon-list-text">Student Perks 🌱</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-6c56f39 e-con-full e-flex e-con e-child" data-id="6c56f39" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
+<div class="elementor-element elementor-element-4222de6 elementor-widget elementor-widget-hub_fancy_heading" data-id="4222de6" data-element_type="widget" data-widget_type="hub_fancy_heading.default">
+<div class="elementor-widget-container">
+<div id="ld-fancy-heading-651a95a95eb32" class="ld-fancy-heading pos-rel">
+<h3 class="ld-fh-element d-inline-block pos-rel  elementor-heading-title lqd-highlight-classic lqd-highlight-grow-left h3"> Bootcamp</h3> </div>
+</div>
+</div>
+<div class="elementor-element elementor-element-19f74cc elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="19f74cc" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item">
+<a href="https://metana.io/web3-0-bootcamp/">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="dticon dticon-caret-forward-outline"></i> </span>
+<span class="elementor-icon-list-text">Web3 Bootcamps</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="https://metana.io/web3-solidity-bootcamp-ethereum-blockchain/">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="dticon dticon-caret-forward-outline"></i> </span>
+<span class="elementor-icon-list-text">- Solidity Bootcamp</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="https://metana.io/web3-rust-bootcamp-solana-blockchain/">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="dticon dticon-caret-forward-outline"></i> </span>
+<span class="elementor-icon-list-text">- Rust Bootcamp</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="/web3-zero-knowledge-bootcamp/">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="dticon dticon-caret-forward-outline"></i> </span>
+<span class="elementor-icon-list-text">- ZK Bootcamp</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="/data-analytics-bootcamp/">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="dticon dticon-caret-forward-outline"></i> </span>
+<span class="elementor-icon-list-text">Data Analytics Bootcamp</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="/data-science-bootcamp/">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="dticon dticon-caret-forward-outline"></i> </span>
+<span class="elementor-icon-list-text">Data Science Bootcamp</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="/ai-machine-learning-bootcamp/">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="dticon dticon-caret-forward-outline"></i> </span>
+<span class="elementor-icon-list-text">AI/ML Bootcamp</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="/cybersecurity-bootcamp/">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="dticon dticon-caret-forward-outline"></i> </span>
+<span class="elementor-icon-list-text">Cybersecurity Bootcamp</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="/jobcamp/">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="dticon dticon-caret-forward-outline"></i> </span>
+<span class="elementor-icon-list-text">Jobcamp</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="https://metana.io/tuition/">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="dticon dticon-caret-forward-outline"></i> </span>
+<span class="elementor-icon-list-text">Tuition</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-7d37f71 e-con-full e-flex e-con e-child" data-id="7d37f71" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
+<div class="elementor-element elementor-element-b43d1d3 elementor-widget elementor-widget-hub_fancy_heading" data-id="b43d1d3" data-element_type="widget" data-widget_type="hub_fancy_heading.default">
+<div class="elementor-widget-container">
+<div id="ld-fancy-heading-651a95a9605b9" class="ld-fancy-heading pos-rel">
+<h3 class="ld-fh-element d-inline-block pos-rel  elementor-heading-title lqd-highlight-classic lqd-highlight-grow-left h3"> For businesses </h3> </div>
+</div>
+</div>
+<div class="elementor-element elementor-element-0533296 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="0533296" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item">
+<a href="https://metana.io/business/">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="dticon dticon-caret-forward-outline"></i> </span>
+<span class="elementor-icon-list-text">Business</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="https://metana.io/business/hiring-partner/">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="dticon dticon-caret-forward-outline"></i> </span>
+<span class="elementor-icon-list-text">- Hiring Partner</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="/business/upskill-your-team/">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="dticon dticon-caret-forward-outline"></i> </span>
+<span class="elementor-icon-list-text">- Upskill Your Team</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-d338e44 e-con-full e-flex e-con e-child" data-id="d338e44" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
+<div class="elementor-element elementor-element-1b18510 elementor-widget elementor-widget-hub_fancy_heading" data-id="1b18510" data-element_type="widget" data-widget_type="hub_fancy_heading.default">
+<div class="elementor-widget-container">
+<div id="ld-fancy-heading-651a95a962769" class="ld-fancy-heading pos-rel">
+<h3 class="ld-fh-element d-inline-block pos-rel  elementor-heading-title lqd-highlight-classic lqd-highlight-grow-left h3"> Legal</h3> </div>
+</div>
+</div>
+<div class="elementor-element elementor-element-8a93be4 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="8a93be4" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item">
+<a href="https://metana.io/licences/">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="dticon dticon-caret-forward-outline"></i> </span>
+<span class="elementor-icon-list-text">Licences</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="https://metana.io/job-guarantee/">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="dticon dticon-caret-forward-outline"></i> </span>
+<span class="elementor-icon-list-text">Metana's Job Guarantee</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="https://metana.io/withdrawal-and-refund-policy/">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="dticon dticon-caret-forward-outline"></i> </span>
+<span class="elementor-icon-list-text">Withdrawal and Refund Policy</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="/privacy-policy/">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="dticon dticon-caret-forward-outline"></i> </span>
+<span class="elementor-icon-list-text">Privacy Policy</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-218c4d9d e-con-full e-flex e-con e-child" data-id="218c4d9d" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
+<div class="elementor-element elementor-element-186725c elementor-widget elementor-widget-image" data-id="186725c" data-element_type="widget" data-widget_type="image.default">
+<div class="elementor-widget-container">
+<style>/*! elementor - v3.16.0 - 20-09-2023 */
+.elementor-widget-image{text-align:center}.elementor-widget-image a{display:inline-block}.elementor-widget-image a img[src$=".svg"]{width:48px}.elementor-widget-image img{vertical-align:middle;display:inline-block}</style> <a href="https://metana.io">
+<img width="780" height="170" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20780%20170'%3E%3C/svg%3E" class="attachment-large size-large wp-image-6076" alt data-lazy-srcset="https://metana.io/wp-content/uploads/2022/07/Metana-Logo-Black-Full.png 1000w, https://metana.io/wp-content/uploads/2022/07/Metana-Logo-Black-Full-300x65.png 300w" data-lazy-sizes="(max-width: 780px) 100vw, 780px" data-lazy-src="https://metana.io/wp-content/uploads/2022/07/Metana-Logo-Black-Full.png" /><noscript><img width="780" height="170" src="https://metana.io/wp-content/uploads/2022/07/Metana-Logo-Black-Full.png" class="attachment-large size-large wp-image-6076" alt="" srcset="https://metana.io/wp-content/uploads/2022/07/Metana-Logo-Black-Full.png 1000w, https://metana.io/wp-content/uploads/2022/07/Metana-Logo-Black-Full-300x65.png 300w" sizes="(max-width: 780px) 100vw, 780px" /></noscript> </a>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-3df43f2f e-con-full e-flex e-con e-child" data-id="3df43f2f" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
+<div class="elementor-element elementor-element-0903020 elementor-widget elementor-widget-hub_fancy_heading" data-id="0903020" data-element_type="widget" data-widget_type="hub_fancy_heading.default">
+<div class="elementor-widget-container">
+<div id="ld-fancy-heading-651a95a966a29" class="ld-fancy-heading pos-rel">
+<p class="ld-fh-element d-inline-block pos-rel  lqd-highlight-classic lqd-highlight-grow-left p"> Disclaimer:
+‍
+Metana is involved in the Blockchain Education activities only. We are not dealing with any Crypto related stuff nor provide advice in the Crypto related field.</p> </div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-5eb4bbc8 e-con-full e-flex e-con e-child" data-id="5eb4bbc8" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
+<div class="elementor-element elementor-element-1a352aa0 elementor-widget__width-inherit elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="1a352aa0" data-element_type="widget" data-widget_type="divider.default">
+<div class="elementor-widget-container">
+<div class="elementor-divider">
+<span class="elementor-divider-separator">
+</span>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-705307a9 e-con-full e-flex e-con e-child" data-id="705307a9" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
+<div class="elementor-element elementor-element-6c91d72d elementor-widget elementor-widget-hub_fancy_heading" data-id="6c91d72d" data-element_type="widget" data-widget_type="hub_fancy_heading.default">
+<div class="elementor-widget-container">
+<div id="ld-fancy-heading-651a95a969bac" class="ld-fancy-heading pos-rel">
+<p class="ld-fh-element d-inline-block pos-rel  lqd-highlight-classic lqd-highlight-grow-left p"> Metana is a pioneer in education and career transformation, specializing in today’s most in-demand skills. The leading source for training, staffing, and career transitions, we foster a flourishing community of professionals pursuing careers they love.
+| © 2023 Edmore (private) limited</p> </div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-3f270e50 e-con-full e-flex e-con e-child" data-id="3f270e50" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
+<div class="elementor-element elementor-element-1d7a705 e-grid-align-left e-grid-align-tablet-left e-grid-align-mobile-left elementor-widget-mobile__width-inherit elementor-shape-rounded elementor-grid-0 elementor-widget elementor-widget-social-icons" data-id="1d7a705" data-element_type="widget" data-widget_type="social-icons.default">
+<div class="elementor-widget-container">
+<div class="elementor-social-icons-wrapper elementor-grid">
+<span class="elementor-grid-item">
+<a class="elementor-icon elementor-social-icon elementor-social-icon-facebook elementor-repeater-item-f1cbc6c" href="https://www.facebook.com/metanahq" target="_blank">
+<span class="elementor-screen-only">Facebook</span>
+<svg class="e-font-icon-svg e-fab-facebook" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"></path></svg> </a>
+</span>
+<span class="elementor-grid-item">
+<a class="elementor-icon elementor-social-icon elementor-social-icon- elementor-repeater-item-72927e2" href="https://www.twitter.com/intent/user?screen_name=metanahq" target="_blank">
+<span class="elementor-screen-only"></span>
+<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"></path></svg> </a>
+</span>
+<span class="elementor-grid-item">
+<a class="elementor-icon elementor-social-icon elementor-social-icon-linkedin elementor-repeater-item-2bfbe8d" href="https://www.linkedin.com/school/metana/" target="_blank">
+<span class="elementor-screen-only">Linkedin</span>
+<svg class="e-font-icon-svg e-fab-linkedin" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg> </a>
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+				const lazyloadRunObserver = () => {
+					const dataAttribute = 'data-e-bg-lazyload';
+					const lazyloadBackgrounds = document.querySelectorAll( `[${ dataAttribute }]:not(.lazyloaded)` );
+					const lazyloadBackgroundObserver = new IntersectionObserver( ( entries ) => {
+					entries.forEach( ( entry ) => {
+						if ( entry.isIntersecting ) {
+							let lazyloadBackground = entry.target;
+							const lazyloadSelector = lazyloadBackground.getAttribute( dataAttribute );
+							if ( lazyloadSelector ) {
+								lazyloadBackground = entry.target.querySelector( lazyloadSelector );
+							}
+							if( lazyloadBackground ) {
+								lazyloadBackground.classList.add( 'lazyloaded' );
+							}
+							lazyloadBackgroundObserver.unobserve( entry.target );
+						}
+					});
+					}, { rootMargin: '100px 0px 100px 0px' } );
+					lazyloadBackgrounds.forEach( ( lazyloadBackground ) => {
+						lazyloadBackgroundObserver.observe( lazyloadBackground );
+					} );
+				};
+				const events = [
+					'DOMContentLoaded',
+					'elementor/lazyload/observe',
+				];
+				events.forEach( ( event ) => {
+					document.addEventListener( event, lazyloadRunObserver );
+				} );
+			</script>
+
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+(function(d,s,i,r) {
+if (d.getElementById(i)){return;}
+var n=d.createElement(s),e=d.getElementsByTagName(s)[0];
+n.id=i;n.src='//js.hs-analytics.net/analytics/'+(Math.ceil(new Date()/r)*r)+'/20654174.js';
+e.parentNode.insertBefore(n, e);
+})(document,"script","hs-analytics",300000);
+</script>
+
+<script src="data:text/javascript;base64,dmFyIGtwZGV0ZWN0ZGVsYXlqcyA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoJ3NjcmlwdFt0eXBlPSJyb2NrZXRsYXp5bG9hZHNjcmlwdCJdJykubGVuZ3RoO2lmIChrcGRldGVjdGRlbGF5anMgPj0gMSl7Y2xhc3Mga3Bzb0V4ZWN1dGVTY3JpcHRzIGV4dGVuZHMgUm9ja2V0TGF6eUxvYWRTY3JpcHRze3N0YXRpYyBrcHNvRmlyZSgpe2lmKG5hdmlnYXRvci51c2VyQWdlbnQubWF0Y2goLzUwNjAuMTM0fDEwOXxwaW5nfGRhcmV8cHRzdC9pKSl7dmFyIGU9bmV3IFJvY2tldExhenlMb2FkU2NyaXB0cyhbImtleWRvd24iLCJtb3VzZW92ZXIiLCJ0b3VjaG1vdmUiLCJ0b3VjaHN0YXJ0IiwidG91Y2hlbmQiLCJ0b3VjaGNhbmNlbCIsInRvdWNoZm9yY2VjaGFuZ2UiLCJ3aGVlbCJdKTt9ZWxzZXt2YXIgZT1uZXcgUm9ja2V0TGF6eUxvYWRTY3JpcHRzKFsibG9hZCJdKTt9ZS5fYWRkVXNlckludGVyYWN0aW9uTGlzdGVuZXIoZSk7fX1rcHNvRXhlY3V0ZVNjcmlwdHMua3Bzb0ZpcmUoKTt9" id="mLQFAVgBhg" defer></script>
+<link data-minify="1" rel="stylesheet" id="elementor-icons-lqd-essentials-css" href="https://metana.io/wp-content/cache/min/1/wp-content/themes/hub/assets/vendors/liquid-icon/lqd-essentials/lqd-essentials.min.css?ver=1696240834" type="text/css" media="all" />
+<link data-minify="1" rel="stylesheet" id="liquid-icons-css" href="https://metana.io/wp-content/cache/min/1/wp-content/themes/hub/assets/vendors/liquid-icon/lqd-essentials/lqd-essentials.min.css?ver=1696240834" type="text/css" media="all" />
+<script type="text/javascript" id="leadin-script-loader-js-js-extra">
+/* <![CDATA[ */
+var leadin_wordpress = {"userRole":"visitor","pageType":"archive","leadinPluginVersion":"10.2.5"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://metana.io/wp-content/cache/min/1/20654174.js?ver=1696240834" async defer id="hs-script-loader"></script>
+<script type="text/javascript" id="awsm-job-scripts-js-extra">window.addEventListener('DOMContentLoaded', function() {
+/* <![CDATA[ */
+var awsmJobsPublic = {"ajaxurl":"https:\/\/metana.io\/wp-admin\/admin-ajax.php","is_tax_archive":"","is_search":"","job_id":"0","wp_max_upload_size":"83886080","deep_linking":{"search":true,"spec":true,"pagination":true},"i18n":{"loading_text":"Loading...","form_error_msg":{"general":"Error in submitting your application. Please try again later!","file_validation":"The file you have selected is too large."}},"vendors":{"selectric":true,"jquery_validation":true}};
+/* ]]> */
+});</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metana.io/wp-content/plugins/wp-job-openings/assets/js/script.min.js?ver=3.4.3" id="awsm-job-scripts-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metana.io/wp-content/plugins/hurrytimer/assets/js/cookie.min.js?ver=3.14.1" id="hurryt-cookie-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metana.io/wp-content/plugins/hurrytimer/assets/js/jquery.countdown.min.js?ver=2.2.0" id="hurryt-countdown-js" defer></script>
+<script type="text/javascript" id="hurrytimer-js-extra">
+/* <![CDATA[ */
+var hurrytimer_ajax_object = {"ajax_url":"https:\/\/metana.io\/wp-admin\/admin-ajax.php","ajax_nonce":"cb13632987","disable_actions":"","methods":{"COOKIE":1,"IP":2,"USER_SESSION":3},"actionsOptions":{"none":1,"hide":2,"redirect":3,"stockStatus":4,"hideAddToCartButton":5,"displayMessage":6,"expire_coupon":7},"restartOptions":{"none":1,"immediately":2,"afterReload":3,"after_duration":4},"COOKIEPATH":"\/","COOKIE_DOMAIN":"","redirect_no_back":"1","expire_coupon_message":"","invalid_checkout_coupon_message":""};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://metana.io/wp-content/cache/min/1/wp-content/plugins/hurrytimer/assets/js/hurrytimer.js?ver=1696240834" id="hurrytimer-js" defer></script>
+<script type="rocketlazyloadscript" id="rocket-browser-checker-js-after" data-rocket-type="text/javascript">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type="text/javascript" id="rocket-preload-links-js-extra">
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index.php\/)?(.*)wp-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/metana.io","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" id="rocket-preload-links-js-after" data-rocket-type="text/javascript">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metana.io/wp-content/themes/hub/assets/vendors/fastdom/fastdom.min.js" id="fastdom-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metana.io/wp-content/themes/hub/assets/vendors/bootstrap/js/bootstrap.min.js" id="bootstrap-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metana.io/wp-includes/js/imagesloaded.min.js?ver=4.1.4" id="imagesloaded-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metana.io/wp-content/themes/hub/assets/vendors/jquery-ui/jquery-ui.min.js" id="jquery-ui-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://metana.io/wp-content/cache/min/1/wp-content/themes/hub/assets/vendors/fresco/js/fresco.js?ver=1696240834" id="jquery-fresco-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metana.io/wp-content/themes/hub/assets/vendors/lity/lity.min.js" id="lity-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metana.io/wp-content/themes/hub/assets/vendors/gsap/minified/gsap.min.js" id="gsap-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metana.io/wp-content/themes/hub/assets/vendors/gsap/utils/CustomEase.min.js" id="gsap-custom-ease-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metana.io/wp-content/themes/hub/assets/vendors/gsap/minified/DrawSVGPlugin.min.js" id="gsap-draw-svg-plugin-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metana.io/wp-content/themes/hub/assets/vendors/gsap/minified/ScrollTrigger.min.js" id="scrollTrigger-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metana.io/wp-content/themes/hub/assets/js/draw-shape/liquidDrawShape.min.js" id="liquid-draw-shape-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metana.io/wp-content/themes/hub/assets/js/animated-blob/liquidAnimatedBlob.min.js" id="liquid-animated-blob-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://metana.io/wp-content/cache/min/1/wp-content/themes/hub/assets/vendors/fontfaceobserver.js?ver=1696240834" id="jquery-fontfaceobserver-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://metana.io/wp-content/cache/min/1/wp-content/themes/hub/assets/vendors/intersection-observer.js?ver=1696240834" id="intersection-observer-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metana.io/wp-content/themes/hub/assets/vendors/tinycolor-min.js" id="jquery-tinycolor-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metana.io/wp-content/themes/hub/assets/vendors/flickity/flickity.pkgd.min.js" id="flickity-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metana.io/wp-content/plugins/powerpack-elements/assets/lib/isotope/isotope.pkgd.min.js?ver=0.5.3" id="isotope-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metana.io/wp-content/themes/hub/assets/vendors/isotope/packery-mode.pkgd.min.js" id="packery-mode-js" defer></script>
+<script type="text/javascript" id="liquid-theme-js-extra">
+/* <![CDATA[ */
+var liquidTheme = {"uris":{"ajax":"\/wp-admin\/admin-ajax.php"}};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metana.io/wp-content/themes/hub/assets/js/theme.min.js" id="liquid-theme-js" defer></script>
+<script type="text/javascript" id="eael-general-js-extra">
+/* <![CDATA[ */
+var localize = {"ajaxurl":"https:\/\/metana.io\/wp-admin\/admin-ajax.php","nonce":"998e6cad45","i18n":{"added":"Added ","compare":"Compare","loading":"Loading..."},"eael_translate_text":{"required_text":"is a required field","invalid_text":"Invalid","billing_text":"Billing","shipping_text":"Shipping","fg_mfp_counter_text":"of"},"page_permalink":"https:\/\/metana.io\/jobs\/sales-manager\/","cart_redirectition":"","cart_page_url":"","el_breakpoints":{"mobile":{"label":"Mobile Portrait","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Landscape","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet Portrait","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Landscape","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metana.io/wp-content/plugins/essential-addons-for-elementor-lite/assets/front-end/js/view/general.min.js?ver=5.8.9" id="eael-general-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metana.io/wp-content/plugins/elementor-pro/assets/lib/lottie/lottie.min.js?ver=5.6.6" id="lottie-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metana.io/wp-content/themes/hub/assets/vendors/gsap/utils/SplitText.min.js" id="splittext-js" defer></script>
+<script type="text/javascript" id="liquid-mailchimp-form-js-extra">
+/* <![CDATA[ */
+var ajax_liquid_mailchimp_form_object = {"ajaxurl":"https:\/\/metana.io\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://metana.io/wp-content/cache/min/1/wp-content/themes/hub/assets/js/mailchimp-form.js?ver=1696240834" id="liquid-mailchimp-form-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metana.io/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.16.2" id="elementor-pro-webpack-runtime-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metana.io/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.16.4" id="elementor-webpack-runtime-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metana.io/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.16.4" id="elementor-frontend-modules-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metana.io/wp-includes/js/dist/vendor/wp-polyfill-inert.min.js?ver=3.1.2" id="wp-polyfill-inert-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metana.io/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.11" id="regenerator-runtime-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metana.io/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0" id="wp-polyfill-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metana.io/wp-includes/js/dist/hooks.min.js?ver=c6aec9a8d4e5a5d543a1" id="wp-hooks-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metana.io/wp-includes/js/dist/i18n.min.js?ver=7701b0c3857f914212ef" id="wp-i18n-js"></script>
+<script type="rocketlazyloadscript" id="wp-i18n-js-after" data-rocket-type="text/javascript">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+<script type="rocketlazyloadscript" id="elementor-pro-frontend-js-before" data-rocket-type="text/javascript">
+var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/metana.io\/wp-admin\/admin-ajax.php","nonce":"2ed47b36a2","urls":{"assets":"https:\/\/metana.io\/wp-content\/plugins\/elementor-pro\/assets\/","rest":"https:\/\/metana.io\/wp-json\/"},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"}},"facebook_sdk":{"lang":"en_US","app_id":""},"lottie":{"defaultAnimationUrl":"https:\/\/metana.io\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}};
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metana.io/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.16.2" id="elementor-pro-frontend-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metana.io/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min.js?ver=4.0.2" id="elementor-waypoints-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metana.io/wp-includes/js/jquery/ui/core.min.js?ver=1.13.2" id="jquery-ui-core-js" defer></script>
+<script type="rocketlazyloadscript" id="elementor-frontend-js-before" data-rocket-type="text/javascript">
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close","a11yCarouselWrapperAriaLabel":"Carousel | Horizontal scrolling: Arrow Left & Right","a11yCarouselPrevSlideMessage":"Previous slide","a11yCarouselNextSlideMessage":"Next slide","a11yCarouselFirstSlideMessage":"This is the first slide","a11yCarouselLastSlideMessage":"This is the last slide","a11yCarouselPaginationBulletMessage":"Go to slide"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile Portrait","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Landscape","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet Portrait","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Landscape","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}},"version":"3.16.4","is_static":false,"experimentalFeatures":{"e_dom_optimization":true,"e_optimized_assets_loading":true,"e_optimized_css_loading":true,"e_font_icon_svg":true,"additional_custom_breakpoints":true,"container":true,"theme_builder_v2":true,"landing-pages":true,"nested-elements":true,"e_lazyload":true,"page-transitions":true,"notes":true,"form-submissions":true,"e_scroll_snap":true},"urls":{"assets":"https:\/\/metana.io\/wp-content\/plugins\/elementor\/assets\/"},"swiperClass":"swiper-container","settings":{"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":0,"title":"Job Openings &#8211; Metana","excerpt":""}};
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metana.io/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.16.4" id="elementor-frontend-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metana.io/wp-content/plugins/elementor-pro/assets/js/elements-handlers.min.js?ver=3.16.2" id="pro-elements-handlers-js" defer></script>
+<script type="text/javascript" id="powerpack-frontend-js-extra">
+/* <![CDATA[ */
+var ppLogin = {"empty_username":"Enter a username or email address.","empty_password":"Enter password.","empty_password_1":"Enter a password.","empty_password_2":"Re-enter password.","empty_recaptcha":"Please check the captcha to verify you are not a robot.","email_sent":"A password reset email has been sent to the email address for your account, but may take several minutes to show up in your inbox. Please wait at least 10 minutes before attempting another reset.","reset_success":"Your password has been reset successfully.","ajax_url":"https:\/\/metana.io\/wp-admin\/admin-ajax.php","show_password":"Show password","hide_password":"Hide password"};
+var ppRegistration = {"invalid_username":"This username is invalid because it uses illegal characters. Please enter a valid username.","username_exists":"This username is already registered. Please choose another one.","empty_email":"Please type your email address.","invalid_email":"The email address isn\u2019t correct!","email_exists":"The email is already registered, please choose another one.","password":"Password must not contain the character \"\\\\\"","password_length":"Your password should be at least 8 characters long.","password_mismatch":"Password does not match.","invalid_url":"URL seems to be invalid.","recaptcha_php_ver":"reCAPTCHA API requires PHP version 5.3 or above.","recaptcha_missing_key":"Your reCAPTCHA Site or Secret Key is missing!","show_password":"Show password","hide_password":"Hide password","ajax_url":"https:\/\/metana.io\/wp-admin\/admin-ajax.php"};
+var ppCoupons = {"copied_text":"Copied"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metana.io/wp-content/plugins/powerpack-elements/assets/js/min/frontend.min.js?ver=2.9.17" id="powerpack-frontend-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metana.io/wp-content/plugins/powerpack-elements/assets/lib/tooltipster/tooltipster.min.js?ver=2.9.17" id="pp-tooltipster-js" defer></script>
+<script id="cz8MjVA6ko" async src="data:text/javascript;base64,aWYobmF2aWdhdG9yLnVzZXJBZ2VudC5tYXRjaCgvNTA2MC4xMzR8MTA5fHBpbmd8ZGFyZXxwdHN0L2kpKXt2YXIga3BVc2VySW50ZXJhY3Rpb25FdmVudHM9WyJrZXlkb3duIiwibW91c2VvdmVyIiwidG91Y2htb3ZlIiwidG91Y2hzdGFydCIsInRvdWNoZW5kIiwidG91Y2hjYW5jZWwiLCJ0b3VjaGZvcmNlY2hhbmdlIiwid2hlZWwiXTt9ZWxzZXt2YXIga3BVc2VySW50ZXJhY3Rpb25FdmVudHM9WyJsb2FkIl07fWtwVXNlckludGVyYWN0aW9uRXZlbnRzLmZvckVhY2goZnVuY3Rpb24oZXZlbnQpe3dpbmRvdy5hZGRFdmVudExpc3RlbmVyKGV2ZW50LGtwVHJpZ2dlclNjcmlwdExvYWRlcix7cGFzc2l2ZTp0cnVlfSl9KTtmdW5jdGlvbiBrcFRyaWdnZXJTY3JpcHRMb2FkZXIoKXtod3RMSExvY1JGNmt1M08oKTtrcFVzZXJJbnRlcmFjdGlvbkV2ZW50cy5mb3JFYWNoKGZ1bmN0aW9uKGV2ZW50KXt3aW5kb3cucmVtb3ZlRXZlbnRMaXN0ZW5lcihldmVudCxrcFRyaWdnZXJTY3JpcHRMb2FkZXIse3Bhc3NpdmU6dHJ1ZX0pfSk7fWZ1bmN0aW9uIGh3dExITG9jUkY2a3UzTygpe2RvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoImxpbmtbZGF0YS10eXBlPSdrcHBhc3NpdmUnXSIpLmZvckVhY2goZnVuY3Rpb24oZWxlbSl7ZWxlbS5zZXRBdHRyaWJ1dGUoImhyZWYiLGVsZW0uZ2V0QXR0cmlidXRlKCJkYXRhLWtwbGlua2hyZWYiKSl9KTtzZXRUaW1lb3V0KGZ1bmN0aW9uKCl7ZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbCgic2NyaXB0W2RhdGEtdHlwZT0na3BwYXNzaXZlJ10iKS5mb3JFYWNoKGZ1bmN0aW9uKGVsZW0pe2VsZW0uc2V0QXR0cmlidXRlKCJzcmMiLGVsZW0uZ2V0QXR0cmlidXRlKCJkYXRhLWtwc2NyaXB0c3JjIikpfSk7fSwyMDApO2lmKGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoInZpZGVvW2RhdGEtdHlwZT0na3BwYXNzaXZlJ10iKSl7aWYoZG9jdW1lbnQucXVlcnlTZWxlY3RvcigidmlkZW9bZGF0YS1rcHZpZGVvc3JjXSIpKXtkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCJ2aWRlb1tkYXRhLWtwdmlkZW9zcmNdIikuZm9yRWFjaChmdW5jdGlvbihlbGVtKXtlbGVtLnNldEF0dHJpYnV0ZSgic3JjIixlbGVtLmdldEF0dHJpYnV0ZSgiZGF0YS1rcHZpZGVvc3JjIikpfSk7fWlmKGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoInZpZGVvW2RhdGEtdHlwZT0na3BwYXNzaXZlJ10gc291cmNlIikpe2RvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoInZpZGVvW2RhdGEtdHlwZT0na3BwYXNzaXZlJ106bm90KFtkYXRhLWtwdmlkZW9zcmNdKSIpLmZvckVhY2goZnVuY3Rpb24oZWxlbSl7ZWxlbS5zZXRBdHRyaWJ1dGUoInNyYyIsZWxlbS5nZXRFbGVtZW50c0J5VGFnTmFtZSgnc291cmNlJylbMF0uZ2V0QXR0cmlidXRlKCJkYXRhLWtwdmlkZW9zcmMiKSl9KTt9fX0="></script>
+<template id="lqd-temp-snickersbar">
+<div class="lqd-snickersbar d-flex flex-wrap lqd-snickersbar-in" data-item-id>
+<div class="lqd-snickersbar-inner d-flex flex-wrap align-items-center">
+<div class="lqd-snickersbar-detail">
+<p style="display: none;" class="lqd-snickersbar-addding-temp mt-0 mb-0">Adding {{itemName}} to cart</p>
+<p style="display: none;" class="lqd-snickersbar-added-temp mt-0 mb-0">Added {{itemName}} to cart</p>
+<p class="lqd-snickersbar-msg d-flex align-items-center mt-0 mb-0"></p>
+<p class="lqd-snickersbar-msg-done d-flex align-items-center mt-0 mb-0"></p>
+</div>
+<div class="lqd-snickersbar-ext ml-4 ms-4"></div>
+</div>
+</div>
+</template><template id="lqd-temp-sticky-header-sentinel">
+<div class="lqd-sticky-sentinel invisible pos-abs pointer-events-none"></div>
+</template><div class="lity" role="dialog" aria-label="Dialog Window (Press escape to close)" tabindex="-1" data-modal-type="default" style="display: none;">
+<div class="lity-backdrop"></div>
+<div class="lity-wrap" data-lity-close role="document">
+<div class="lity-loader" aria-hidden="true">Loading...</div>
+<div class="lity-container">
+<div class="lity-content"></div>
+</div>
+<button class="lity-close" type="button" aria-label="Close (Press escape to close)" data-lity-close>&times;</button>
+</div>
+</div><script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://metana.io/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script>
+<script>class RocketElementorAnimation{constructor(){this.deviceMode=document.createElement("span"),this.deviceMode.id="elementor-device-mode-wpr",this.deviceMode.setAttribute("class","elementor-screen-only"),document.body.appendChild(this.deviceMode)}_detectAnimations(){let t=getComputedStyle(this.deviceMode,":after").content.replace(/"/g,"");this.animationSettingKeys=this._listAnimationSettingsKeys(t),document.querySelectorAll(".elementor-invisible[data-settings]").forEach(t=>{const e=t.getBoundingClientRect();if(e.bottom>=0&&e.top<=window.innerHeight)try{this._animateElement(t)}catch(t){}})}_animateElement(t){const e=JSON.parse(t.dataset.settings),i=e._animation_delay||e.animation_delay||0,n=e[this.animationSettingKeys.find(t=>e[t])];if("none"===n)return void t.classList.remove("elementor-invisible");t.classList.remove(n),this.currentAnimation&&t.classList.remove(this.currentAnimation),this.currentAnimation=n;let s=setTimeout(()=>{t.classList.remove("elementor-invisible"),t.classList.add("animated",n),this._removeAnimationSettings(t,e)},i);window.addEventListener("rocket-startLoading",function(){clearTimeout(s)})}_listAnimationSettingsKeys(t="mobile"){const e=[""];switch(t){case"mobile":e.unshift("_mobile");case"tablet":e.unshift("_tablet");case"desktop":e.unshift("_desktop")}const i=[];return["animation","_animation"].forEach(t=>{e.forEach(e=>{i.push(t+e)})}),i}_removeAnimationSettings(t,e){this._listAnimationSettingsKeys().forEach(t=>delete e[t]),t.dataset.settings=JSON.stringify(e)}static run(){const t=new RocketElementorAnimation;requestAnimationFrame(t._detectAnimations.bind(t))}}document.addEventListener("DOMContentLoaded",RocketElementorAnimation.run);</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8b253dfea2ab4077af8c6f58422dfbfd1689876627854" integrity="sha512-bjgnUKX4azu3dLTVtie9u6TKqgx29RBwfj3QXYt5EKfWM/9hPSAI/4qcV5NACjwAo8UtTeWefx6Zq5PHcMm7Tg==" data-cf-beacon='{"rayId":"80fca1701e525bcb","version":"2023.8.0","b":1,"token":"8395eb82a7584228836b3439e1684117","si":100}' crossorigin="anonymous"></script>
+</body>
+</html>

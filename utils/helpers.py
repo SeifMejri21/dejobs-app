@@ -112,3 +112,12 @@ def open_html(file_path=""):
         # print(e)
         # print(file_path)
     return html_content
+
+def save_html(html_content, file_path=""):
+    # file_path = f"database/hr_html/{file_name}.html"
+    try:
+        with open(file_path, 'wb') as file:
+            file.write(html_content)
+            # print(f'HTML content saved to {file_path}')
+    except Exception as e:
+        print(f'Error: save html file: {e}')
