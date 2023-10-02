@@ -34,14 +34,14 @@ GOOGLE_ANALYICS = """<!DOCTYPE html>
 <html>
     <head>
 <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-V7B2RT94WN"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-        
-          gtag('config', 'G-V7B2RT94WN');
-        </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J7E2DP8HGL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J7E2DP8HGL');
+</script>
     </head>
     <body>
         {%app_entry%}

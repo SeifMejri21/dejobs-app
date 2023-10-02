@@ -7,6 +7,8 @@ from dashboard.board import board
 from dashboard.home_page import home_page
 from dashboard.html_finder import html_finder
 
+
+server = app.server
 app.layout = home_page
 
 
@@ -21,8 +23,7 @@ def update_jobs_list(path_name):
     elif path_name == "/search":
         return html_finder
     else:
-        # return board
-        return html_finder
+        return board
 
 
 if __name__ == "__main__":

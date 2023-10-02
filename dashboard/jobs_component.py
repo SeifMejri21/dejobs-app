@@ -77,7 +77,7 @@ class JobsComponent(object):
                 dbc.CardBody(
                     [
                         html.H4(company_name, className="card-title"),
-                        html.P("Matches: " + str_matches, className="card-text", ),
+                        html.P("Matche(s): " + str_matches, className="card-text", ),
                         dbc.Button("Go to careers Page", href=careers_page,
                                    target='_blank', color="primary"),
                     ]

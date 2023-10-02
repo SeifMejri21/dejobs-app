@@ -10,5 +10,3 @@ app = dash.Dash(__name__,
                 include_assets_files=True,
                 )
 app._favicon = "dejobs_icon.png"
-
-server = app.server

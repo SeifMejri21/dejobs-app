@@ -3,10 +3,17 @@ import dash_mantine_components as dmc
 from dash import html, dcc
 
 from dashboard.static_components import SOCIALS, VERSION, GOOGLE_ANALYICS
+from utils.helpers import set_env
+
+font_size = '1.325rem'
+if set_env() == 'prod':
+    comp = html.Script(children=[GOOGLE_ANALYICS], id='google-analytics-script')
+else:
+    comp = html.Div([])
 
 home_page = html.Div([
     html.Div([
-        html.Script(children=[GOOGLE_ANALYICS], id='google-analytics-script'),
+        comp,
         html.A(
             dmc.Image(
                 src="https://i.postimg.cc/90fzNFxT/logo.png",
@@ -20,12 +27,13 @@ home_page = html.Div([
             style={"textDecoration": "none"},
         )]),
     html.Div([html.H2("Elevate Your Crypto Career: 100x More Jobs, One Board")],
-             style={"height": "100px", "text-align": "center", "text-color": "pink"}),
+             style={"height": "100px", "text-align": "center", "text-color": "pink",
+                    "font-family": "Segoe, sans-serif"}),
     html.Center(
         dbc.Nav(
             [
-                dbc.NavLink("Board", href="/board", active="exact"),
-                dbc.NavLink("Search", href="/search", active="exact"),
+                dbc.NavLink("Board", href="/board", active="exact", style={'font-size': font_size}),
+                dbc.NavLink("Search", href="/search", active="exact", style={'font-size': font_size}),
             ],
             pills=True,
             fill=True,
