@@ -20,7 +20,10 @@ dj_api = DeJobsApiTester(test_env=set_env())
 # dj_api = DeJobsApiTester(test_env='prod')
 
 all_jobs = dj_api.import_all_available_jobs()
-random.shuffle(all_jobs)
+if type(all_jobs) == list:
+    random.shuffle(all_jobs)
+else:
+    all_jobs = []
 all_locations, all_titles, all_companies = dj_api.load_jobs_filters()
 jobs_count = dj_api.load_available_jobs_count()
 

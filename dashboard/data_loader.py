@@ -33,7 +33,7 @@ class DeJobsApiTester(object):
             if resp.status_code == 200:
                 data = resp.json()
             else:
-                data = 200
+                data = []
                 print(f"'GET' request ERROR: {resp.status_code} on  {url}")
         elif request_type in ["POST", "post", "Post"]:
             resp = req.post(url, json=data)
